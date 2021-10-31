@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Love4Retro/Love4Retro.gd" type="Script" id=1]
+[ext_resource path="res://resources/sprites/logo-love4retro.png" type="Texture" id=2]
+[ext_resource path="res://resources/sounds/love4retro.wav" type="AudioStream" id=3]
+[ext_resource path="res://scenes/Transition/TransitionIn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Transition/TransitionOut.tscn" type="PackedScene" id=5]
+
+[node name="Love4Retro" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 128.0 ],
+"_edit_vertical_guides_": [ 240.0 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 240, 128 )
+scale = Vector2( 1, 0.857143 )
+texture = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="TransitionIn" parent="." instance=ExtResource( 4 )]
+
+[node name="TransitionOut" parent="." instance=ExtResource( 5 )]
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

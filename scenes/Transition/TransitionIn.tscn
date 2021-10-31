@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Transition/TransitionIn.gd" type="Script" id=1]
+[ext_resource path="res://resources/animated-textures/transition-in.tres" type="Texture" id=2]
+
+[node name="TransitionIn" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+margin_right = 480.0
+margin_bottom = 272.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

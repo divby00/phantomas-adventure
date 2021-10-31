@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/drozerix_-_lost_without.mp3-8c76337bcb7b37571df5407d2e63b1d5.mp3str"
+
+[deps]
+
+source_file="res://resources/music/drozerix_-_lost_without.mp3"
+dest_files=[ "res://.import/drozerix_-_lost_without.mp3-8c76337bcb7b37571df5407d2e63b1d5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
