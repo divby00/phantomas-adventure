@@ -91,21 +91,21 @@ Podemos distinguir entre enemigos vivos, objetos encantados y seres sobrenatural
 
 ### NPC
 
-- Pescador (Proporciona las truchas para coger a la gata)
-- Tio Juan (Nos ayuda a obtener un módulo con su burro)
-- Tio Ramón (Tras ayudarle con las manzanas nos da el botijo)
-- Tia Simona (La que nos da el capote de torero)
-- Agustín (Guardia del toril)
-- Maximina (Desbloqueo de senda de Bienvenida)
-- Heladia (Nos da un bollo en el horno)
-- Tio Eleuterio (Herrero, nos da la ganzúa para acceder a la casa del tio Valentín)
-- Tio Calixto (Carbonero, nos da el carbón para dárselo al tio Eleuterio)
-- Tio Valentín (El que conoce la senda a la montaña, desbloqueo de senda de Maria)
-- Don Francisco (Párroco)
-- Flora (La que está preparando la sopa, desbloqueo de senda de Esteban)
-- Felipa (Dueña de la cantina)
-- Tio Venancio (Pastor desaparecido que vive en la falda de la montaña)
-- Tia Susana (Bruja buena)
+- Pescador (Proporciona las truchas para coger a la gata) 40
+- Tio Juan (Nos ayuda a obtener un módulo con su burro) 45
+- Tio Ramón (Tras ayudarle con las manzanas nos da el botijo) 55
+- Tia Simona (La que nos da el capote de torero) 52
+- Agustín (Guardia del toril) 30
+- Maximina (Desbloqueo de senda de Bienvenida) 40
+- Heladia (Nos da un bollo en el horno) 45
+- Tio Eleuterio (Herrero, nos da la ganzúa para acceder a la casa del tio Valentín) 60
+- Tio Calixto (Carbonero, nos da el carbón para dárselo al tio Eleuterio) 60
+- Tio Valentín (El que conoce la senda a la montaña, desbloqueo de senda de Maria) 42
+- Don Francisco (Párroco) 35
+- Flora (La que está preparando la sopa, desbloqueo de senda de Esteban) 35
+- Felipa (Dueña de la cantina) 38
+- Tio Venancio (Pastor desaparecido que vive en la falda de la montaña) 60
+- Tia Susana (Bruja buena) 50
 - Dominguera madre (Agonizando en la cascada, nos da las pilas)
 - Dominguero padre (En una celda, tras rescatarle nos explica como manipular la estatua roja)
 - Dominguero hijo (En una celda, tras rescatarle nos explica como manipular la estatua verde)
