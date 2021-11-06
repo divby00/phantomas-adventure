@@ -13,15 +13,13 @@ config_version=4
 config/name="Phantomas en la sierra"
 config/description="A Phantomas adventure"
 run/main_scene="res://scenes/Love4Retro/Love4Retro.tscn"
-boot_splash/image="res://resources/sprites/logo-godot.png"
-boot_splash/fullsize=false
-boot_splash/use_filter=false
-boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://phantomas.png"
 
 [autoload]
 
 Configuration="*res://scripts/Configuration.gd"
 Utils="*res://scripts/Utils.gd"
+EgaColors="*res://scripts/EgaColors.gd"
 
 [display]
 

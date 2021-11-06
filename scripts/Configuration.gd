@@ -4,6 +4,7 @@ var fullscreen = true setget set_fullscreen
 var sfx_volume = 0.5 setget set_sfx_volume
 var music_volume = 0.5 setget set_music_volume
 
+
 func set_fullscreen(value):
 	if OS.get_name() != "HTML5":
 		fullscreen = value
@@ -13,15 +14,18 @@ func set_fullscreen(value):
 		OS.window_fullscreen = fullscreen
 		save()
 
+
 func set_sfx_volume(value):
 	sfx_volume = value
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear2db(sfx_volume))
 	save()
 
+
 func set_music_volume(value):
 	music_volume = value
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear2db(music_volume))
 	save()
+
 
 func save():
 	var config = ConfigFile.new()
@@ -29,6 +33,7 @@ func save():
 	config.set_value("sound", "sfx_volume", self.sfx_volume)
 	config.set_value("sound", "music_volume", self.music_volume)
 	config.save("user://phmountains.cfg")
+
 
 func load_and_save_config():
 	var config = ConfigFile.new()

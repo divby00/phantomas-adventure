@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://resources/music/drozerix_-_lost_without.mp3" type="AudioStream" id=2]
 [ext_resource path="res://resources/sprites/logo-game.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Transition/TransitionIn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://resources/theme.tres" type="Theme" id=5]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -13,10 +14,61 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 240, 128 )
+position = Vector2( 240, 96 )
 texture = ExtResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+bus = "Music"
 
 [node name="TransitionIn" parent="." instance=ExtResource( 4 )]
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MainMenu"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -48.0
+margin_top = 8.0
+margin_right = 48.0
+margin_bottom = 88.0
+theme = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/NinePatchRect"]
+margin_top = 16.0
+margin_right = 96.0
+margin_bottom = 80.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonStart" type="Button" parent="MainMenu/NinePatchRect/VBoxContainer"]
+margin_top = 10.0
+margin_right = 96.0
+margin_bottom = 22.0
+text = "START"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonOptions" type="Button" parent="MainMenu/NinePatchRect/VBoxContainer"]
+margin_top = 26.0
+margin_right = 96.0
+margin_bottom = 38.0
+text = "OPTIONS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonQuit" type="Button" parent="MainMenu/NinePatchRect/VBoxContainer"]
+margin_top = 42.0
+margin_right = 96.0
+margin_bottom = 54.0
+text = "QUIT"
