@@ -2,7 +2,7 @@ tool
 extends Node2D
 
 signal remove
-signal act_finished
+signal message_removed
 
 export var message: String;
 export var speed: float = 0.5;
@@ -12,6 +12,7 @@ const AsepriteFont: DynamicFont = preload("res://resources/fonts/aseprite.tres")
 
 onready var label: Label = $Label
 onready var timer: Timer = $Timer
+onready var remove_timer: Timer = $RemoveTimer
 
 var cursor_position: int = 0;
 var character_position: Vector2 = Vector2.ZERO
@@ -19,8 +20,6 @@ var characters_buffer: PoolByteArray = []
 
 
 func _ready():
-	if Engine.editor_hint:
-		label.text = "ColorMessage"
 	characters_buffer = message.to_ascii()
 	var label_length: int = 0
 	for index in characters_buffer.size():
@@ -37,6 +36,7 @@ func start():
 
 func remove():
 	emit_signal('remove')
+	remove_timer.start()
 	
 
 func _on_Timer_timeout():
@@ -64,3 +64,7 @@ func _get_glyph_size(index):
 	var current_character = int(characters_buffer[index])
 	var next_character = int(characters_buffer[index + 1]) if index < message.length() - 1 else 0
 	return AsepriteFont.get_char_size(current_character, next_character)
+
+
+func _on_RemoveTimer_timeout():
+	emit_signal("message_removed", self)
