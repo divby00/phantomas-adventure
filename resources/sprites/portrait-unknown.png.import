@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/face-phantomas.png-787190dacf744cc32d6e1595be0bae62.stex"
+path="res://.import/portrait-unknown.png-7ce2221ae9893ff9e1c9aa038fa86315.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/face-phantomas.png"
-dest_files=[ "res://.import/face-phantomas.png-787190dacf744cc32d6e1595be0bae62.stex" ]
+source_file="res://resources/sprites/portrait-unknown.png"
+dest_files=[ "res://.import/portrait-unknown.png-7ce2221ae9893ff9e1c9aa038fa86315.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false

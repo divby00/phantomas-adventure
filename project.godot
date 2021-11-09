@@ -12,7 +12,7 @@ config_version=4
 
 config/name="Phantomas en la sierra"
 config/description="A Phantomas adventure"
-run/main_scene="res://scenes/Love4Retro/Love4Retro.tscn"
+run/main_scene="res://scenes/Intro/Intro.tscn"
 config/icon="res://phantomas.png"
 
 [autoload]
@@ -20,6 +20,7 @@ config/icon="res://phantomas.png"
 Configuration="*res://scripts/Configuration.gd"
 Utils="*res://scripts/Utils.gd"
 EgaColors="*res://scripts/EgaColors.gd"
+Characters="*res://scripts/Characters.gd"
 
 [display]
 
@@ -55,6 +56,5 @@ texture={
 
 [rendering]
 
-2d/snapping/use_gpu_pixel_snap=true
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/dynamic_fonts/use_oversampling=false

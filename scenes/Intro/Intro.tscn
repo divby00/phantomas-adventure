@@ -77,31 +77,32 @@ hframes = 5
 [node name="ColorMessage" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, 160 )
 message = "En una celda tenebrosa, Phantomas se pudre solo... abandonado..."
-speed = 0.033
+speed = 0.001
 
 [node name="ColorMessage2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, 160 )
 message = "¿Cuánto tiempo lleva encerrado? no hay manera de saberlo, meses, años quizás..."
-speed = 0.033
+speed = 0.001
 
 [node name="ColorMessage3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, 160 )
 message = "No tiene importancia, su batería se está agotando y el final parece más cerca que nunca..."
-speed = 0.033
+speed = 0.001
 
 [node name="ColorMessage4" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, 160 )
 message = "...hasta que un día..."
-speed = 0.033
+speed = 0.001
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="ActTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.5
 
 [node name="SfxPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+bus = "SFX"
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

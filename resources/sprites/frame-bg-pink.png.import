@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frame-red.png-0ddfc626ea410c3f5b236640b57acc03.stex"
+path="res://.import/frame-bg-pink.png-3fa03fe8251d203a939375139af43ae4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/frame-red.png"
-dest_files=[ "res://.import/frame-red.png-0ddfc626ea410c3f5b236640b57acc03.stex" ]
+source_file="res://resources/sprites/frame-bg-pink.png"
+dest_files=[ "res://.import/frame-bg-pink.png-3fa03fe8251d203a939375139af43ae4.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=false
