@@ -1,6 +1,6 @@
 extends Node
 
-var fullscreen = true setget set_fullscreen
+var fullscreen = false setget set_fullscreen
 var sfx_volume = 0.5 setget set_sfx_volume
 var music_volume = 0.5 setget set_music_volume
 

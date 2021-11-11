@@ -1,133 +1,122 @@
-extends Node
+extends Object
+class_name Characters
 
-enum CharNames {
-	Phantomas,
-	Unknown,
-	Lorenzo,
-	TioJuan,
-	TioRamon,
-	TiaSimona,
-	Agustin,
-	Maximina,
-	Heladia,
-	TioEleuterio,
-	TioCalixto,
-	TioValentin,
-	DonFrancisco,
-	Flora,
-	Felipa,
-	TioVenancio,
-	TiaSusana,
-	DomingueroPadre,
-	DomingueraMadre,
-	DomingueroHijo,
-	DomingueraHija
-}
-
-var Characters = {
-	CharNames.Phantomas: {
+const data = {
+	"Phantomas": {
 		"name": "Phantomas",
 		"portrait": preload("res://resources/sprites/portrait-phantomas.png"),
 		"background": preload("res://resources/sprites/frame-bg-blue.png")
 	},
-	CharNames.Unknown: {
+	"Unknown": {
 		"name": "Desconocido",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
-	CharNames.Lorenzo: {
+	"Lorenzo": {
 		"name": "Lorenzo",
-		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
-		"background": preload("res://resources/sprites/frame-bg-brown.png")
+		"portrait": preload("res://resources/sprites/portrait-lorenzo.png"),
+		"background": preload("res://resources/sprites/frame-bg-blue.png")
 	},
-	CharNames.TioJuan: {
+	"TioJuan": {
 		"name": "Tio Juan",
-		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
-		"background": preload("res://resources/sprites/frame-bg-brown.png")
+		"portrait": preload("res://resources/sprites/portrait-tiojuan.png"),
+		"background": preload("res://resources/sprites/frame-bg-green.png")
 	},
-	CharNames.TioRamon: {
+	"TioRamon": {
 		"name": "Tio Ramón",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
-	CharNames.TiaSimona: {
+	"TiaSimona": {
 		"name": "Tia Simona",
-		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
-		"background": preload("res://resources/sprites/frame-bg-brown.png")		
+		"portrait": preload("res://resources/sprites/portrait-tiasimona.png"),
+		"background": preload("res://resources/sprites/frame-bg-red.png")		
 	},
-	CharNames.Agustin: {
+	"Agustin": {
 		"name": "Agustín",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")				
 	},
-	CharNames.Maximina: {
+	"Maximina": {
 		"name": "Maximina",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")				
 	},
-	CharNames.Heladia: {
+	"Heladia": {
 		"name": "Heladia",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")		
 	},
-	CharNames.TioEleuterio: {
+	"TioEleuterio": {
 		"name": "Tio Eleuterio",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")	
 	},
-	CharNames.TioCalixto: {
+	"TioCalixto": {
 		"name": "Tio Calixto",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
-	CharNames.TioValentin: {
+	"TioValentin": {
 		"name": "Tio Valentín",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
-	CharNames.DonFrancisco: {
+	"DonFrancisco": {
 		"name": "Don Francisco",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
-	CharNames.Flora: {
+	"Flora": {
 		"name": "Flora",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
-	CharNames.Felipa: {
+	"Felipa": {
 		"name": "Felipa",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
-	CharNames.TioVenancio: {
+	"TioVenancio": {
 		"name": "Tio Venancio",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
-	CharNames.TiaSusana: {
+	"TiaSusana": {
 		"name": "Tia Susana",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
-	CharNames.DomingueroPadre: {
+	"DomingueroPadre": {
 		"name": "Dominguero Padre",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
-	CharNames.DomingueraMadre: {
+	"DomingueraMadre": {
 		"name": "Dominguera Madre",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
-	CharNames.DomingueroHijo: {
+	"DomingueroHijo": {
 		"name": "Dominguero Hijo",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
-	CharNames.DomingueraHija: {
+	"DomingueraHija": {
 		"name": "Dominguera Hija",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},
 }
+
+
+static func get_name(id) -> String:
+	return data[id].name;
+
+
+static func get_portrait(id) -> Texture:
+	return data[id].portrait;
+
+
+static func get_background(id) -> Texture:
+	return data[id].background;

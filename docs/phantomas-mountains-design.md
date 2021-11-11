@@ -92,6 +92,8 @@ Podemos distinguir entre enemigos vivos, objetos encantados y seres sobrenatural
 ### NPC
 
 - Pescador (Proporciona las truchas para coger a la gata) 40
+https://generated.photos/face-generator/618b4e845d2207000fa7866c
+
 - Tio Juan (Nos ayuda a obtener un módulo con su burro) 45
 - Tio Ramón (Tras ayudarle con las manzanas nos da el botijo) 55
 - Tia Simona (La que nos da el capote de torero) 52

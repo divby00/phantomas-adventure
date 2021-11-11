@@ -8,11 +8,21 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Object",
+"class": "Characters",
+"language": "GDScript",
+"path": "res://scripts/Characters.gd"
+} ]
+_global_script_class_icons={
+"Characters": ""
+}
+
 [application]
 
 config/name="Phantomas en la sierra"
 config/description="A Phantomas adventure"
-run/main_scene="res://scenes/Intro/Intro.tscn"
+run/main_scene="res://scenes/Love4Retro/Love4Retro.tscn"
 config/icon="res://phantomas.png"
 
 [autoload]
@@ -20,14 +30,13 @@ config/icon="res://phantomas.png"
 Configuration="*res://scripts/Configuration.gd"
 Utils="*res://scripts/Utils.gd"
 EgaColors="*res://scripts/EgaColors.gd"
-Characters="*res://scripts/Characters.gd"
 
 [display]
 
 window/size/width=480
 window/size/height=272
-window/size/test_width=1440
-window/size/test_height=816
+window/size/test_width=960
+window/size/test_height=544
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
