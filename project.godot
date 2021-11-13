@@ -63,6 +63,11 @@ texture={
 "svg/scale": 1.0
 }
 
+[locale]
+
+translations=PoolStringArray( "res://resources/i18n/labels.es.translation" )
+locale_filter=[ 0, [  ] ]
+
 [rendering]
 
 environment/default_clear_color=Color( 0, 0, 0, 1 )

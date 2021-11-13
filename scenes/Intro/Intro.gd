@@ -5,6 +5,7 @@ const MainScene = preload("res://scenes/Main/Main.tscn")
 const Steps = preload("res://resources/sounds/intro-steps.wav")
 
 onready var timer: Timer = $Timer
+onready var dialog: Node = $Dialog
 onready var act_timer: Timer = $ActTimer
 onready var music_tween: Tween = $MusicTween
 onready var sfx_player: AudioStreamPlayer = $SfxPlayer
@@ -21,7 +22,9 @@ func _ready():
 	transition_in.start()
 	for act in acts:
 		Utils.connect_signal(act, "message_removed", self, "_on_message_removed")
+	Utils.connect_signal(dialog, "dialog_finished", self, "_on_dialog_finished")
 	acts[current_act].start()
+# warning-ignore:return_value_discarded
 	music_tween.interpolate_property(music_player, "volume_db", 0, -80, 2.00, 1, Tween.EASE_IN, 0)
 
 
@@ -43,6 +46,7 @@ func _change_act():
 		timer.start()
 		acts[current_act].start()
 	else:
+# warning-ignore:return_value_discarded
 		music_tween.start()
 		current_act += 1
 
@@ -52,20 +56,29 @@ func _play_step():
 	sfx_player.play()
 
 
+func _on_message_removed(_act):
+	if current_act == 4:
+		act_timer.stop()
+
+
+func _on_MusicTween_tween_completed(_object, _key):
+	_dialog_start()
+
+
 func _dialog_start():
 	sfx_player.play()
 	animation_player.play("animate")
 
 
+func _on_AnimationPlayer_animation_finished(_anim_name):
+	dialog.start()
+
+
+func _on_dialog_finished(_dialog):
+	transition_out.start()
+
+
 func _on_TransitionOut_transition_out_finished():
-	#get_tree().change_scene_to(MainScene)
-	pass
+# warning-ignore:return_value_discarded
+	get_tree().change_scene_to(MainScene)
 
-
-func _on_message_removed(act):
-	if current_act == 4:
-		act_timer.stop()
-
-
-func _on_MusicTween_tween_completed(object, key):
-	_dialog_start()

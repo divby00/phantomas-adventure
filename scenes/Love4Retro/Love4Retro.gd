@@ -25,4 +25,5 @@ func on_transition_in_finished():
 
 
 func on_transition_out_finished():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene_to(IntroScene)

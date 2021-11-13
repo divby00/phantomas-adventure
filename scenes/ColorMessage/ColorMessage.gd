@@ -4,7 +4,7 @@ extends Node2D
 signal remove
 signal message_removed
 
-export var message: String;
+export var message_key: String;
 export var speed: float = 0.5;
 
 const ColorGlyphScene: PackedScene = preload("res://scenes/ColorMessage/ColorGlyph.tscn")
@@ -14,16 +14,19 @@ onready var label: Label = $Label
 onready var timer: Timer = $Timer
 onready var remove_timer: Timer = $RemoveTimer
 
+var message: String
 var cursor_position: int = 0;
 var character_position: Vector2 = Vector2.ZERO
 var characters_buffer: PoolByteArray = []
 
 
 func _ready():
+	message = tr(message_key)
 	characters_buffer = message.to_ascii()
 	var label_length: int = 0
 	for index in characters_buffer.size():
 		label_length += _get_glyph_size(index)[0]
+# warning-ignore:integer_division
 	var label_size: int = label_length / 2
 	character_position.x = 240 - label_size
 

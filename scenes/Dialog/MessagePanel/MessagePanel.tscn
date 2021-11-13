@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://resources/sprites/frame.png" type="Texture" id=1]
 [ext_resource path="res://resources/sounds/dialog-spawn.wav" type="AudioStream" id=2]
 [ext_resource path="res://resources/sounds/dialog-text.wav" type="AudioStream" id=3]
-[ext_resource path="res://scenes/MessagePanel/MessagePanel.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Dialog/MessagePanel/MessagePanel.gd" type="Script" id=4]
 [ext_resource path="res://resources/theme.tres" type="Theme" id=5]
+[ext_resource path="res://resources/sprites/ui-text-continues1.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/ui-text-continues2.png" type="Texture" id=7]
+[ext_resource path="res://resources/sprites/ui-text-continues3.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -72,6 +75,82 @@ tracks/4/keys = {
 "update": 0,
 "values": [ false ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("PortraitFrame:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "close"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("MessageFrame:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Portrait:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PortraitBackground:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("NameLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("PortraitFrame:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "open"
@@ -136,6 +215,26 @@ tracks/4/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("PortraitFrame:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "animate",
+"speed": 8.0
+} ]
 
 [node name="MessagePanel" type="CanvasLayer"]
 script = ExtResource( 4 )
@@ -143,9 +242,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 800.0, 960.0 ]
 }
 character = "TioJuan"
-message = "Ve al huerto y mira a ver si hay alguna zanahoria para el borrico."
+messages = [ "Prueba 1", "Prueba 2", "Final" ]
 
 [node name="PortraitFrame" type="Sprite" parent="."]
+visible = false
 position = Vector2( 136, 184 )
 scale = Vector2( 1e-05, 1e-05 )
 texture = ExtResource( 1 )
@@ -209,19 +309,26 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "open"
 anims/RESET = SubResource( 4 )
+anims/close = SubResource( 6 )
 anims/open = SubResource( 3 )
 
 [node name="GlyphTimer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.1
 
 [node name="AudioStreamPlayerSpawn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -12.0
+volume_db = -80.0
 bus = "SFX"
 
 [node name="AudioStreamPlayerText" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 bus = "SFX"
+
+[node name="TextContinue" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( 361, 212 )
+frames = SubResource( 5 )
+animation = "animate"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="GlyphTimer" to="." method="_on_GlyphTimer_timeout"]

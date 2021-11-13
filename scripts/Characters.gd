@@ -2,13 +2,13 @@ extends Object
 class_name Characters
 
 const data = {
-	"Phantomas": {
+	"Player": {
 		"name": "Phantomas",
 		"portrait": preload("res://resources/sprites/portrait-phantomas.png"),
 		"background": preload("res://resources/sprites/frame-bg-blue.png")
 	},
 	"Unknown": {
-		"name": "Desconocido",
+		"name": "Extraño",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")
 	},

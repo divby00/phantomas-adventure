@@ -11,7 +11,7 @@ func set_fullscreen(value):
 		if !fullscreen:
 			#OS.set_window_size(Vector2(1920, 1080))
 			OS.set_window_size(Vector2(960, 544))
-		OS.window_fullscreen = fullscreen
+		OS.window_fullscreen = true
 		save()
 
 
