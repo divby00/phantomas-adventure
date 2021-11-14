@@ -5,7 +5,7 @@ const data = {
 	"Player": {
 		"name": "Phantomas",
 		"portrait": preload("res://resources/sprites/portrait-phantomas.png"),
-		"background": preload("res://resources/sprites/frame-bg-blue.png")
+		"background": preload("res://resources/sprites/frame-bg-gray.png")
 	},
 	"Unknown": {
 		"name": "Extraño",
@@ -15,47 +15,47 @@ const data = {
 	"Lorenzo": {
 		"name": "Lorenzo",
 		"portrait": preload("res://resources/sprites/portrait-lorenzo.png"),
-		"background": preload("res://resources/sprites/frame-bg-blue.png")
+		"background": preload("res://resources/sprites/frame-bg-red.png")
 	},
 	"TioJuan": {
 		"name": "Tio Juan",
 		"portrait": preload("res://resources/sprites/portrait-tiojuan.png"),
-		"background": preload("res://resources/sprites/frame-bg-green.png")
+		"background": preload("res://resources/sprites/frame-bg-pink.png")
 	},
 	"TioRamon": {
 		"name": "Tio Ramón",
-		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
-		"background": preload("res://resources/sprites/frame-bg-brown.png")
+		"portrait": preload("res://resources/sprites/portrait-tioramon.png"),
+		"background": preload("res://resources/sprites/frame-bg-green.png")
 	},
 	"TiaSimona": {
 		"name": "Tia Simona",
 		"portrait": preload("res://resources/sprites/portrait-tiasimona.png"),
-		"background": preload("res://resources/sprites/frame-bg-red.png")		
+		"background": preload("res://resources/sprites/frame-bg-blue.png")		
 	},
 	"Agustin": {
 		"name": "Agustín",
-		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
+		"portrait": preload("res://resources/sprites/portrait-agustin.png"),
 		"background": preload("res://resources/sprites/frame-bg-brown.png")				
 	},
 	"Maximina": {
 		"name": "Maximina",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
-		"background": preload("res://resources/sprites/frame-bg-brown.png")				
+		"background": preload("res://resources/sprites/frame-bg-red.png")				
 	},
 	"Heladia": {
 		"name": "Heladia",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
-		"background": preload("res://resources/sprites/frame-bg-brown.png")		
+		"background": preload("res://resources/sprites/frame-bg-pink.png")		
 	},
 	"TioEleuterio": {
 		"name": "Tio Eleuterio",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
-		"background": preload("res://resources/sprites/frame-bg-brown.png")	
+		"background": preload("res://resources/sprites/frame-bg-green.png")	
 	},
 	"TioCalixto": {
 		"name": "Tio Calixto",
 		"portrait": preload("res://resources/sprites/portrait-unknown.png"),
-		"background": preload("res://resources/sprites/frame-bg-brown.png")
+		"background": preload("res://resources/sprites/frame-bg-blue.png")
 	},
 	"TioValentin": {
 		"name": "Tio Valentín",

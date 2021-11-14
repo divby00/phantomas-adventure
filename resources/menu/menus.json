@@ -1,0 +1,44 @@
+[
+  {
+    "id": "main",
+    "previous": null,
+    "entries": [
+      {
+        "id": "MENU_MAIN_START",
+        "method": "_on_menu_main_start_selected",
+        "type": "button",
+        "next": null
+      },
+      {
+        "id": "MENU_MAIN_OPTIONS",
+        "method": "_on_menu_main_options_selected",
+        "type": "button",
+        "next": "options"
+      },
+      {
+        "id": "MENU_MAIN_QUIT",
+        "method": "_on_menu_main_quit_selected",
+        "type": "button",
+        "next": null
+      }
+    ]
+  },
+  {
+    "id": "options",
+    "previous": "main",
+    "entries": [
+      {
+        "id": "MENU_OPTIONS_GRAPHICS",
+        "method": "_on_menu_options_graphics_selected",
+        "type": "button",
+        "next": null
+      },
+      {
+        "id": "MENU_OPTIONS_SOUNDS",
+        "method": "_on_menu_options_sounds_selected",
+        "type": "button",
+        "next": null
+      }
+    ]
+  }
+]

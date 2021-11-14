@@ -18,7 +18,6 @@ onready var text_continue: AnimatedSprite = $TextContinue
 onready var message_label: Label = $MessageFrame/MessageLabel
 onready var portrait_background: Sprite = $PortraitBackground
 onready var animation_player: AnimationPlayer = $AnimationPlayer
-onready var audio_player_spawn: AudioStreamPlayer = $AudioStreamPlayerSpawn
 onready var audio_player_text: AudioStreamPlayer = $AudioStreamPlayerText
 
 var current_glyph: int = 0
@@ -30,8 +29,7 @@ func _ready():
 	message_label.text = ''
 	portrait.texture = char_portrait
 	portrait_background.texture = char_background
-	audio_player_spawn.play()
-	
+
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept") and wait_for_user:
@@ -44,7 +42,7 @@ func _process(_delta):
 		else:
 			animation_player.play("close")
 			
-	if Input.is_action_pressed("ui_accept") and not wait_for_user:
+	if Input.is_action_pressed("ui_accept") and not wait_for_user and !animation_player.is_playing():
 		if current_glyph < messages[current_message].length() + 1:
 			glyph_timer.stop()
 			_print_glyph()

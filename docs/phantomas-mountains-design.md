@@ -92,12 +92,19 @@ Podemos distinguir entre enemigos vivos, objetos encantados y seres sobrenatural
 ### NPC
 
 - Pescador (Proporciona las truchas para coger a la gata) 40
-https://generated.photos/face-generator/618b4e845d2207000fa7866c
+  https://generated.photos/face-generator/618b4e845d2207000fa7866c
 
 - Tio Juan (Nos ayuda a obtener un módulo con su burro) 45
+
 - Tio Ramón (Tras ayudarle con las manzanas nos da el botijo) 55
+  https://generated.photos/face-generator/618faf63be0cb9000c99d62e
+
 - Tia Simona (La que nos da el capote de torero) 52
+  https://generated.photos/face-generator/618b4d855d2207000c02cc74
+
 - Agustín (Guardia del toril) 30
+  https://generated.photos/face-generator/618fb4bb5d2207000d05b807
+
 - Maximina (Desbloqueo de senda de Bienvenida) 40
 - Heladia (Nos da un bollo en el horno) 45
 - Tio Eleuterio (Herrero, nos da la ganzúa para acceder a la casa del tio Valentín) 60
