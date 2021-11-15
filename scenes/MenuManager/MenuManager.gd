@@ -36,6 +36,15 @@ func _ready():
 					else:
 						Utils.connect_signal(button, 'pressed', self, entry['method'])
 
+#				menu_panel.margin_top = -(menu_panel.rect_size.y / 2)
+#				menu_panel.margin_bottom = (menu_panel.rect_size.y / 2)
+#				menu_panel.margin_left = -(menu_panel.rect_size.x / 2)
+#				menu_panel.margin_right = (menu_panel.rect_size.x / 2)
+#				var screen_size = Vector2(ProjectSettings.get("display/window/size/width"), ProjectSettings.get("display/window/size/height"))
+#				var pos = Vector2((screen_size.x / 2 - menu_panel.rect_size.x / 2), (screen_size.y / 2 - menu_panel.rect_size.y / 2))
+#				print(menu_panel.rect_size)
+#				menu_panel.set_global_position(pos)
+
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
