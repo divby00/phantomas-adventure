@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-const ThemeResource: Theme = preload("res://resources/theme.tres")
 const MenuPanelScene: PackedScene = preload("res://scenes/MenuManager/MenuPanel/MenuPanel.tscn")
 
 export var config_file: String
@@ -16,25 +15,16 @@ func _ready():
 	var json = Utils.json_file_read(config_file)
 	menu_entries = json.result
 	for menu in menu_entries:
+		var entries = menu['entries']
 		var menu_panel = MenuPanelScene.instance()
+		menu_panel.entries = entries
 		add_child(menu_panel)
 		menu_panel.id = menu['id']
 		var previous = menu['previous']
 		if previous != null:
 			menu_panel.previous = previous
 		menu_panel.visible = false
-		var entries = menu['entries']
-		for entry in entries:
-			if entry['type'] == 'button':
-				var button = Button.new()
-				menu_panel.vbox.add_child(button)
-				button.text = entry['id']
-				button.theme = ThemeResource
-				if entry['method']:
-					if entry['next']:
-						Utils.connect_signal(button, 'pressed', self, entry['method'], [entry['next']])
-					else:
-						Utils.connect_signal(button, 'pressed', self, entry['method'])
+		menu_panel.add_to_group("MenusGroup")
 
 
 func _process(_delta: float) -> void:
@@ -47,6 +37,13 @@ func _process(_delta: float) -> void:
 func start():
 	self.current_menu = 'main'
 	set_process(true)
+
+
+func _change_menu(new_menu_id):
+	var menus = get_tree().get_nodes_in_group("MenusGroup")
+	for menu in menus:
+		if menu.id == new_menu_id:
+			menu.first_node.grab_focus()
 
 
 func _on_menu_main_start_selected():
@@ -77,6 +74,7 @@ func set_current_menu(value):
 			menu.visible = true
 			selected_menu = menu
 	current_menu = value
+	_change_menu(current_menu)
 
 
 func get_current_menu():

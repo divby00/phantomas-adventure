@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="Phantomas en la sierra"
 config/description="A Phantomas adventure"
-run/main_scene="res://scenes/Love4Retro/Love4Retro.tscn"
+run/main_scene="res://scenes/TitleScreen/TitleScreen.tscn"
 config/icon="res://phantomas.png"
 
 [autoload]
