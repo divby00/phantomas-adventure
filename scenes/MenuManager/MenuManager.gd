@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal menu_selected(menu)
+
 const MenuPanelScene: PackedScene = preload("res://scenes/MenuManager/MenuPanel/MenuPanel.tscn")
 
 export var config_file: String
@@ -65,7 +67,7 @@ func get_current_menu():
 
 
 func _on_menu_main_start_selected():
-	pass
+	emit_signal("menu_selected", "start")
 
 
 func _on_menu_main_options_selected(params):
@@ -77,7 +79,7 @@ func _on_menu_options_back_selected(params):
 
 
 func _on_menu_main_quit_selected():
-	get_tree().quit(0)
+	emit_signal("menu_selected", "quit")
 
 
 func _on_menu_options_fullscreen_selected(_params):
