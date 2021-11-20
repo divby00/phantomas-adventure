@@ -39,7 +39,7 @@ func _on_ActTimer_timeout():
 
 func _change_act():
 	acts[current_act].remove()
-	
+
 	if current_act < acts.size() - 1:
 		current_act += 1
 		act_timer.stop()

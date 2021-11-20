@@ -5,6 +5,8 @@ const MenuPanelScene: PackedScene = preload("res://scenes/MenuManager/MenuPanel/
 export var config_file: String
 export var current_menu: String = "main" setget set_current_menu, get_current_menu
 
+onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 var main_menu
 var selected_menu
 var menu_entries = []
@@ -18,13 +20,13 @@ func _ready():
 		var entries = menu['entries']
 		var menu_panel = MenuPanelScene.instance()
 		menu_panel.entries = entries
-		add_child(menu_panel)
 		menu_panel.id = menu['id']
 		var previous = menu['previous']
 		if previous != null:
 			menu_panel.previous = previous
 		menu_panel.visible = false
 		menu_panel.add_to_group("MenusGroup")
+		add_child(menu_panel)
 
 
 func _process(_delta: float) -> void:
@@ -46,26 +48,6 @@ func _change_menu(new_menu_id):
 			menu.first_node.grab_focus()
 
 
-func _on_menu_main_start_selected():
-	pass
-
-
-func _on_menu_main_options_selected(params):
-	self.current_menu = params
-
-
-func _on_menu_main_quit_selected():
-	get_tree().quit(0)
-
-
-func _on_menu_options_graphics_selected(params):
-	print(params)
-
-
-func _on_menu_options_sounds_selected(params):
-	print(params)
-
-
 func set_current_menu(value):
 	var menus = get_tree().get_nodes_in_group("MenuGroup")
 	for menu in menus:
@@ -79,3 +61,38 @@ func set_current_menu(value):
 
 func get_current_menu():
 	return current_menu
+
+
+func _on_menu_main_start_selected():
+	pass
+
+
+func _on_menu_main_options_selected(params):
+	self.current_menu = params
+
+
+func _on_menu_options_back_selected(params):
+	self.current_menu = params
+
+
+func _on_menu_main_quit_selected():
+	get_tree().quit(0)
+
+
+func _on_menu_options_fullscreen_selected(_params):
+	Configuration.fullscreen = _params.pressed
+
+
+func _on_menu_options_sfx_volume_value_changed(_value, slider):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear2db(slider.value))
+	if current_menu == 'options':
+		audio_stream_player.play()
+	Configuration.sfx_volume = slider.value
+
+
+func _on_menu_options_music_volume_value_changed(_value, slider):
+	Configuration.music_volume = slider.value
+
+
+func _on_menu_control_redefine_selected(params):
+	self.current_menu = params

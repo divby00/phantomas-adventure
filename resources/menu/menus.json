@@ -28,16 +28,127 @@
     "previous": "main",
     "entries": [
       {
-        "id": "MENU_OPTIONS_GRAPHICS",
-        "method": "_on_menu_options_graphics_selected",
-        "type": "button",
+        "id": "MENU_GRAPHICS_FULLSCREEN",
+        "init_method": "_init_fullscreen_checkbox",
+        "method": "_on_menu_options_fullscreen_selected",
+        "type": "check",
         "next": null
       },
       {
-        "id": "MENU_OPTIONS_SOUNDS",
-        "method": "_on_menu_options_sounds_selected",
-        "type": "button",
+        "id": "MENU_HRULE",
+        "method": null,
+        "type": "hrule",
         "next": null
+      },
+      {
+        "id": "MENU_LABEL_SFX",
+        "method": null,
+        "type": "label",
+        "next": null
+      },
+      {
+        "id": "MENU_SOUNDS_SFX_VOLUME",
+        "init_method": "_init_sfx_slider",
+        "method": "_on_menu_options_sfx_volume_value_changed",
+        "type": "slider",
+        "steps": 10,
+        "next": null
+      },
+      {
+        "id": "MENU_LABEL_MUSIC",
+        "method": null,
+        "type": "label",
+        "next": null
+      },
+      {
+        "id": "MENU_SOUNDS_MUSIC_VOLUME",
+        "init_method": "_init_music_slider",
+        "method": "_on_menu_options_music_volume_value_changed",
+        "type": "slider",
+        "steps": 10,
+        "next": null
+      },
+      {
+        "id": "MENU_HRULE",
+        "method": null,
+        "type": "hrule",
+        "next": null
+      },
+      {
+        "id": "MENU_CONTROL_REDEFINE",
+        "method": "_on_menu_control_redefine_selected",
+        "type": "button",
+        "next": "redefine"
+      },
+      {
+        "id": "MENU_HRULE",
+        "method": null,
+        "type": "hrule",
+        "next": null
+      },
+      {
+        "id": "MENU_OPTIONS_BACK",
+        "method": "_on_menu_options_back_selected",
+        "type": "button",
+        "next": "main"
+      }
+    ]
+  },
+  {
+    "id": "redefine",
+    "previous": "options",
+    "entries": [
+      {
+        "id": "MENU_CONTROL_REDEFINE_UP",
+        "init_method": "_init_control",
+        "method": "_on_menu_control_redefine_action_selected",
+        "type": "keypress",
+        "action": "Up",
+        "next": null
+      },
+      {
+        "id": "MENU_CONTROL_REDEFINE_DOWN",
+        "init_method": "_init_control",
+        "method": "_on_menu_control_redefine_action_selected",
+        "type": "keypress",
+        "action": "Down",
+        "next": null
+      },
+      {
+        "id": "MENU_CONTROL_REDEFINE_LEFT",
+        "init_method": "_init_control",
+        "method": "_on_menu_control_redefine_action_selected",
+        "type": "keypress",
+        "action": "Left",
+        "next": null
+      },
+      {
+        "id": "MENU_CONTROL_REDEFINE_RIGHT",
+        "init_method": "_init_control",
+        "method": "_on_menu_control_redefine_action_selected",
+        "type": "keypress",
+        "action": "Right",
+        "next": null
+      },
+      {
+        "id": "MENU_CONTROL_REDEFINE_ACTION",
+        "init_method": "_init_control",
+        "method": "_on_menu_control_redefine_action_selected",
+        "type": "keypress",
+        "action": "Action",
+        "next": null
+      },
+      {
+        "id": "MENU_HRULE",
+        "method": null,
+        "type": "hrule",
+        "next": null
+      },
+      {
+        "id": "MENU_OPTIONS_BACK",
+        "method": "_on_menu_options_back_selected",
+        "type": "button",
+        "next": "options"
       }
     ]
   }
