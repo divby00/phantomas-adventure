@@ -20,6 +20,7 @@ enum ACTIONS {
 
 
 func _ready() -> void:
+	var has_keypress: bool = false
 	for entry in entries:
 		if entry['type'] == 'button':
 			_create_button(entry)
@@ -32,9 +33,10 @@ func _ready() -> void:
 		if entry['type'] == 'label':
 			_create_label(entry)
 		if entry['type'] == 'keypress':
+			has_keypress = true
 			_create_keypress(entry)
 
-		if entry['type'] != 'keypress':
+		if !has_keypress:
 			first_node = vbox.get_children()[0]
 		else:
 			var hbox: HBoxContainer = vbox.get_children()[0]
