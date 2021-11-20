@@ -155,18 +155,19 @@ func _find_key_button(action):
 	var button: Button = null
 	var buttons = get_tree().get_nodes_in_group("KeyButtonsGroup")
 	for btn in buttons:
-		if btn.text == OS.get_scancode_string(InputMap.get_action_list(action)[0].scancode):
+		var btn_label = OS.get_scancode_string(InputMap.get_action_list(action)[0].scancode)
+		if btn.text == btn_label:
 			button = btn
 			break
 	return button
 
 
 func _init_input_map(button, scancode, action):
-	button.text = OS.get_scancode_string(scancode)
+	InputMap.action_erase_events(action)
 	var event = InputEventKey.new()
 	event.scancode = scancode
-	#InputMap.action_erase_events(action)
 	InputMap.action_add_event(action, event)
+	button.text = OS.get_scancode_string(scancode)
 
 
 func _reset_buttons(button: Button):
@@ -179,9 +180,14 @@ func _reset_buttons(button: Button):
 func _change_key(new_key):
 	var scancode: int = new_key.scancode
 	var scancode_label: String = OS.get_scancode_string(scancode)
-	var button: Button = _find_key_button(selected_action)
-	button.text = scancode_label
-	InputMap.action_erase_events(selected_action)
+
+	if !InputMap.get_action_list(selected_action).empty():
+		InputMap.action_erase_events(selected_action)
+
+	for action in ACTIONS:
+		if InputMap.action_has_event(action, new_key):
+			InputMap.action_erase_event(action, new_key)
+
 	InputMap.action_add_event(selected_action, new_key)
 	selected_button.text = scancode_label
 	match selected_action:
