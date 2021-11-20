@@ -5,6 +5,7 @@ const MenuPanelScene: PackedScene = preload("res://scenes/MenuManager/MenuPanel/
 export var config_file: String
 export var current_menu: String = "main" setget set_current_menu, get_current_menu
 
+onready var center_container: CenterContainer = $CenterContainer
 onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var main_menu
@@ -26,7 +27,7 @@ func _ready():
 			menu_panel.previous = previous
 		menu_panel.visible = false
 		menu_panel.add_to_group("MenusGroup")
-		add_child(menu_panel)
+		center_container.add_child(menu_panel)
 
 
 func _process(_delta: float) -> void:

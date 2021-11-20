@@ -57,9 +57,9 @@ func _create_button(entry):
 	button.theme = ThemeResource
 	if entry['method']:
 		if entry['next']:
-			Utils.connect_signal(button, 'pressed', get_node("../"), entry['method'], [entry['next']])
+			Utils.connect_signal(button, 'pressed', get_node("../../"), entry['method'], [entry['next']])
 		else:
-			Utils.connect_signal(button, 'pressed', get_node("../"), entry['method'])
+			Utils.connect_signal(button, 'pressed', get_node("../../"), entry['method'])
 
 
 func _create_check(entry):
@@ -68,7 +68,7 @@ func _create_check(entry):
 	check.text = entry['id']
 	check.theme = ThemeResource
 	if entry['method']:
-		Utils.connect_signal(check, 'pressed', get_node("../"), entry['method'], [check])
+		Utils.connect_signal(check, 'pressed', get_node("../../"), entry['method'], [check])
 	if entry['init_method']:
 		call(entry['init_method'], check)
 
@@ -82,9 +82,9 @@ func _create_slider(entry):
 	slider.max_value = 1
 	if entry['method']:
 		if entry['next']:
-			Utils.connect_signal(slider, 'value_changed', get_node("../"), entry['method'], [entry['next']])
+			Utils.connect_signal(slider, 'value_changed', get_node("../../"), entry['method'], [entry['next']])
 		else:
-			Utils.connect_signal(slider, 'value_changed', get_node("../"), entry['method'], [slider])
+			Utils.connect_signal(slider, 'value_changed', get_node("../../"), entry['method'], [slider])
 	if entry['init_method']:
 		call(entry['init_method'], slider)
 
