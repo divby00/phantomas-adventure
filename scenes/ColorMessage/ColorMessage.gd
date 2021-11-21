@@ -35,12 +35,12 @@ func start():
 	timer.wait_time = speed
 	timer.autostart = true
 	timer.start()
-	
+
 
 func remove():
 	emit_signal('remove')
 	remove_timer.start()
-	
+
 
 func _on_Timer_timeout():
 	var character = message.substr(cursor_position, 1)

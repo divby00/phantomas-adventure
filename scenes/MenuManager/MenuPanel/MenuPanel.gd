@@ -193,16 +193,11 @@ func _change_key(new_key):
 	InputMap.action_add_event(selected_action, new_key)
 	selected_button.text = scancode_label
 	match selected_action:
-		"Up":
-			Configuration.key_up = scancode
-		"Down":
-			Configuration.key_down = scancode
-		"Left":
-			Configuration.key_left = scancode
-		"Right":
-			Configuration.key_right = scancode
-		"Action":
-			Configuration.key_action = scancode
+		"Up": Configuration.key_up = scancode
+		"Down": Configuration.key_down = scancode
+		"Left": Configuration.key_left = scancode
+		"Right": Configuration.key_right = scancode
+		"Action": Configuration.key_action = scancode
 
 
 func _on_redefine_button_pressed(entry, button: Button):

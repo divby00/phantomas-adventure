@@ -41,7 +41,7 @@ func _process(_delta):
 			glyph_timer.start()
 		else:
 			animation_player.play("close")
-			
+
 	if Input.is_action_pressed("ui_accept") and not wait_for_user and !animation_player.is_playing():
 		if current_glyph < messages[current_message].length() + 1:
 			glyph_timer.stop()
