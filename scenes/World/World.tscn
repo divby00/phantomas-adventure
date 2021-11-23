@@ -1,0 +1,150 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scenes/World/World.gd" type="Script" id=1]
+[ext_resource path="res://resources/sprites/ingame-panel-tech-phantom.png" type="Texture" id=2]
+[ext_resource path="res://resources/sprites/ingame-panel-tech-doble.png" type="Texture" id=3]
+[ext_resource path="res://resources/sprites/ingame-panel-tech-control.png" type="Texture" id=4]
+[ext_resource path="res://resources/sprites/ingame-panel-tech-bomb.png" type="Texture" id=5]
+[ext_resource path="res://resources/sprites/ingame-panel-energy-under.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/ingame-panel-energy-over.png" type="Texture" id=7]
+[ext_resource path="res://resources/sprites/ingame-panel-energy-progress.png" type="Texture" id=8]
+[ext_resource path="res://resources/sprites/title-background.png" type="Texture" id=9]
+[ext_resource path="res://scenes/Dialog/Dialog.tscn" type="PackedScene" id=10]
+[ext_resource path="res://resources/sprites/helicopter.png" type="Texture" id=11]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Nueva Animación"
+length = 0.15
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Helicopter:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Helicopter:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 240, 80 ), Vector2( 241, 81 ), Vector2( 242, 79 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Helicopter:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Helicopter:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 240, 80 ) ]
+}
+
+[node name="World" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 608.0, 656.0 ],
+"_edit_vertical_guides_": [ 240.0 ]
+}
+
+[node name="Title-background" type="Sprite" parent="."]
+position = Vector2( 240, 136 )
+texture = ExtResource( 9 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TextureProgress" type="TextureProgress" parent="UI"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 145.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 143, 10 )
+max_value = 141.0
+value = 88.0
+texture_under = ExtResource( 6 )
+texture_over = ExtResource( 7 )
+texture_progress = ExtResource( 8 )
+texture_progress_offset = Vector2( 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TechContainer" type="HBoxContainer" parent="UI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -82.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TechDoubleJump" type="TextureRect" parent="UI/TechContainer"]
+margin_left = 4.0
+margin_right = 20.0
+margin_bottom = 16.0
+texture = ExtResource( 3 )
+
+[node name="TechDoubleJump2" type="TextureRect" parent="UI/TechContainer"]
+margin_left = 24.0
+margin_right = 40.0
+margin_bottom = 16.0
+texture = ExtResource( 4 )
+
+[node name="TechDoubleJump3" type="TextureRect" parent="UI/TechContainer"]
+margin_left = 44.0
+margin_right = 60.0
+margin_bottom = 16.0
+texture = ExtResource( 5 )
+
+[node name="TechDoubleJump4" type="TextureRect" parent="UI/TechContainer"]
+margin_left = 64.0
+margin_right = 80.0
+margin_bottom = 16.0
+texture = ExtResource( 2 )
+
+[node name="Dialog" parent="." instance=ExtResource( 10 )]
+
+[node name="Helicopter" type="Sprite" parent="."]
+position = Vector2( 240, 80 )
+texture = ExtResource( 11 )
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Nueva Animación"
+"anims/Nueva Animación" = SubResource( 1 )
+anims/RESET = SubResource( 2 )

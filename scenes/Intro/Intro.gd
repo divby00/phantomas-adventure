@@ -1,8 +1,8 @@
 extends Node2D
 
 
-const MainScene = preload("res://scenes/Main/Main.tscn")
 const Steps = preload("res://resources/sounds/intro-steps.wav")
+const TitleScene = preload("res://scenes/TitleScreen/TitleScreen.tscn")
 
 onready var timer: Timer = $Timer
 onready var dialog: Node = $Dialog
@@ -80,5 +80,5 @@ func _on_dialog_finished(_dialog):
 
 func _on_TransitionOut_transition_out_finished():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene_to(MainScene)
+	get_tree().change_scene_to(TitleScene)
 

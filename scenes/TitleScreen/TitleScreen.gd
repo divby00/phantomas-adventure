@@ -1,6 +1,6 @@
 extends Node2D
 
-const MainScene: PackedScene = preload("res://scenes/Main/Main.tscn")
+const WorldScene: PackedScene = preload("res://scenes/World/World.tscn")
 
 onready var menu_manager = $MenuManager
 onready var transition_in = $TransitionIn
@@ -30,7 +30,7 @@ func _on_transition_in_finished():
 
 func _on_transition_out_finished():
 	if has_to_quit:
-		get_tree().quit(0)
+		get_tree().quit(0) # Quit
 	else:
 # warning-ignore:return_value_discarded
-		get_tree().change_scene_to(MainScene)
+		get_tree().change_scene_to(WorldScene) # Begin game
