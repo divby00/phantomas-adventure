@@ -4,7 +4,7 @@
 [ext_resource path="res://resources/sprites/player/phantomas.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 6, 7.5 )
+extents = Vector2( 5.5, 7.5 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -147,7 +147,7 @@ texture = ExtResource( 2 )
 hframes = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8, 9.5 )
+position = Vector2( 8.5, 9.5 )
 shape = SubResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -11,15 +11,22 @@ const ACCELERATION: int = 512
 const JUMP_FORCE: float = 144.0
 
 var jumping: bool = false
+onready var jumping_y: int = global_position.y
 var motion: Vector2 = Vector2.ZERO
+
+# Technologies
+var double_jump = false
+var jump_control = false
+var phantom = false
+var bomb = false
 
 
 func _physics_process(delta):
 	var input_vector: Vector2 = _get_input_vector()
 	_apply_horizontal_force(input_vector, delta)
 	_apply_friction(input_vector)
-	_jump_check(input_vector, delta)
 	_apply_gravity(delta)
+	_jump_check(input_vector, delta)
 	_update_animation(input_vector)
 	motion = move_and_slide(motion, Vector2.UP)
 
@@ -46,6 +53,22 @@ func _apply_gravity(delta):
 	motion.y = min(motion.y, JUMP_FORCE)
 
 
+func _jump_check(_input_vector, _delta):
+	if is_on_floor():
+		jumping = false
+		jumping_y = global_position.y
+		if Input.is_action_just_pressed("Up"):
+			jumping = true
+			motion.y = -JUMP_FORCE
+		if Input.is_action_just_pressed("Down"):
+			jumping = true
+			motion.y = -(JUMP_FORCE/5) * 4
+	else:
+		if Input.is_action_just_released("Up") and motion.y < -JUMP_FORCE/2:
+			jumping = true
+			motion.y = -JUMP_FORCE/2
+
+
 func _update_animation(input_vector):
 	if input_vector.x != 0:
 		sprite.scale.x = sign(input_vector.x)
@@ -56,23 +79,8 @@ func _update_animation(input_vector):
 		else:
 			animation_player.play("stand")
 	else:
-		if jumping:
+		if jumping and global_position.y < jumping_y:
 			animation_player.play("jump")
 		else:
 			animation_player.play("fall")
-			motion.x = 0
-
-
-func _jump_check(_input_vector, _delta):
-	if is_on_floor():
-		jumping = false
-		if Input.is_action_just_pressed("Up"):
-			jumping = true
-			motion.y = -JUMP_FORCE
-		if Input.is_action_just_pressed("Down"):
-			jumping = true
-			motion.y = -(JUMP_FORCE/3) * 2
-	else:
-		if Input.is_action_just_released("Up") and motion.y < -JUMP_FORCE/2:
-			jumping = true
-			motion.y = -JUMP_FORCE/2
+			motion.x /= 2
