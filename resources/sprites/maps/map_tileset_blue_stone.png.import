@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tiled.png-dbbabe58e4f927769540a522a2073689.stex"
+path="res://.import/map_tileset_blue_stone.png-c67db48a3fb49576065997a88c60521a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/vnen.tiled_importer/tiled.png"
-dest_files=[ "res://.import/tiled.png-dbbabe58e4f927769540a522a2073689.stex" ]
+source_file="res://resources/sprites/maps/map_tileset_blue_stone.png"
+dest_files=[ "res://.import/map_tileset_blue_stone.png-c67db48a3fb49576065997a88c60521a.stex" ]
 
 [params]
 

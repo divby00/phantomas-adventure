@@ -80,6 +80,16 @@ do
 done
 mv resources/sprites/original/player/*.png resources/sprites/player/
 
+# Get sprites from 'maps' folder
+rm resources/sprites/maps/*.png 
+for file in resources/sprites/original/maps/*.ase
+do
+    f=${file%%.*}
+    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    echo ${f}.png
+done
+mv resources/sprites/original/maps/*.png resources/sprites/maps/
+
 # Get sprites from 'cutscenes/intro' folder
 rm resources/sprites/cutscenes/intro/*.png 
 for file in resources/sprites/original/cutscenes/intro/*.ase
