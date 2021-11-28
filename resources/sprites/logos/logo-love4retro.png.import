@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/logo-love4retro.png-8901866e28f9bcac46fcb5d944c0a8c3.stex"
+path="res://.import/logo-love4retro.png-d06c4cea6f98470444d616b30da2ee3d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/logo-love4retro.png"
-dest_files=[ "res://.import/logo-love4retro.png-8901866e28f9bcac46fcb5d944c0a8c3.stex" ]
+source_file="res://resources/sprites/logos/logo-love4retro.png"
+dest_files=[ "res://.import/logo-love4retro.png-d06c4cea6f98470444d616b30da2ee3d.stex" ]
 
 [params]
 

@@ -60,6 +60,46 @@ do
 done
 mv resources/sprites/original/ui/*.png resources/sprites/ui/
 
+# Get sprites from 'logos' folder
+rm resources/sprites/logos/*.png 
+for file in resources/sprites/original/logos/*.ase
+do
+    f=${file%%.*}
+    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    echo ${f}.png
+done
+mv resources/sprites/original/logos/*.png resources/sprites/logos/
+
+# Get sprites from 'player' folder
+rm resources/sprites/player/*.png 
+for file in resources/sprites/original/player/*.ase
+do
+    f=${file%%.*}
+    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    echo ${f}.png
+done
+mv resources/sprites/original/player/*.png resources/sprites/player/
+
+# Get sprites from 'cutscenes/intro' folder
+rm resources/sprites/cutscenes/intro/*.png 
+for file in resources/sprites/original/cutscenes/intro/*.ase
+do
+    f=${file%%.*}
+    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    echo ${f}.png
+done
+mv resources/sprites/original/cutscenes/intro/*.png resources/sprites/cutscenes/intro/
+
+# Get sprites from 'cutscenes/start' folder
+rm resources/sprites/cutscenes/start/*.png 
+for file in resources/sprites/original/cutscenes/start/*.ase
+do
+    f=${file%%.*}
+    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    echo ${f}.png
+done
+mv resources/sprites/original/cutscenes/start/*.png resources/sprites/cutscenes/start/
+
 # ------------------------------------------------
 # Start with animated textures (one file per tile)
 # ------------------------------------------------

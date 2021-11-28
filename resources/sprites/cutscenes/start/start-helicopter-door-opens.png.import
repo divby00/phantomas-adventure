@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/game-logo.png-4d0f5d8bfaa97c080349bb85c3aff417.stex"
+path="res://.import/start-helicopter-door-opens.png-7a22f2018a94438a6eb16435e1791083.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/game-logo.png"
-dest_files=[ "res://.import/game-logo.png-4d0f5d8bfaa97c080349bb85c3aff417.stex" ]
+source_file="res://resources/sprites/cutscenes/start/start-helicopter-door-opens.png"
+dest_files=[ "res://.import/start-helicopter-door-opens.png-7a22f2018a94438a6eb16435e1791083.stex" ]
 
 [params]
 

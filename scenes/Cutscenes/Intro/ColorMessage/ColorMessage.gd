@@ -7,7 +7,7 @@ signal message_removed
 export var message_key: String;
 export var speed: float = 0.5;
 
-const ColorGlyphScene: PackedScene = preload("res://scenes/Intro/ColorMessage/ColorGlyph.tscn")
+const ColorGlyphScene: PackedScene = preload("res://scenes/Cutscenes/Intro/ColorMessage/ColorGlyph.tscn")
 const AsepriteFont: DynamicFont = preload("res://resources/fonts/aseprite.tres")
 
 onready var label: Label = $Label

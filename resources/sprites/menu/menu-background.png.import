@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/helicopter.png-ab3056ea785f20075f3f0fa8712c4841.stex"
+path="res://.import/menu-background.png-85126533082b478b0cb3540978935540.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/helicopter.png"
-dest_files=[ "res://.import/helicopter.png-ab3056ea785f20075f3f0fa8712c4841.stex" ]
+source_file="res://resources/sprites/menu/menu-background.png"
+dest_files=[ "res://.import/menu-background.png-85126533082b478b0cb3540978935540.stex" ]
 
 [params]
 

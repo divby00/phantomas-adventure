@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/phantomas.png-f37b3deed30168169ef54a87a55d36e2.stex"
+path="res://.import/phantomas.png-e6972b4a01bade72909796fbd0015a07.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/phantomas.png"
-dest_files=[ "res://.import/phantomas.png-f37b3deed30168169ef54a87a55d36e2.stex" ]
+source_file="res://resources/sprites/player/phantomas.png"
+dest_files=[ "res://.import/phantomas.png-e6972b4a01bade72909796fbd0015a07.stex" ]
 
 [params]
 

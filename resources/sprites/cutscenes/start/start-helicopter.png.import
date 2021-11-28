@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flare-gun.png-467020bfa1768976879ae81cc4997308.stex"
+path="res://.import/start-helicopter.png-46c20c6e2b635849afabaa5374e282ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/flare-gun.png"
-dest_files=[ "res://.import/flare-gun.png-467020bfa1768976879ae81cc4997308.stex" ]
+source_file="res://resources/sprites/cutscenes/start/start-helicopter.png"
+dest_files=[ "res://.import/start-helicopter.png-46c20c6e2b635849afabaa5374e282ec.stex" ]
 
 [params]
 

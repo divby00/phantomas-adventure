@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Transition/TransitionIn.tscn" type="PackedScene" id=2]
-[ext_resource path="res://resources/sprites/logo-game.png" type="Texture" id=3]
+[ext_resource path="res://resources/sprites/logos/logo-game.png" type="Texture" id=3]
 [ext_resource path="res://resources/music/drozerix_-_lost_without.mp3" type="AudioStream" id=4]
 [ext_resource path="res://scenes/TitleScreen/TitleScreen.gd" type="Script" id=5]
-[ext_resource path="res://resources/sprites/title-background.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/menu/menu-background.png" type="Texture" id=6]
 [ext_resource path="res://scenes/MenuManager/MenuManager.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Transition/TransitionOut.tscn" type="PackedScene" id=9]
 

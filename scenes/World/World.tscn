@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/World/World.gd" type="Script" id=1]
 [ext_resource path="res://scenes/World/UI/UI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://resources/sprites/title-background.png" type="Texture" id=9]
+[ext_resource path="res://resources/sprites/menu/menu-background.png" type="Texture" id=9]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )

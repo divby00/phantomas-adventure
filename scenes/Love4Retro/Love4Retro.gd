@@ -1,6 +1,6 @@
 extends Node2D
 
-const IntroScene = preload("res://scenes/Intro/Intro.tscn")
+const IntroScene = preload("res://scenes/Cutscenes/Intro/Intro.tscn")
 
 onready var transition_in = $TransitionIn
 onready var transition_out = $TransitionOut
