@@ -1,7 +1,7 @@
 extends PanelContainer
 
 const ThemeResource: Theme = preload("res://resources/theme.tres")
-const Cursor: StreamTexture = preload("res://resources/sprites/menu-arrow.png")
+const Cursor: StreamTexture = preload("res://resources/sprites/menu/menu-arrow.png")
 
 export var id: String
 export var previous: String

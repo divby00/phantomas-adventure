@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/Transition/TransitionOut.tscn" type="PackedScene" id=3]
 [ext_resource path="res://resources/sprites/intro-jail-door.png" type="Texture" id=4]
 [ext_resource path="res://resources/sounds/intro.wav" type="AudioStream" id=5]
-[ext_resource path="res://scenes/ColorMessage/ColorMessage.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Intro/ColorMessage/ColorMessage.tscn" type="PackedScene" id=6]
 [ext_resource path="res://resources/sounds/intro-window-opens.wav" type="AudioStream" id=7]
 [ext_resource path="res://scenes/Dialog/Dialog.tscn" type="PackedScene" id=8]
 

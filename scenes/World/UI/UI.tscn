@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://resources/sprites/ui/ui-panel-tech-phantom.png" type="Texture" id=1]
+[ext_resource path="res://resources/sprites/ui/ui-panel-energy-under.png" type="Texture" id=2]
+[ext_resource path="res://resources/sprites/ui/ui-panel-energy-progress.png" type="Texture" id=3]
+[ext_resource path="res://resources/sprites/ui/ui-panel-tech-control.png" type="Texture" id=4]
+[ext_resource path="res://resources/sprites/ui/ui-panel-tech-doble.png" type="Texture" id=5]
+[ext_resource path="res://resources/sprites/ui/ui-panel-tech-bomb.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/ui/ui-panel-energy-over.png" type="Texture" id=7]
+[ext_resource path="res://scenes/World/UI/UI.gd" type="Script" id=8]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 8 )
+
+[node name="LifeBar" type="TextureProgress" parent="."]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 145.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 143, 10 )
+max_value = 141.0
+value = 141.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 7 )
+texture_progress = ExtResource( 3 )
+texture_progress_offset = Vector2( 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TechContainer" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -82.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TechDoubleJump" type="TextureRect" parent="TechContainer"]
+margin_left = 4.0
+margin_right = 20.0
+margin_bottom = 16.0
+texture = ExtResource( 5 )
+
+[node name="TechDoubleJump2" type="TextureRect" parent="TechContainer"]
+margin_left = 24.0
+margin_right = 40.0
+margin_bottom = 16.0
+texture = ExtResource( 4 )
+
+[node name="TechDoubleJump3" type="TextureRect" parent="TechContainer"]
+margin_left = 44.0
+margin_right = 60.0
+margin_bottom = 16.0
+texture = ExtResource( 6 )
+
+[node name="TechDoubleJump4" type="TextureRect" parent="TechContainer"]
+margin_left = 64.0
+margin_right = 80.0
+margin_bottom = 16.0
+texture = ExtResource( 1 )
+
+[node name="InventoryContainer" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -480.0
+margin_top = 256.0
+margin_bottom = 272.0
+rect_min_size = Vector2( 0, 16 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TechDoubleJump" type="TextureRect" parent="InventoryContainer"]
+margin_left = 202.0
+margin_right = 218.0
+margin_bottom = 16.0
+texture = ExtResource( 5 )
+
+[node name="TechDoubleJump2" type="TextureRect" parent="InventoryContainer"]
+margin_left = 222.0
+margin_right = 238.0
+margin_bottom = 16.0
+texture = ExtResource( 4 )
+
+[node name="TechDoubleJump3" type="TextureRect" parent="InventoryContainer"]
+margin_left = 242.0
+margin_right = 258.0
+margin_bottom = 16.0
+texture = ExtResource( 6 )
+
+[node name="TechDoubleJump4" type="TextureRect" parent="InventoryContainer"]
+margin_left = 262.0
+margin_right = 278.0
+margin_bottom = 16.0
+texture = ExtResource( 1 )
