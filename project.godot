@@ -111,7 +111,6 @@ locale_filter=[ 0, [  ] ]
 
 [rendering]
 
-2d/options/use_nvidia_rect_flicker_workaround=true
 environment/default_clear_color=Color( 0.270588, 0.270588, 0.270588, 1 )
 quality/dynamic_fonts/use_oversampling=false
 

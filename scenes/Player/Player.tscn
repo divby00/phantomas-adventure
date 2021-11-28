@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://resources/sprites/player/phantomas.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 7.0
-height = 2.0
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 6, 7.5 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -24,8 +23,9 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 resource_name = "fall"
-length = 0.4
+length = 0.3
 loop = true
+step = 0.075
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -33,7 +33,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"times": PoolRealArray( 0, 0.075, 0.15, 0.225 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 5, 6, 7, 8 ]
@@ -88,10 +88,9 @@ tracks/0/keys = {
 "values": [ 13 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "walk"
-length = 0.4
-loop = true
+[sub_resource type="Animation" id=9]
+resource_name = "stand"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -99,7 +98,25 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "walk"
+length = 0.3
+loop = true
+step = 0.075
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.075, 0.15, 0.225 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 1, 0, 3, 2 ]
@@ -130,14 +147,16 @@ texture = ExtResource( 2 )
 hframes = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8, 8 )
-shape = SubResource( 1 )
+position = Vector2( 8, 9.5 )
+shape = SubResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fall"
 anims/RESET = SubResource( 2 )
 anims/fall = SubResource( 5 )
 anims/fall_hurt = SubResource( 8 )
 anims/jump = SubResource( 4 )
 anims/jump_hurt = SubResource( 7 )
+anims/stand = SubResource( 9 )
 anims/walk = SubResource( 3 )
 anims/walk_hurt = SubResource( 6 )
