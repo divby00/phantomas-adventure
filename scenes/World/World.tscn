@@ -1,10 +1,75 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/World/World.gd" type="Script" id=1]
 [ext_resource path="res://scenes/World/UI/UI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://resources/maps/tileset-blue-stone/tileset_tileset-blue-stone.tres" type="TileSet" id=3]
+[ext_resource path="res://scenes/World/Levels/Level01.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://resources/sprites/cutscenes/start/start-helicopter.png" type="Texture" id=5]
 [ext_resource path="res://resources/sprites/menu/menu-background.png" type="Texture" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Nueva Animación"
+length = 0.15
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Start-helicopter:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Start-helicopter:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 256, 48 ), Vector2( 257, 49 ), Vector2( 258, 48 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Start-helicopter:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Start-helicopter:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 256, 48 ) ]
+}
+
+[sub_resource type="Environment" id=3]
+background_mode = 4
+ambient_light_color = Color( 0.631373, 0.0784314, 0.0784314, 1 )
+ambient_light_energy = 11.71
+fog_enabled = true
+glow_enabled = true
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,16 +79,26 @@ __meta__ = {
 }
 
 [node name="Title-background" type="Sprite" parent="."]
+modulate = Color( 0.388235, 0.388235, 0.388235, 1 )
 position = Vector2( 240, 136 )
 texture = ExtResource( 9 )
 
 [node name="UI" parent="." instance=ExtResource( 2 )]
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 2, -65507, 0, 0, -65506, 0, 2, 65535, 0, 65536, 0, 0, 65538, 29, 0, 65536, 30, 0, 65538, 131071, 0, 65536, 65536, 0, 65538, 65565, 0, 65536, 65566, 0, 65538, 196607, 0, 65536, 131072, 0, 65538, 131101, 0, 65536, 131102, 0, 65538, 262143, 0, 65536, 196608, 0, 65538, 196610, 0, 196611, 196637, 0, 65536, 196638, 0, 65538, 327679, 0, 65536, 262144, 0, 65538, 262173, 0, 65536, 262174, 0, 65538, 393215, 0, 65536, 327680, 0, 262149, 327681, 0, 196610, 327709, 0, 65536, 327710, 0, 65538, 458751, 0, 65536, 393216, 0, 65538, 393245, 0, 65536, 393246, 0, 65538, 524287, 0, 65536, 458752, 0, 65538, 458754, 0, 196611, 458759, 0, 196611, 458781, 0, 65536, 458782, 0, 65538, 589823, 0, 65536, 524288, 0, 65538, 524317, 0, 65536, 524318, 0, 65538, 655359, 0, 65536, 589824, 0, 262149, 589825, 0, 196610, 589846, 0, 3, 589853, 0, 65536, 589854, 0, 65538, 720895, 0, 65536, 655360, 0, 65538, 655364, 0, 196611, 655367, 0, 196611, 655382, 0, 65539, 655389, 0, 65536, 655390, 0, 65538, 786431, 0, 65536, 720896, 0, 65538, 720911, 0, 3, 720918, 0, 65539, 720925, 0, 65536, 720926, 0, 65538, 851967, 0, 65536, 786432, 0, 131077, 786433, 0, 1, 786434, 0, 2, 786447, 0, 65539, 786454, 0, 65539, 786459, 0, 0, 786460, 0, 1, 786461, 0, 131078, 786462, 0, 65538, 917503, 0, 65536, 851968, 0, 65537, 851969, 0, 65537, 851970, 0, 131077, 851971, 0, 1, 851972, 0, 2, 851983, 0, 262148, 851984, 0, 196610, 851990, 0, 65539, 851994, 0, 0, 851995, 0, 131078, 851996, 0, 65537, 851997, 0, 65537, 851998, 0, 65538, 983039, 0, 65536, 917504, 0, 65537, 917505, 0, 65537, 917506, 0, 65537, 917507, 0, 65537, 917508, 0, 131077, 917509, 0, 1, 917510, 0, 2, 917515, 0, 3, 917518, 0, 0, 917519, 0, 131079, 917525, 0, 0, 917526, 0, 131079, 917529, 0, 0, 917530, 0, 131078, 917531, 0, 65537, 917532, 0, 65537, 917533, 0, 65537, 917534, 0, 65538, 1048575, 0, 65536, 983040, 0, 65537, 983041, 0, 65537, 983042, 0, 65537, 983043, 0, 65537, 983044, 0, 65537, 983045, 0, 65537, 983046, 0, 131077, 983047, 0, 1, 983048, 0, 2, 983051, 0, 65539, 983053, 0, 0, 983054, 0, 131078, 983055, 0, 131077, 983056, 0, 1, 983057, 0, 2, 983060, 0, 0, 983061, 0, 131078, 983062, 0, 131077, 983063, 0, 2, 983065, 0, 65536, 983066, 0, 65537, 983067, 0, 65537, 983068, 0, 65537, 983069, 0, 65537, 983070, 0, 65538, 1114111, 0, 65536, 1048576, 0, 65537, 1048577, 0, 65537, 1048578, 0, 65537, 1048579, 0, 65537, 1048580, 0, 65537, 1048581, 0, 65537, 1048582, 0, 65537, 1048583, 0, 65537, 1048584, 0, 131077, 1048585, 0, 1, 1048586, 0, 1, 1048587, 0, 131080, 1048588, 0, 1, 1048589, 0, 131078, 1048590, 0, 65537, 1048591, 0, 65537, 1048592, 0, 65537, 1048593, 0, 131077, 1048594, 0, 1, 1048595, 0, 1, 1048596, 0, 131078, 1048597, 0, 65537, 1048598, 0, 65537, 1048599, 0, 131077, 1048600, 0, 1, 1048601, 0, 131078, 1048602, 0, 65537, 1048603, 0, 65537, 1048604, 0, 65537, 1048605, 0, 65537, 1048606, 0, 65538, 1179647, 0, 131072, 1114112, 0, 131073, 1114113, 0, 131073, 1114114, 0, 131073, 1114115, 0, 131073, 1114116, 0, 131073, 1114117, 0, 131073, 1114118, 0, 131073, 1114119, 0, 131073, 1114120, 0, 131073, 1114121, 0, 131073, 1114122, 0, 131073, 1114123, 0, 131073, 1114124, 0, 131073, 1114125, 0, 131073, 1114126, 0, 131073, 1114127, 0, 131073, 1114128, 0, 131073, 1114129, 0, 131073, 1114130, 0, 131073, 1114131, 0, 131073, 1114132, 0, 131073, 1114133, 0, 131073, 1114134, 0, 131073, 1114135, 0, 131073, 1114136, 0, 131073, 1114137, 0, 131073, 1114138, 0, 131073, 1114139, 0, 131073, 1114140, 0, 131073, 1114141, 0, 131073, 1114142, 0, 131074 )
-
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 64, -32 )
+
+[node name="Start-helicopter" type="Sprite" parent="."]
+position = Vector2( 256, 48 )
+texture = ExtResource( 5 )
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Nueva Animación"
+"anims/Nueva Animación" = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="Level01" parent="." instance=ExtResource( 3 )]

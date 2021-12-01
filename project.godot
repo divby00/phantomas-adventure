@@ -29,6 +29,7 @@ _global_script_class_icons={
 config/name="Phantomas en la sierra"
 config/description="A Phantomas adventure"
 run/main_scene="res://scenes/World/World.tscn"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://phantomas.png"
 config/version="1.0.0"
 
@@ -112,7 +113,7 @@ locale_filter=[ 0, [  ] ]
 
 [rendering]
 
-environment/default_clear_color=Color( 0.270588, 0.270588, 0.270588, 1 )
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/dynamic_fonts/use_oversampling=false
 
 [tiled_importer]
