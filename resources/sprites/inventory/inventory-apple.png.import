@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/worm.png-5cf97885120b20bf222ff223cc0b0607.stex"
+path="res://.import/inventory-apple.png-745914e2c747b4c361375d69a5853238.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/inventory/worm.png"
-dest_files=[ "res://.import/worm.png-5cf97885120b20bf222ff223cc0b0607.stex" ]
+source_file="res://resources/sprites/inventory/inventory-apple.png"
+dest_files=[ "res://.import/inventory-apple.png-745914e2c747b4c361375d69a5853238.stex" ]
 
 [params]
 

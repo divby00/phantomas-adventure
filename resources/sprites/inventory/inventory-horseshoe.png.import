@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/truit.png-c741631e19c099cf65bbc9f311ad96a0.stex"
+path="res://.import/inventory-horseshoe.png-5fee9e0fe4ce91ad46508a73eae5c073.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/inventory/truit.png"
-dest_files=[ "res://.import/truit.png-c741631e19c099cf65bbc9f311ad96a0.stex" ]
+source_file="res://resources/sprites/inventory/inventory-horseshoe.png"
+dest_files=[ "res://.import/inventory-horseshoe.png-5fee9e0fe4ce91ad46508a73eae5c073.stex" ]
 
 [params]
 

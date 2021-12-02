@@ -70,6 +70,16 @@ do
 done
 mv resources/sprites/original/logos/*.png resources/sprites/logos/
 
+# Get sprites from 'effects' folder
+rm resources/sprites/effects/*.png 
+for file in resources/sprites/original/effects/*.ase
+do
+    f=${file%%.*}
+    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    echo ${f}.png
+done
+mv resources/sprites/original/effects/*.png resources/sprites/effects/
+
 # Get sprites from 'player' folder
 rm resources/sprites/player/*.png 
 for file in resources/sprites/original/player/*.ase

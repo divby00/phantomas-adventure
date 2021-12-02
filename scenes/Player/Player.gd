@@ -1,24 +1,29 @@
 extends KinematicBody2D
 
 
-onready var sprite = $Sprite
-onready var animation_player = $AnimationPlayer
-
 const GRAVITY: int = 200
 const FRICTION: float = .5
 const MAX_SPEED: int = 48
 const ACCELERATION: int = 512
 const JUMP_FORCE: float = 144.0
 
-var jumping: bool = false
+enum FACING {
+	LEFT, RIGHT
+}
+
+onready var sprite = $Sprite
+onready var animation_player = $AnimationPlayer
 onready var jumping_y: int = global_position.y
+
+var jumping: bool = false
+var facing = FACING.RIGHT
 var motion: Vector2 = Vector2.ZERO
 
 # Technologies
-var double_jump = false
 var jump_control = false
-var phantom = false
+var double_jump = false
 var bomb = false
+var phantom = false
 
 
 func _physics_process(delta):
@@ -33,7 +38,14 @@ func _physics_process(delta):
 
 func _get_input_vector():
 	var input_vector: Vector2 = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
+	if jump_control or not jumping:
+		input_vector.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
+		if input_vector.x > 0:
+			facing = FACING.RIGHT
+		elif input_vector.x < 0:
+			facing = FACING.LEFT
+	if jumping and not jump_control:
+		input_vector.x = 1 if facing == FACING.RIGHT else -1
 	return input_vector
 
 
