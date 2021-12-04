@@ -1,32 +1,26 @@
 extends KinematicBody2D
 
 
-const GRAVITY: int = 200
-const FRICTION: float = .5
-const MAX_SPEED: int = 48
-const ACCELERATION: int = 512
-const JUMP_FORCE: float = 144.0
-
-enum FACING {
-	LEFT, RIGHT
-}
+const BombScene: PackedScene = preload("res://scenes/Player/Bomb/Bomb.tscn")
 
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
 onready var jumping_y: int = global_position.y
 
 var jumping: bool = false
-var facing = FACING.RIGHT
+var facing = Enums.FACING.RIGHT
 var motion: Vector2 = Vector2.ZERO
 
 # Technologies
-var jump_control = false
+var jump_control = true
 var double_jump = false
-var bomb = false
+var bomb = true
 var phantom = false
 
 
 func _physics_process(delta):
+	if bomb and Input.is_action_just_pressed("Action"):
+		_set_bomb()
 	var input_vector: Vector2 = _get_input_vector()
 	_apply_horizontal_force(input_vector, delta)
 	_apply_friction(input_vector)
@@ -41,28 +35,28 @@ func _get_input_vector():
 	if jump_control or not jumping:
 		input_vector.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 		if input_vector.x > 0:
-			facing = FACING.RIGHT
+			facing = Enums.FACING.RIGHT
 		elif input_vector.x < 0:
-			facing = FACING.LEFT
+			facing = Enums.FACING.LEFT
 	if jumping and not jump_control:
-		input_vector.x = 1 if facing == FACING.RIGHT else -1
+		input_vector.x = 1 if facing == Enums.FACING.RIGHT else -1
 	return input_vector
 
 
 func _apply_horizontal_force(input_vector, delta):
 	if input_vector.x != 0:
-		motion.x += input_vector.x * ACCELERATION * delta
-		motion.x = clamp(motion.x, -MAX_SPEED, MAX_SPEED)
+		motion.x += input_vector.x * Constants.ACCELERATION * delta
+		motion.x = clamp(motion.x, -Constants.MAX_SPEED, Constants.MAX_SPEED)
 
 
 func _apply_friction(input_vector):
 	if input_vector.x == 0:
-		motion.x = lerp(motion.x, 0, FRICTION)
+		motion.x = lerp(motion.x, 0, Constants.FRICTION)
 
 
 func _apply_gravity(delta):
-	motion.y += GRAVITY * delta
-	motion.y = min(motion.y, JUMP_FORCE)
+	motion.y += Constants.GRAVITY * delta
+	motion.y = min(motion.y, Constants.JUMP_FORCE)
 
 
 func _jump_check(_input_vector, _delta):
@@ -71,14 +65,14 @@ func _jump_check(_input_vector, _delta):
 		jumping_y = global_position.y
 		if Input.is_action_just_pressed("Up"):
 			jumping = true
-			motion.y = -JUMP_FORCE
+			motion.y = -Constants.JUMP_FORCE
 		if Input.is_action_just_pressed("Down"):
 			jumping = true
-			motion.y = -(JUMP_FORCE/5) * 4
+			motion.y = -(Constants.JUMP_FORCE/5) * 4
 	else:
-		if Input.is_action_just_released("Up") and motion.y < -JUMP_FORCE/2:
+		if Input.is_action_just_released("Up") and motion.y < -Constants.JUMP_FORCE/2:
 			jumping = true
-			motion.y = -JUMP_FORCE/2
+			motion.y = -Constants.JUMP_FORCE/2
 
 
 func _update_animation(input_vector):
@@ -96,3 +90,10 @@ func _update_animation(input_vector):
 		else:
 			animation_player.play("fall")
 			motion.x /= 2
+
+
+func _set_bomb():
+	bomb = BombScene.instance()
+	bomb.facing = facing
+	get_tree().current_scene.add_child(bomb)
+	bomb.set_global_position(Vector2(global_position.x + 8, global_position.y + 8))
