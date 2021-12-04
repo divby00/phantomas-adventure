@@ -100,6 +100,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 offset = Vector2( 1, -2 )
@@ -128,3 +131,5 @@ emission_shape = 1
 emission_sphere_radius = 10.0
 gravity = Vector2( 0, 0 )
 anim_speed = 1.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

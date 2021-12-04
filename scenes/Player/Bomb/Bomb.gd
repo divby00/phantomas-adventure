@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+onready var timer: Timer = $Timer
 onready var sprite: Sprite = $Sprite
 onready var particles: CPUParticles2D = $CPUParticles2D
 onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -19,7 +20,7 @@ func _process(delta: float) -> void:
 		started = true
 
 	if not particles.emitting and started:
-		queue_free()
+		timer.start()
 
 
 func _physics_process(delta: float) -> void:
@@ -30,3 +31,7 @@ func _physics_process(delta: float) -> void:
 func _apply_gravity(delta):
 	motion.y += Constants.GRAVITY * delta
 	motion.y = min(motion.y, Constants.ACCELERATION)
+
+
+func _on_Timer_timeout() -> void:
+	queue_free()
