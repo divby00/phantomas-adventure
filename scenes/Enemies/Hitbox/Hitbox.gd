@@ -7,14 +7,14 @@ export var damage: float
 var collision: bool = false
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if collision:
 		emit_signal("collision", damage)
 
 
-func _on_Hitbox_body_entered(body: Node) -> void:
+func _on_Hitbox_body_entered(_body: Node) -> void:
 	collision = true
 
 
-func _on_Hitbox_body_exited(body: Node) -> void:
+func _on_Hitbox_body_exited(_body: Node) -> void:
 	collision = false

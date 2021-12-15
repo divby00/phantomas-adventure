@@ -43,6 +43,7 @@ EgaColors="*res://scripts/EgaColors.gd"
 GameSaver="*res://scripts/GameSaver.gd"
 Enums="*res://scripts/Enums.gd"
 Constants="*res://scripts/Constants.gd"
+Levels="*res://scripts/Levels.gd"
 
 [display]
 

@@ -7,6 +7,8 @@ onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
 onready var jumping_y: int = global_position.y
 
+
+var on_platform: bool = false
 var jumping: bool = false
 var facing = Enums.FACING.RIGHT
 var motion: Vector2 = Vector2.ZERO
@@ -75,11 +77,15 @@ func _jump_check(_input_vector, _delta):
 			jumping = true
 			motion.y = -Constants.JUMP_FORCE
 		if Input.is_action_just_pressed("Down"):
+			if on_platform:
+				motion.y = 0
 			snap = Vector2.ZERO
 			jumping = true
 			motion.y = -(Constants.JUMP_FORCE/5) * 4
 	else:
 		if Input.is_action_just_released("Up") and motion.y < -Constants.JUMP_FORCE/2:
+			if on_platform:
+				motion.y = 0
 			jumping = true
 			motion.y = -Constants.JUMP_FORCE/2
 
@@ -106,3 +112,9 @@ func _set_bomb():
 	bomb.facing = facing
 	get_tree().current_scene.add_child(bomb)
 	bomb.set_global_position(Vector2(global_position.x + 8, global_position.y + 8))
+
+
+func _over_platform(over_platform):
+	on_platform = over_platform
+	print(on_platform)
+

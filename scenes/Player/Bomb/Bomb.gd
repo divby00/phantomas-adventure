@@ -15,7 +15,7 @@ func _ready() -> void:
 	direction = -1 if facing == Enums.FACING.LEFT else 1
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if particles.emitting:
 		started = true
 
