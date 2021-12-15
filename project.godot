@@ -29,6 +29,8 @@ _global_script_class_icons={
 config/name="Phantomas en la sierra"
 config/description="A Phantomas adventure"
 run/main_scene="res://scenes/World/World.tscn"
+boot_splash/image="res://resources/sprites/logos/logo-godot.png"
+boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://phantomas.png"
 config/version="1.0.0"
@@ -57,6 +59,7 @@ window/stretch/aspect="keep"
 Version=0
 ds=0
 color=false
+gpu=false
 
 [importer_defaults]
 
@@ -113,6 +116,7 @@ Action={
 
 2d_physics/layer_1="Tilemap"
 2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
 
 [locale]
 
@@ -121,7 +125,7 @@ locale_filter=[ 0, [  ] ]
 
 [rendering]
 
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+2d/snapping/use_gpu_pixel_snap=true
 quality/dynamic_fonts/use_oversampling=false
 
 [tiled_importer]

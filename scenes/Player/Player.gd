@@ -10,6 +10,7 @@ onready var jumping_y: int = global_position.y
 var jumping: bool = false
 var facing = Enums.FACING.RIGHT
 var motion: Vector2 = Vector2.ZERO
+var snap: Vector2 = Vector2.ZERO
 
 # Technologies
 var jump_control = true
@@ -24,9 +25,11 @@ func _physics_process(delta):
 	var input_vector: Vector2 = _get_input_vector()
 	_apply_horizontal_force(input_vector, delta)
 	_apply_friction(input_vector)
+	_apply_snap()
 	_apply_gravity(delta)
 	_jump_check(input_vector, delta)
 	_update_animation(input_vector)
+	#motion = move_and_slide_with_snap(motion, snap * 2, Vector2.UP, true, 4, rad2deg(46))
 	motion = move_and_slide(motion, Vector2.UP)
 
 
@@ -54,6 +57,10 @@ func _apply_friction(input_vector):
 		motion.x = lerp(motion.x, 0, Constants.FRICTION)
 
 
+func _apply_snap():
+	snap = Vector2.DOWN if is_on_floor() else Vector2.ZERO
+
+
 func _apply_gravity(delta):
 	motion.y += Constants.GRAVITY * delta
 	motion.y = min(motion.y, Constants.JUMP_FORCE)
@@ -64,9 +71,11 @@ func _jump_check(_input_vector, _delta):
 		jumping = false
 		jumping_y = global_position.y
 		if Input.is_action_just_pressed("Up"):
+			snap = Vector2.ZERO
 			jumping = true
 			motion.y = -Constants.JUMP_FORCE
 		if Input.is_action_just_pressed("Down"):
+			snap = Vector2.ZERO
 			jumping = true
 			motion.y = -(Constants.JUMP_FORCE/5) * 4
 	else:

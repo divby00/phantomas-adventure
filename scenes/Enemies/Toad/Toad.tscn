@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Enemies/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://resources/sprites/enemies/enemy-frog.png" type="Texture" id=2]
+[ext_resource path="res://scenes/Enemies/Toad/Toad.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 6.5 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[node name="Toad" instance=ExtResource( 1 )]
+position = Vector2( 0, -9 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 0, 2.5 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" parent="." index="1"]
+anims/RESET = SubResource( 2 )
+
+[node name="Sprite" parent="." index="2"]
+scale = Vector2( 1, 0.911765 )
+texture = ExtResource( 2 )
+offset = Vector2( 0, 1.4 )
+hframes = 4
+
+[editable path="Hitbox"]
