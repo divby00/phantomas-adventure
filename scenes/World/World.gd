@@ -8,6 +8,7 @@ const Levels = {
 }
 
 func _ready():
+	Configuration.load_and_save_config()
 	_load_level("01")
 
 
@@ -18,6 +19,7 @@ func _load_level(level_key):
 
 
 func _connect_signals():
-	var platforms = get_tree().get_nodes_in_group("PlatformGroup")
-	for platform in platforms:
-		Utils.connect_signal(platform, "is_over_platform", player, "_over_platform")
+	pass
+#	var platforms = get_tree().get_nodes_in_group("PlatformGroup")
+#	for platform in platforms:
+#		Utils.connect_signal(platform, "is_over_platform", player, "_over_platform")

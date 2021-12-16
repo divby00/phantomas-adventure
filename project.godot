@@ -49,7 +49,6 @@ Levels="*res://scripts/Levels.gd"
 
 window/size/width=480
 window/size/height=272
-window/size/fullscreen=true
 window/size/test_width=960
 window/size/test_height=544
 window/stretch/mode="viewport"
@@ -118,6 +117,7 @@ Action={
 2d_physics/layer_1="Tilemap"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Platform"
 
 [locale]
 
@@ -126,6 +126,7 @@ locale_filter=[ 0, [  ] ]
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
 quality/dynamic_fonts/use_oversampling=false
 

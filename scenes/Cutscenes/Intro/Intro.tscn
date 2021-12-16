@@ -70,6 +70,14 @@ __meta__ = {
 
 [node name="TransitionOut" parent="." instance=ExtResource( 3 )]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 480.0
+margin_bottom = 272.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 240, 80 )
 texture = ExtResource( 4 )

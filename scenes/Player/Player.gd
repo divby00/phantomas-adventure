@@ -5,17 +5,16 @@ const BombScene: PackedScene = preload("res://scenes/Player/Bomb/Bomb.tscn")
 
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
+onready var raycast = $RayCast2D
 onready var jumping_y: int = global_position.y
 
 
-var on_platform: bool = false
 var jumping: bool = false
 var facing = Enums.FACING.RIGHT
 var motion: Vector2 = Vector2.ZERO
-var snap: Vector2 = Vector2.ZERO
 
 # Technologies
-var jump_control = true
+var jump_control = false
 var double_jump = false
 var bomb = true
 var phantom = false
@@ -27,12 +26,10 @@ func _physics_process(delta):
 	var input_vector: Vector2 = _get_input_vector()
 	_apply_horizontal_force(input_vector, delta)
 	_apply_friction(input_vector)
-	_apply_snap()
 	_apply_gravity(delta)
 	_jump_check(input_vector, delta)
 	_update_animation(input_vector)
-	#motion = move_and_slide_with_snap(motion, snap * 2, Vector2.UP, true, 4, rad2deg(46))
-	motion = move_and_slide(motion, Vector2.UP)
+	move_and_slide(motion, Vector2.UP)
 
 
 func _get_input_vector():
@@ -59,10 +56,6 @@ func _apply_friction(input_vector):
 		motion.x = lerp(motion.x, 0, Constants.FRICTION)
 
 
-func _apply_snap():
-	snap = Vector2.DOWN if is_on_floor() else Vector2.ZERO
-
-
 func _apply_gravity(delta):
 	motion.y += Constants.GRAVITY * delta
 	motion.y = min(motion.y, Constants.JUMP_FORCE)
@@ -73,19 +66,13 @@ func _jump_check(_input_vector, _delta):
 		jumping = false
 		jumping_y = global_position.y
 		if Input.is_action_just_pressed("Up"):
-			snap = Vector2.ZERO
 			jumping = true
 			motion.y = -Constants.JUMP_FORCE
 		if Input.is_action_just_pressed("Down"):
-			if on_platform:
-				motion.y = 0
-			snap = Vector2.ZERO
 			jumping = true
 			motion.y = -(Constants.JUMP_FORCE/5) * 4
 	else:
 		if Input.is_action_just_released("Up") and motion.y < -Constants.JUMP_FORCE/2:
-			if on_platform:
-				motion.y = 0
 			jumping = true
 			motion.y = -Constants.JUMP_FORCE/2
 
@@ -100,7 +87,7 @@ func _update_animation(input_vector):
 		else:
 			animation_player.play("stand")
 	else:
-		if jumping and global_position.y < jumping_y:
+		if jumping and floor(global_position.y) <= jumping_y:
 			animation_player.play("jump")
 		else:
 			animation_player.play("fall")
@@ -112,9 +99,4 @@ func _set_bomb():
 	bomb.facing = facing
 	get_tree().current_scene.add_child(bomb)
 	bomb.set_global_position(Vector2(global_position.x + 8, global_position.y + 8))
-
-
-func _over_platform(over_platform):
-	on_platform = over_platform
-	print(on_platform)
 
