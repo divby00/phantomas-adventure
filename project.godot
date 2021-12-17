@@ -29,7 +29,6 @@ _global_script_class_icons={
 config/name="Phantomas en la sierra"
 config/description="A Phantomas adventure"
 run/main_scene="res://scenes/World/World.tscn"
-boot_splash/image="res://resources/sprites/logos/logo-godot.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://phantomas.png"
@@ -49,8 +48,8 @@ Levels="*res://scripts/Levels.gd"
 
 window/size/width=480
 window/size/height=272
-window/size/test_width=960
-window/size/test_height=544
+window/size/test_width=1440
+window/size/test_height=816
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
@@ -126,7 +125,6 @@ locale_filter=[ 0, [  ] ]
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
 quality/dynamic_fonts/use_oversampling=false
 

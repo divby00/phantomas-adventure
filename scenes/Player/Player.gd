@@ -3,26 +3,35 @@ extends KinematicBody2D
 
 const BombScene: PackedScene = preload("res://scenes/Player/Bomb/Bomb.tscn")
 
+onready var timer = $Timer
 onready var sprite = $Sprite
 onready var animation_player = $AnimationPlayer
-onready var raycast = $RayCast2D
 onready var jumping_y: int = global_position.y
 
 
 var jumping: bool = false
+var phantom_possible: bool = false
 var facing = Enums.FACING.RIGHT
 var motion: Vector2 = Vector2.ZERO
 
 # Technologies
-var jump_control = false
+var jump_control = true
 var double_jump = false
 var bomb = true
-var phantom = false
+var phantom = true
+var using_phantom = false
 
 
 func _physics_process(delta):
 	if bomb and Input.is_action_just_pressed("Action"):
 		_set_bomb()
+	if not timer.is_stopped():
+		if Input.is_action_just_pressed("Right") and facing == Enums.FACING.RIGHT and phantom_possible:
+			using_phantom = true
+			global_position.x += 32
+		if Input.is_action_just_pressed("Left") and facing == Enums.FACING.LEFT and phantom_possible:
+			using_phantom = true
+			global_position.x -= 32
 	var input_vector: Vector2 = _get_input_vector()
 	_apply_horizontal_force(input_vector, delta)
 	_apply_friction(input_vector)
@@ -38,8 +47,10 @@ func _get_input_vector():
 		input_vector.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 		if input_vector.x > 0:
 			facing = Enums.FACING.RIGHT
+			timer.start()
 		elif input_vector.x < 0:
 			facing = Enums.FACING.LEFT
+			timer.start()
 	if jumping and not jump_control:
 		input_vector.x = 1 if facing == Enums.FACING.RIGHT else -1
 	return input_vector
@@ -81,17 +92,21 @@ func _update_animation(input_vector):
 	if input_vector.x != 0:
 		sprite.scale.x = sign(input_vector.x)
 
-	if is_on_floor():
-		if input_vector.x != 0:
-			animation_player.play("walk")
-		else:
-			animation_player.play("stand")
+	if using_phantom:
+		var phantom_animation = "phantom-right" if facing == Enums.FACING.RIGHT else "phantom-left"
+		animation_player.play(phantom_animation)
 	else:
-		if jumping and floor(global_position.y) <= jumping_y:
-			animation_player.play("jump")
+		if is_on_floor():
+			if input_vector.x != 0:
+				animation_player.play("walk")
+			else:
+				animation_player.play("stand")
 		else:
-			animation_player.play("fall")
-			motion.x /= 2
+			if jumping and floor(global_position.y) <= jumping_y:
+				animation_player.play("jump")
+			else:
+				animation_player.play("fall")
+				motion.x /= 2
 
 
 func _set_bomb():
@@ -100,3 +115,15 @@ func _set_bomb():
 	get_tree().current_scene.add_child(bomb)
 	bomb.set_global_position(Vector2(global_position.x + 8, global_position.y + 8))
 
+
+func _on_Area2D_body_entered(_body: Node) -> void:
+	phantom_possible = false
+
+
+func _on_Area2D_body_exited(_body: Node) -> void:
+	phantom_possible = true
+
+
+func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
+	if anim_name == 'phantom-right' or anim_name == 'phantom-left':
+		using_phantom = false

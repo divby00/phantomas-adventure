@@ -20,6 +20,7 @@ func _process(_delta: float) -> void:
 		started = true
 
 	if not particles.emitting and started:
+		started = false
 		timer.start()
 
 
