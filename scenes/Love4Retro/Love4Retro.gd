@@ -9,8 +9,6 @@ onready var audio_stream_player = $AudioStreamPlayer
 
 func _ready():
 	transition_in.start()
-	print("Starting 'Phantomas en la sierra' version " + ProjectSettings.get("application/config/version"));
-	Configuration.load_and_save_config()
 	Utils.connect_signal(transition_in, "transition_in_finished", self, "on_transition_in_finished")
 	Utils.connect_signal(transition_out, "transition_out_finished", self, "on_transition_out_finished")
 

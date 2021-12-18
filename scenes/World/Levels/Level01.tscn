@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://resources/maps/tileset-blue-stone/tileset_tileset-blue-stone.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Enemies/Boar/Boar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/World/Platform/Platform.tscn" type="PackedScene" id=3]
-
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 73, 0 )
-}
+[ext_resource path="res://resources/paths/vertical.tres" type="Curve2D" id=4]
+[ext_resource path="res://resources/paths/horizontal.tres" type="Curve2D" id=5]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -58,6 +55,9 @@ position = Vector2( 126, 232 )
 [node name="Platform" parent="." instance=ExtResource( 3 )]
 position = Vector2( 72, 176 )
 
+[node name="Path2D" parent="Platform" index="1"]
+curve = ExtResource( 4 )
+
 [node name="Platform2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 288, 192 )
 
@@ -66,10 +66,11 @@ position = Vector2( -16, 0 )
 
 [node name="Path2D" parent="Platform2" index="1"]
 position = Vector2( -16, 0 )
-curve = SubResource( 1 )
+curve = ExtResource( 5 )
 
 [node name="AnimationPlayer" parent="Platform2" index="2"]
 anims/RESET = SubResource( 2 )
 anims/move = SubResource( 3 )
 
+[editable path="Platform"]
 [editable path="Platform2"]

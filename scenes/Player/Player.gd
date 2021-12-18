@@ -5,12 +5,13 @@ const BombScene: PackedScene = preload("res://scenes/Player/Bomb/Bomb.tscn")
 
 onready var timer = $Timer
 onready var sprite = $Sprite
-onready var animation_player = $AnimationPlayer
 onready var jumping_y: int = global_position.y
-
+onready var animation_player = $AnimationPlayer
+onready var phantom_collision = $Sprite/Area2D/CollisionShape2D
 
 var jumping: bool = false
 var phantom_possible: bool = false
+var using_phantom: bool = false
 var facing = Enums.FACING.RIGHT
 var motion: Vector2 = Vector2.ZERO
 
@@ -18,20 +19,12 @@ var motion: Vector2 = Vector2.ZERO
 var jump_control = true
 var double_jump = false
 var bomb = true
-var phantom = true
-var using_phantom = false
+var phantom = true setget set_phantom
 
 
 func _physics_process(delta):
-	if bomb and Input.is_action_just_pressed("Action"):
-		_set_bomb()
-	if not timer.is_stopped():
-		if Input.is_action_just_pressed("Right") and facing == Enums.FACING.RIGHT and phantom_possible:
-			using_phantom = true
-			global_position.x += 32
-		if Input.is_action_just_pressed("Left") and facing == Enums.FACING.LEFT and phantom_possible:
-			using_phantom = true
-			global_position.x -= 32
+	if bomb: _handle_bomb()
+	if phantom: _handle_phantom()
 	var input_vector: Vector2 = _get_input_vector()
 	_apply_horizontal_force(input_vector, delta)
 	_apply_friction(input_vector)
@@ -39,6 +32,21 @@ func _physics_process(delta):
 	_jump_check(input_vector, delta)
 	_update_animation(input_vector)
 	move_and_slide(motion, Vector2.UP)
+
+
+func _handle_bomb():
+	if Input.is_action_just_pressed("Action"):
+		_set_bomb()
+
+
+func _handle_phantom():
+	if not timer.is_stopped():
+		if Input.is_action_just_pressed("Right") and facing == Enums.FACING.RIGHT and phantom_possible:
+			using_phantom = true
+			global_position.x += 32
+		if Input.is_action_just_pressed("Left") and facing == Enums.FACING.LEFT and phantom_possible:
+			using_phantom = true
+			global_position.x -= 32
 
 
 func _get_input_vector():
@@ -127,3 +135,8 @@ func _on_Area2D_body_exited(_body: Node) -> void:
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 	if anim_name == 'phantom-right' or anim_name == 'phantom-left':
 		using_phantom = false
+
+
+func set_phantom(value):
+	phantom_collision.disabled = !value
+	phantom = value
