@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menu-arrow.png-9279c93f833632f52d1d8ddfd71ec5c0.stex"
+path="res://.import/bush01.png-f4f94e98cfc4972610fa8d4c618317fd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/original/menu/menu-arrow.png"
-dest_files=[ "res://.import/menu-arrow.png-9279c93f833632f52d1d8ddfd71ec5c0.stex" ]
+source_file="res://resources/sprites/maps/bush01.png"
+dest_files=[ "res://.import/bush01.png-f4f94e98cfc4972610fa8d4c618317fd.stex" ]
 
 [params]
 

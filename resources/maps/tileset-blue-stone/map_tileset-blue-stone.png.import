@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menu-grabber-disabled.png-179f5831fd2351d286da7670e3d3b01d.stex"
+path="res://.import/map_tileset-blue-stone.png-8eca30fb26ed2de19b1becb9893cef83.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/original/menu/menu-grabber-disabled.png"
-dest_files=[ "res://.import/menu-grabber-disabled.png-179f5831fd2351d286da7670e3d3b01d.stex" ]
+source_file="res://resources/maps/tileset-blue-stone/map_tileset-blue-stone.png"
+dest_files=[ "res://.import/map_tileset-blue-stone.png-8eca30fb26ed2de19b1becb9893cef83.stex" ]
 
 [params]
 

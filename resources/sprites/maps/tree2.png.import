@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/menu-grabber.png-148c6dd1307ea35f91a5311551d0de54.stex"
+path="res://.import/tree2.png-38bb6655e8d27ca4d689367e0dea3efa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/original/menu/menu-grabber.png"
-dest_files=[ "res://.import/menu-grabber.png-148c6dd1307ea35f91a5311551d0de54.stex" ]
+source_file="res://resources/sprites/maps/tree2.png"
+dest_files=[ "res://.import/tree2.png-38bb6655e8d27ca4d689367e0dea3efa.stex" ]
 
 [params]
 

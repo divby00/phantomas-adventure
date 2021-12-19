@@ -45,6 +45,7 @@ GameSaver="*res://scripts/GameSaver.gd"
 Enums="*res://scripts/Enums.gd"
 Constants="*res://scripts/Constants.gd"
 Levels="*res://scripts/Levels.gd"
+PlayerStats="*res://scripts/PlayerStats.gd"
 
 [display]
 

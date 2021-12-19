@@ -31,10 +31,10 @@ position = Vector2( 0, 2.5 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" parent="." index="1"]
+autoplay = "animate"
 anims/RESET = SubResource( 2 )
 
 [node name="Sprite" parent="." index="2"]
-scale = Vector2( 1, 0.911765 )
 texture = ExtResource( 2 )
 offset = Vector2( 0, 1.4 )
 hframes = 4
