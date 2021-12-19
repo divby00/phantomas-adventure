@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://resources/maps/tileset-blue-stone/tileset_tileset-blue-stone.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Enemies/Boar/Boar.tscn" type="PackedScene" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://resources/sprites/maps/background-hills.png" type="Texture" id=10]
 [ext_resource path="res://resources/sprites/maps/tree.png" type="Texture" id=11]
 [ext_resource path="res://scenes/Enemies/Toad/Toad.tscn" type="PackedScene" id=12]
-[ext_resource path="res://resources/sprites/maps/bush01.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -92,10 +91,6 @@ camera_limit_right = 1920
 [node name="Tree" type="Sprite" parent="."]
 position = Vector2( 199, 156 )
 texture = ExtResource( 11 )
-
-[node name="Bush01" type="Sprite" parent="."]
-position = Vector2( 304, 224 )
-texture = ExtResource( 13 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
