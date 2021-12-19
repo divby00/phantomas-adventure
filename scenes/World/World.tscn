@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/World/World.gd" type="Script" id=1]
 [ext_resource path="res://scenes/World/UI/UI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://resources/sprites/cutscenes/start/start-helicopter.png" type="Texture" id=5]
-[ext_resource path="res://resources/sprites/menu/menu-background.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Nueva Animación"
@@ -63,28 +62,12 @@ tracks/1/keys = {
 "values": [ Vector2( 256, 48 ) ]
 }
 
-[sub_resource type="Environment" id=3]
-background_mode = 4
-ambient_light_color = Color( 0.631373, 0.0784314, 0.0784314, 1 )
-ambient_light_energy = 11.71
-fog_enabled = true
-glow_enabled = true
-
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 608.0, 656.0 ],
 "_edit_vertical_guides_": [ 240.0 ]
 }
-
-[node name="Title-background" type="Sprite" parent="."]
-position = Vector2( 240, 136 )
-texture = ExtResource( 9 )
-
-[node name="UI" parent="." instance=ExtResource( 2 )]
-
-[node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 64, -32 )
 
 [node name="Start-helicopter" type="Sprite" parent="."]
 position = Vector2( 256, 48 )
@@ -96,5 +79,16 @@ autoplay = "Nueva Animación"
 "anims/Nueva Animación" = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 64, -32 )
+current = true
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 64, -32 )
+
+[node name="RemoteTransform2D" parent="Player" index="5"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="UI" parent="." instance=ExtResource( 2 )]
+
+[editable path="Player"]

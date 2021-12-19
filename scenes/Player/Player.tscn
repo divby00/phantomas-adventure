@@ -579,6 +579,8 @@ collision_mask = 8
 wait_time = 0.15
 one_shot = true
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+
 [connection signal="body_entered" from="Sprite/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Sprite/Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
