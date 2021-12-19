@@ -70,6 +70,7 @@ __meta__ = {
 }
 
 [node name="Start-helicopter" type="Sprite" parent="."]
+visible = false
 position = Vector2( 256, 48 )
 texture = ExtResource( 5 )
 hframes = 3

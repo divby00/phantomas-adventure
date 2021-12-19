@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://resources/maps/tileset-blue-stone/tileset_tileset-blue-stone.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Enemies/Boar/Boar.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://resources/sprites/maps/background-hills.png" type="Texture" id=10]
 [ext_resource path="res://resources/sprites/maps/tree.png" type="Texture" id=11]
 [ext_resource path="res://scenes/Enemies/Toad/Toad.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Inventory/EnergyIem.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -169,6 +170,12 @@ motion_mirroring = Vector2( 960, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2( 480, 408 )
 texture = ExtResource( 10 )
+
+[node name="EnergyItem" parent="." instance=ExtResource( 13 )]
+position = Vector2( 288, 240 )
+
+[node name="EnergyItem2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 336, 224 )
 
 [editable path="Platform"]
 [editable path="Platform2"]
