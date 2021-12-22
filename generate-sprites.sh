@@ -142,7 +142,6 @@ do
     echo ${f}.png
 done
 mv resources/sprites/original/dialogs/separate/*.png resources/sprites/dialogs/
-echo Done!
 
 # Get sprites from 'transitions' folder
 for file in resources/sprites/original/transitions/separate/*.ase
@@ -152,4 +151,15 @@ do
     echo ${f}.png
 done
 mv resources/sprites/original/transitions/separate/*.png resources/sprites/transitions/
+
+# Get sprites from 'maps' folder
+rm resources/sprites/maps/*.png 
+for file in resources/sprites/original/maps/*.ase
+do
+    f=${file%%.*}
+    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --save-as ${f}.png
+    echo ${f}.png
+done
+mv resources/sprites/original/maps/*.png resources/sprites/maps/
+
 echo Done!

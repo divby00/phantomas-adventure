@@ -312,7 +312,7 @@ anims/close = SubResource( 6 )
 anims/open = SubResource( 3 )
 
 [node name="GlyphTimer" type="Timer" parent="."]
-wait_time = 0.075
+wait_time = 0.001
 
 [node name="AudioStreamPlayerText" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
