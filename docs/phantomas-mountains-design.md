@@ -6,14 +6,15 @@ Juego de plataformas con tecnología **QSVP-EGA**, o lo que es lo mismo, paleta 
 
 ## Introducción
 
-Para variar, Phantomas está cumpliendo condena en la trena después de que su último golpe haya fallado. El director de la prisión le explica que su hija ha perdido a su gata Dana en una zona de difícil acceso de la sierra, y que le rebajará la condena si le ayuda a recuperar a la minina. El plan es transportar a Phantomas en helicóptero lo más cerca posible de la última posición conocida de Dana y buscarla por ahí. Phantomas aterrizará en el arroyo, cerca de Dana y conseguirá a la gata casi nada más empezar. Ahí se dará cuenta de que no hay plan de salida y tendrá que usar su habilidad para volver a la civilización.
+Para variar, Phantomas está cumpliendo condena en la trena después de que su último golpe haya fallado. Un personaje poderoso pero desconocido le ofrece sacarle de la cárcel a cambio de recuperar un diamante en el collar de un gato perdido en la Sierra Negra, una zona incomunicada y de difícil acceso. El plan es transportar a Phantomas en helicóptero lo más cerca posible de la última posición conocida del gato y buscarle por ahí. Una vez localizado, usará una bengala para llamar al helicóptero. Phantomas aterrizará en el arroyo, cerca del gato y conseguirá al gato casi nada más empezar, pero se dará cuenta de que no tiene la pistola de bengalas así que tendrá que usar su habilidad para volver a la civilización. Según vaya avanzando y conociendo a los personajes que pueblan la Sierra Negra, se dará cuenta de que tienen un problema muy serio: las brujas que habitan en la montaña, y que solo ayudándoles podrá
+salir.
 
 ## Habilidades
 
 - Control de salto: Permite controlar la dirección durante el salto. Salto vertical útil para acceder a sitios inaccesibles.
 - Doble salto: Permite saltar otra vez más en mitad de un salto. Útil para acceder a sitios inaccesibles.
-- Explosivo: Permite atontar enemigos y despejar bloques. Útil contra enemigos y para acceder a sitios inaccesibles.
-- Tecnología Fantasma: Permite teletransportarse a 2 tiles de distancia. Útil para acceder a sitios inaccesibles.
+- Explosivo: Permite destruir temporalmente a los enemigos y despejar bloques. Útil contra enemigos y para acceder a sitios inaccesibles.
+- Tecnología Fantasma: Permite teletransportarse a 2 tiles de distancia. Útil para acceder a sitios inaccesibles. (Atraviesa paredes de un tile de ancho).
 
 ## Objetos de inventario
 
@@ -21,7 +22,7 @@ Para variar, Phantomas está cumpliendo condena en la trena después de que su �
 - Agujas de ganchillo
 - Herradura
 - Trucha
-- Gata
+- Gato
 - Manzana
 - Botijo
 - Manta roja
@@ -47,7 +48,7 @@ Para variar, Phantomas está cumpliendo condena en la trena después de que su �
 
 Podemos distinguir entre enemigos vivos, objetos encantados y seres sobrenaturales:
 
-### Animales
+### Animales silvestres serranos
 
 - Avispa
 - Sapo
@@ -60,7 +61,7 @@ Podemos distinguir entre enemigos vivos, objetos encantados y seres sobrenatural
 - Víbora
 - Lobo
 
-### Objetos encantados
+### Objetos encantados por los hechizos de las brujas de la montaña
 
 - Tijera
 - Cuchillo
@@ -91,30 +92,30 @@ Podemos distinguir entre enemigos vivos, objetos encantados y seres sobrenatural
 
 ### NPC
 
-- Pescador (Proporciona las truchas para coger a la gata) 40
+- Lorenzo (Pescador, proporciona las truchas para coger al gato) 40 años
   https://generated.photos/face-generator/618b4e845d2207000fa7866c
 
-- Tio Juan (Nos ayuda a obtener un módulo con su burro) 45
+- Tio Juan (Nos ayuda a obtener un módulo con su burro) 45 años
 
-- Tio Ramón (Tras ayudarle con las manzanas nos da el botijo) 55
+- Tio Ramón (Tras ayudarle con las manzanas nos da el botijo) 55 años
   https://generated.photos/face-generator/618faf63be0cb9000c99d62e
 
-- Tia Simona (La que nos da el capote de torero) 52
+- Tia Simona (La que nos da el capote de torero) 52 años
   https://generated.photos/face-generator/618b4d855d2207000c02cc74
 
-- Agustín (Guardia del toril) 30
+- Agustín (Guardia del toril) 30 años
   https://generated.photos/face-generator/618fb4bb5d2207000d05b807
 
-- Maximina (Desbloqueo de senda de Bienvenida) 40
-- Heladia (Nos da un bollo en el horno) 45
-- Tio Eleuterio (Herrero, nos da la ganzúa para acceder a la casa del tio Valentín) 60
-- Tio Calixto (Carbonero, nos da el carbón para dárselo al tio Eleuterio) 60
-- Tio Valentín (El que conoce la senda a la montaña, desbloqueo de senda de Maria) 42
-- Don Francisco (Párroco) 35
-- Flora (La que está preparando la sopa, desbloqueo de senda de Esteban) 35
-- Felipa (Dueña de la cantina) 38
-- Tio Venancio (Pastor desaparecido que vive en la falda de la montaña) 60
-- Tia Susana (Bruja buena) 50
+- Maximina (Desbloqueo de senda de Bienvenida) 40 años
+- Heladia (Nos da un bollo en el horno) 45 años
+- Tio Eleuterio (Herrero, nos da la ganzúa para acceder a la casa del tio Valentín) 60 años
+- Tio Calixto (Carbonero, nos da el carbón para dárselo al tio Eleuterio) 60 años
+- Tio Valentín (El que conoce la senda a la montaña, desbloqueo de senda de Maria) 42 años
+- Don Francisco (Párroco) 35 años
+- Flora (La que está preparando la sopa, desbloqueo de senda de Esteban) 35 años
+- Felipa (Dueña de la cantina) 38 años
+- Tio Venancio (Pastor desaparecido que vive en la falda de la montaña) 60 años
+- Tia Susana (Bruja buena) 50 años. Lleva pañuelo en la cabeza.
 - Dominguera madre (Agonizando en la cascada, nos da las pilas)
 - Dominguero padre (En una celda, tras rescatarle nos explica como manipular la estatua roja)
 - Dominguero hijo (En una celda, tras rescatarle nos explica como manipular la estatua verde)
@@ -135,7 +136,7 @@ Podemos distinguir entre enemigos vivos, objetos encantados y seres sobrenatural
 ### Nivel 1: El arroyo
 
 - Enemigos: Animales
-- Descripción: Está la _gata_. Tiene un arroyo, donde el **pescador** pesca _truchas_. Hay un pajar donde se encuentran las _agujas de ganchillo_. Está el **tio Juan** con **Apacible**, su borrico. Tiene el _módulo de control de salto_. Hay una cerca electrificada que proteje la zona con los caballos donde está la _herradura_. Está el **cazador cegato**. Está la _mandrágora_ (necesario _tecnología fantasma_)
+- Descripción: Está el _gato_. Tiene un arroyo, donde el **pescador** pesca _truchas_. Hay un pajar donde se encuentran las _agujas de ganchillo_. Está el **tio Juan** con **Apacible**, su borrico. Tiene el _módulo de control de salto_. Hay una cerca electrificada que proteje la zona con los caballos donde está la _herradura_. Está el **cazador cegato**. Está la _mandrágora_ (necesario _tecnología fantasma_)
 
 ### Nivel 2: El prao
 
@@ -167,18 +168,18 @@ Las sendas son formas rápidas de acceder a otras partes del juego. Se desbloque
 
 ## Desarrollo del juego
 
-### Rescate de la gata
+### Rescate del gato
 
 - Nivel: 1
 - Habilidades requeridas: ninguna
 - Condiciones: ninguna
-- Descripción: Obtener 3 _gusanos_ en el nivel 1 (donde hozan los jabalíes) y llevarlos al **pescador**, con cada _gusano_ sacará una _trucha_ y cuando saque la tercera nos la dará. Entonces podremos ir con la _trucha_ hasta donde se encuentra la _gata_ y atraerla hacia nosotros, si no tenemos la _trucha_ la _gata_ no se acercará a nosotros (estará en un lugar inaccesible). Una vez tengamos la _gata_ Phantomas presumirá de lo fácil que ha sido la misión, solamente para darse cuenta de que no sabe como volver a la civilización.
+- Descripción: Obtener 3 _gusanos_ en el nivel 1 (donde hozan los jabalíes) y llevarlos al **pescador**, con cada _gusano_ sacará una _trucha_ y cuando saque la tercera nos la dará. Entonces podremos ir con la _trucha_ hasta donde se encuentra el _gato_ y atraerla hacia nosotros, si no tenemos la _trucha_ el _gato_ no se acercará a nosotros (estará en un lugar inaccesible). Una vez tengamos al _gato_ Phantomas presumirá de lo fácil que ha sido la misión, solamente para darse cuenta de que no sabe como volver a la civilización.
 
 ### Combate con cazador cegato
 
 - Nivel: 1
 - Habilidades requeridas: ninguna
-- Condiciones: Rescate de la gata
+- Condiciones: Rescate del gato
 - Descripción: Más adelante Phantomas se encontrará con el primer jefe, es un **Cazador Cegato** que confunde a Phantomas con un corzo y dispara contra el, cada disparo que choque contra las paredes liberará piedras que si caen encima del **Cazador Cegato** le irán quitando vida. Cuando llega a un límite es eliminado y Phantomas puede continuar.
 
 ### Encuentro con el tio Juan
