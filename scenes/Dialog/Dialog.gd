@@ -79,12 +79,11 @@ func _get_messages():
 	var start = _find_start_node()
 	var next = start['next']
 	var sorted_messages = []
-	var messages = _find_message_nodes()
-	for message in messages:
-		var message_node = _find_next_message(next)
-		if message_node != null:
-			sorted_messages.append(message_node)
-			next = message_node['next']
+	var next_node = _find_next_message(next)
+	while next_node != null:
+		sorted_messages.append(next_node)
+		next = next_node.next
+		next_node = _find_next_message(next)
 	return sorted_messages
 
 
