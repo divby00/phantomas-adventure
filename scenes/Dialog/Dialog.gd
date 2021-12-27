@@ -95,10 +95,7 @@ func _find_start_node():
 
 
 func _find_message_nodes():
-	for node in nodes:
-		if node['node_name'] != 'START':
-			return node
-	return null
+	return _find_start_node()
 
 
 func _find_next_message(node_name):
