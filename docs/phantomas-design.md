@@ -136,7 +136,8 @@ Podemos distinguir entre enemigos vivos, objetos encantados y seres sobrenatural
 ### Nivel 1: El arroyo
 
 - Enemigos: Animales
-- Descripción: Está el _gato_. Tiene un arroyo, donde el **pescador** pesca _truchas_. Hay un pajar donde se encuentran las _agujas de ganchillo_. Está el **tio Juan** con **Apacible**, su borrico. Tiene el _módulo de control de salto_. Hay una cerca electrificada que proteje la zona con los caballos donde está la _herradura_. Está el **cazador cegato**. Está la _mandrágora_ (necesario _tecnología fantasma_)
+- Descripción: Está el _gato_. Tiene un arroyo, donde el **pescador** pesca _truchas_. Hay un pajar donde se encuentran las _agujas de ganchillo_. Está el **tio Juan** con **Apacible**, su borrico. Tiene el _módulo de control de salto_. Hay una cerca electrificada que proteje la zona con los caballos donde está la _herradura_. Está el **cazador cegato**. Está la _mandrágora_ (necesario _tecnología fantasma_.
+- Decorado: Agua, mucha vegetación, un molino con una noria, el pajar, el cercado con los caballos. Se puede poner en un lateral algo del parador nacional.
 
 ### Nivel 2: El prao
 

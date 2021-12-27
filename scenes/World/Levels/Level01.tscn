@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://resources/maps/tileset-blue-stone/tileset_tileset-blue-stone.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Enemies/Boar/Boar.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://scenes/World/Water/Water.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/World/Helicopter/Helicopter.tscn" type="PackedScene" id=15]
 [ext_resource path="res://resources/sprites/maps/bush01.png" type="Texture" id=16]
+[ext_resource path="res://resources/sprites/characters/lorenzo.png" type="Texture" id=17]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -81,6 +82,38 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, -2 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Nueva Animación"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lorenzo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Lorenzo:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
 }
 
 [node name="Level01" type="Node2D"]
@@ -192,6 +225,17 @@ z_index = 20
 position = Vector2( 576, 448 )
 texture = ExtResource( 16 )
 offset = Vector2( 48, -18 )
+
+[node name="Lorenzo" type="Sprite" parent="."]
+position = Vector2( 180, 471 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 17 )
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Nueva Animación"
+"anims/Nueva Animación" = SubResource( 6 )
+anims/RESET = SubResource( 7 )
 
 [editable path="Platform"]
 [editable path="Platform2"]

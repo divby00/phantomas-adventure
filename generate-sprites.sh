@@ -10,6 +10,16 @@ do
 done
 mv resources/sprites/original/*.png resources/sprites/
 
+# Get sprites from 'characters' folder
+rm resources/sprites/characters/*.png 
+for file in resources/sprites/original/characters/*.ase
+do
+    f=${file%%.*}
+    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    echo ${f}.png
+done
+mv resources/sprites/original/characters/*.png resources/sprites/characters/
+
 # Get sprites from 'dialogs' folder
 rm resources/sprites/dialogs/*.png 
 for file in resources/sprites/original/dialogs/*.ase
