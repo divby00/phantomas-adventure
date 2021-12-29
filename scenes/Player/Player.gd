@@ -17,7 +17,7 @@ var motion: Vector2 = Vector2.ZERO
 
 # Technologies
 var jump_control = true
-var double_jump = false
+var double_jump = true
 var bomb = true
 var phantom = true setget set_phantom
 

@@ -1,10 +1,13 @@
 extends Node2D
 
+const BACKGROUND_SCROLL_SPEED: int = 12
 const WorldScene: PackedScene = preload("res://scenes/World/World.tscn")
 
 onready var menu_manager = $MenuManager
 onready var transition_in = $TransitionIn
+onready var parallax = $ParallaxBackground
 onready var transition_out = $TransitionOut
+onready var animation_player = $AnimationPlayer
 onready var audio_stream_player = $AudioStreamPlayer
 
 var has_to_quit = false
@@ -15,6 +18,10 @@ func _ready():
 	Utils.connect_signal(transition_out, "transition_out_finished", self, "_on_transition_out_finished")
 	Utils.connect_signal(menu_manager, "menu_selected", self, "_on_menu_selected")
 	transition_in.start()
+
+
+func _process(delta: float) -> void:
+	parallax.scroll_offset.x -= BACKGROUND_SCROLL_SPEED * delta
 
 
 func _on_menu_selected(menu):

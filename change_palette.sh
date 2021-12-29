@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
 
+# Get sprites from 'title' folder
+for file in resources/sprites/original/title/*.ase
+do
+    f=${file%%.*}
+    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --color-mode rgb --palette dawnbringer-32.pal --save-as ${f}.ase
+done
+
+# Get sprites from 'characters' folder
+for file in resources/sprites/original/characters/*.ase
+do
+    f=${file%%.*}
+    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --color-mode rgb --palette dawnbringer-32.pal --save-as ${f}.ase
+done
+
 # Get sprites from 'dialogs' folder
 for file in resources/sprites/original/dialogs/*.ase
 do
