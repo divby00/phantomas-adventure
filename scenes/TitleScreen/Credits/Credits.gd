@@ -30,7 +30,7 @@ func _start_tween():
 	tween.start()
 
 
-func _on_Tween_tween_step(object: Object, key: NodePath, elapsed: float, value: Object) -> void:
+func _on_Tween_tween_step(_object: Object, _key: NodePath, _elapsed: float, _value: Object) -> void:
 	if round(label.rect_position.x) in [95, 96, 97]:
 		label.rect_position.x = 96
 		tween.stop(label, "rect_position")

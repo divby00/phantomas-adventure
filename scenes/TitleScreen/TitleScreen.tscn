@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://resources/sprites/title/title-sky.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Transition/TransitionIn.tscn" type="PackedScene" id=2]
@@ -9,7 +9,8 @@
 [ext_resource path="res://resources/sprites/logos/logo-phantomas.png" type="Texture" id=7]
 [ext_resource path="res://scenes/MenuManager/MenuManager.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Transition/TransitionOut.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/TitleScreen/Credits.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/TitleScreen/Credits/Credits.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/TitleScreen/Tree/Tree.tscn" type="PackedScene" id=11]
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource( 5 )
@@ -50,3 +51,239 @@ texture = ExtResource( 7 )
 [node name="MountainLogo" type="Sprite" parent="."]
 position = Vector2( 240, 80 )
 texture = ExtResource( 6 )
+
+[node name="Tree76" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( 232, 222 )
+
+[node name="TreeContainer" type="Node2D" parent="."]
+
+[node name="Tree" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 0, 208 )
+
+[node name="Tree6" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 12, 218 )
+
+[node name="Tree7" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 12, 218 )
+
+[node name="Tree2" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 32, 216 )
+
+[node name="Tree3" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 6, 214 )
+
+[node name="Tree8" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( -4, 212 )
+
+[node name="Tree9" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 40, 224 )
+
+[node name="Tree10" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 36, 218 )
+
+[node name="Tree11" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 50, 230 )
+
+[node name="Tree12" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 46, 218 )
+
+[node name="Tree13" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 50, 222 )
+
+[node name="Tree14" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 56, 220 )
+
+[node name="Tree15" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 60, 226 )
+
+[node name="Tree16" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 74, 236 )
+
+[node name="Tree17" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 84, 226 )
+
+[node name="Tree18" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 96, 236 )
+
+[node name="Tree19" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 110, 228 )
+
+[node name="Tree20" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 120, 224 )
+
+[node name="Tree21" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 116, 226 )
+
+[node name="Tree25" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 136, 224 )
+
+[node name="Tree26" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 156, 230 )
+
+[node name="Tree27" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 148, 224 )
+
+[node name="Tree28" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 168, 226 )
+
+[node name="Tree29" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 142, 218 )
+
+[node name="Tree30" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 128, 226 )
+
+[node name="Tree31" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 182, 234 )
+
+[node name="Tree32" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 174, 232 )
+
+[node name="Tree33" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 192, 240 )
+
+[node name="Tree34" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 190, 222 )
+
+[node name="Tree35" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 192, 232 )
+
+[node name="Tree36" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 204, 226 )
+
+[node name="Tree37" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 202, 236 )
+
+[node name="Tree38" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 212, 228 )
+
+[node name="Tree39" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 222, 222 )
+
+[node name="Tree40" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 232, 224 )
+
+[node name="Tree41" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 250, 222 )
+
+[node name="Tree42" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 258, 228 )
+
+[node name="Tree54" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 292, 224 )
+
+[node name="Tree55" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 298, 228 )
+
+[node name="Tree56" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 310, 226 )
+
+[node name="Tree57" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 320, 234 )
+
+[node name="Tree58" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 330, 228 )
+
+[node name="Tree59" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 338, 236 )
+
+[node name="Tree60" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 348, 222 )
+
+[node name="Tree61" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 358, 230 )
+
+[node name="Tree62" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 366, 228 )
+
+[node name="Tree63" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 374, 234 )
+
+[node name="Tree64" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 384, 222 )
+
+[node name="Tree65" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 392, 232 )
+
+[node name="Tree66" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 402, 226 )
+
+[node name="Tree67" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 470, 212 )
+
+[node name="Tree73" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 470, 212 )
+
+[node name="Tree68" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 466, 218 )
+
+[node name="Tree69" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 456, 212 )
+
+[node name="Tree70" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 452, 218 )
+
+[node name="Tree71" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 426, 220 )
+
+[node name="Tree74" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 422, 226 )
+
+[node name="Tree75" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 422, 226 )
+
+[node name="Tree43" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 242, 226 )
+
+[node name="Tree22" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 102, 224 )
+
+[node name="Tree23" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 90, 230 )
+
+[node name="Tree24" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 68, 222 )
+
+[node name="Tree44" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 410, 236 )
+
+[node name="Tree45" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 414, 222 )
+
+[node name="Tree46" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 432, 230 )
+
+[node name="Tree47" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 444, 220 )
+
+[node name="Tree72" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 444, 220 )
+
+[node name="Tree48" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 462, 218 )
+
+[node name="Tree49" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 440, 226 )
+
+[node name="Tree50" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 284, 230 )
+
+[node name="Tree51" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 274, 236 )
+
+[node name="Tree52" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 268, 226 )
+
+[node name="Tree53" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 268, 226 )
+
+[node name="Tree4" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 16, 208 )
+
+[node name="Tree5" parent="TreeContainer" instance=ExtResource( 11 )]
+position = Vector2( 24, 224 )
+
+[node name="WindTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="WindTimer" to="." method="_on_WindTimer_timeout"]

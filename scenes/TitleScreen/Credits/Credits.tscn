@@ -2,7 +2,7 @@
 
 [ext_resource path="res://resources/theme.tres" type="Theme" id=1]
 [ext_resource path="res://resources/sprites/title/title-credit-hide.png" type="Texture" id=2]
-[ext_resource path="res://scenes/TitleScreen/Credits.gd" type="Script" id=3]
+[ext_resource path="res://scenes/TitleScreen/Credits/Credits.gd" type="Script" id=3]
 [ext_resource path="res://resources/fonts/aseprite.tres" type="DynamicFont" id=4]
 
 [node name="Credits" type="CanvasLayer"]
