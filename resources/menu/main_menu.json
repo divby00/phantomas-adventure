@@ -1,0 +1,201 @@
+{
+  "main": {
+    "entries": [
+      {
+        "text": "MENU_MAIN_OPTIONS",
+        "type": "button",
+        "menu": "options"
+      },
+      {
+        "text": "MENU_SAVE_SLOT",
+        "type": "button",
+        "menu": "saveslots"
+      },
+      {
+        "text": "MENU_MAIN_NEWGAME",
+        "type": "button"
+      },
+      {
+        "text": "MENU_MAIN_CONTINUEGAME",
+        "type": "button"
+      },
+      {
+        "text": "MENU_HRULE",
+        "type": "hrule"
+      },
+      {
+        "text": "MENU_MAIN_QUIT",
+        "type": "button"
+      }      
+    ]
+  },
+
+  "saveslots": {
+    "previous": "main",
+    "entries": [
+      {
+        "text": "MENU_SAVE_SLOT#1",
+        "type": "button",
+        "menu": "main"
+      },
+      {
+        "text": "MENU_SAVE_SLOT#2",
+        "type": "button",
+        "menu": "main"
+      },
+      {
+        "text": "MENU_SAVE_SLOT#3",
+        "type": "button",
+        "menu": "main"
+      },
+      {
+        "text": "MENU_HRULE",
+        "type": "hrule"
+      },
+      {
+        "text": "MENU_OPTIONS_BACK",
+        "type": "button",
+        "menu": "main"
+      }
+    ]
+  },
+
+  "options":{
+    "previous": "main",
+    "entries": [
+      {
+        "text": "MENU_LANGUAGE",
+        "type": "button",
+        "menu": "language"
+      },
+      {
+        "text": "MENU_GRAPHICS_FULLSCREEN",
+        "type": "check"
+      },
+      {
+        "text": "MENU_HRULE",
+        "type": "hrule"
+      },
+      {
+        "text": "MENU_LABEL_SFX",
+        "type": "label"
+      },
+      {
+        "text": "MENU_SOUNDS_SFX_VOLUME",
+        "type": "slider",
+        "min": 0,
+        "max": 1,
+        "steps": 10
+      },
+      {
+        "text": "MENU_LABEL_MUSIC",
+        "type": "label"
+      },
+      {
+        "text": "MENU_SOUNDS_MUSIC_VOLUME",
+        "type": "slider",
+        "min": 0,
+        "max": 1,
+        "steps": 10
+      },
+      {
+        "text": "MENU_HRULE",
+        "type": "hrule"
+      },
+      {
+        "text": "MENU_CONTROL_REDEFINE",
+        "type": "button",
+        "menu": "redefine"
+      },
+      {
+        "text": "MENU_HRULE",
+        "type": "hrule"
+      },
+      {
+        "text": "MENU_OPTIONS_BACK",
+        "type": "button",
+        "menu": "main"
+      }
+    ]
+  },
+
+  "language": {
+    "previous": "options",
+    "entries": [
+      {
+        "text": "LANG_ES",
+        "type": "button",
+        "menu": "options"
+      },
+      {
+        "text": "LANG_EN",
+        "type": "button",
+        "menu": "options"
+      },
+      {
+        "text": "MENU_HRULE",
+        "type": "hrule"
+      },
+      {
+        "text": "MENU_OPTIONS_BACK",
+        "type": "button",
+        "menu": "options"
+      }
+    ]
+  },
+
+  "redefine":{
+    "previous": "options",
+    "entries": [
+      {
+        "text": "MENU_CONTROL_REDEFINE_UP",
+        "type": "keypress",
+        "action": "Up"
+      },
+      {
+        "text": "MENU_CONTROL_REDEFINE_DOWN",
+        "type": "keypress",
+        "action": "Down"
+      },
+      {
+        "text": "MENU_CONTROL_REDEFINE_LEFT",
+        "type": "keypress",
+        "action": "Left"
+      },
+      {
+        "text": "MENU_CONTROL_REDEFINE_RIGHT",
+        "type": "keypress",
+        "action": "Right"
+      },
+      {
+        "text": "MENU_CONTROL_REDEFINE_ACTION",
+        "type": "keypress",
+        "action": "Action"
+      },
+      {
+        "text": "MENU_CONTROL_REDEFINE_INVENTORY",
+        "type": "keypress",
+        "action": "Inventory"
+      },
+      {
+        "text": "MENU_CONTROL_REDEFINE_EXIT",
+        "type": "keypress",
+        "action": "Exit"
+      },
+      {
+        "text": "MENU_HRULE",
+        "type": "hrule"
+      },
+      {
+        "text": "MENU_OPTIONS_BACK",
+        "type": "button",
+        "menu": "options"
+      }
+    ]
+
+  }
+
+
+}
+
+

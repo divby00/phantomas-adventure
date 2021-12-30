@@ -24,7 +24,7 @@ MENU_SAVE_SLOT#3,Ranura #3,Slot #3
 MENU_LABEL_SFX,Efectos de sonido,Sound effect
 MENU_LABEL_MUSIC,Música,Music
 MENU_OPTIONS_BACK,Volver,Return
-MENU_LANGUAGE,Seleccionar Idioma,Select Languague
+MENU_LANGUAGE,Seleccionar Idioma,Select Language
 MENU_CONTROL_REDEFINE,Redefinir las teclas,Redefine keys
 MENU_CONTROL_REDEFINE_UP,Arriba,Up
 MENU_CONTROL_REDEFINE_DOWN,Abajo,Down
