@@ -57,10 +57,6 @@ texture = ExtResource( 7 )
 position = Vector2( 240, 80 )
 texture = ExtResource( 6 )
 
-[node name="Tree76" parent="." instance=ExtResource( 11 )]
-visible = false
-position = Vector2( 232, 222 )
-
 [node name="TreeContainer" type="Node2D" parent="."]
 
 [node name="Tree" parent="TreeContainer" instance=ExtResource( 11 )]
@@ -289,6 +285,7 @@ position = Vector2( 16, 208 )
 position = Vector2( 24, 224 )
 
 [node name="WindTimer" type="Timer" parent="."]
-one_shot = true
+wait_time = 0.1
+autostart = true
 
 [connection signal="timeout" from="WindTimer" to="." method="_on_WindTimer_timeout"]

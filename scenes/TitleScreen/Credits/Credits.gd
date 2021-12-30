@@ -2,10 +2,10 @@ extends CanvasLayer
 
 
 const MESSAGES: Array = [
-	"2022 M.A. Software & Love4Retro",
-	"Program by:", "Miguel Ángel Jimenez & Jesús Chicharro",
+	"2022 M.A Software + Love4Retro",
+	"Program by:", "Miguel Ángel Jiménez & Jesús Chicharro",
 	"Graphics by:", "Jesús Chicharro",
-	"Music by:", "Miguel Ángel Jimenez",
+	"Music by:", "Miguel Ángel Jiménez",
 	"This is free software",
 	"We hope you enjoy it!",
 ]

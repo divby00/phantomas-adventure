@@ -21,7 +21,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
 length = 0.7
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -38,7 +37,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "wind"
 length = 0.6
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
