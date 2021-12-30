@@ -1,5 +1,6 @@
 extends Node2D
 
+
 const BACKGROUND_SCROLL_SPEED: int = 12
 const WorldScene: PackedScene = preload("res://scenes/World/World.tscn")
 
@@ -7,10 +8,9 @@ onready var menu_manager = $MenuManager
 onready var transition_in = $TransitionIn
 onready var parallax = $ParallaxBackground
 onready var transition_out = $TransitionOut
-onready var animation_player = $AnimationPlayer
-onready var audio_stream_player = $AudioStreamPlayer
+onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
-var has_to_quit = false
+var has_to_quit: bool = false
 
 
 func _ready():
@@ -21,6 +21,7 @@ func _ready():
 
 
 func _process(delta: float) -> void:
+	# Animate background
 	parallax.scroll_offset.x -= BACKGROUND_SCROLL_SPEED * delta
 
 
