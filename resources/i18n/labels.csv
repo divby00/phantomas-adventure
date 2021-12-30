@@ -1,12 +1,14 @@
 keys,es,en
-LANGUAGE,Español,English
+LANG_ES,Español,Spanish
+LANG_EN,Ingles,English
 INTRO_MESSAGE_01,"En una celda tenebrosa, Phantomas se pudre solo... abandonado...","In a gloomy cell, Phantomas rots alone ... abandoned …"
 INTRO_MESSAGE_02,"¿Cuánto tiempo lleva encerrado? no hay manera de saberlo, meses, años quizás...","How long have you been locked up? there is no way to know, months, years maybe …"
 INTRO_MESSAGE_03,"No tiene importancia, su batería se está agotando y el final parece más cerca que nunca...","It doesn't matter, your battery is running low and the end seems closer than ever …"
 INTRO_MESSAGE_04,...hasta que un día...,...until one day...
 DLG_TIOJUAN_01,Güenas zagal.{sep}Ve al huerto a ver si coges alguna zanahoria para el macho.,Hi boy. {Sep} Go to the orchard to see if you can get any carrots for the male.
 DLG_TIOJUAN_02,Eso está hecho.,That is done.
-MENU_MAIN_START,Empezar,Start
+MENU_MAIN_NEWGAME,Nueva partida,New game
+MENU_MAIN_CONTINUEGAME,Continuar partida,Continue game
 MENU_MAIN_OPTIONS,Opciones,Options
 MENU_MAIN_QUIT,Salir,Exit
 MENU_OPTIONS_GRAPHICS,Gráficos,Graphics
