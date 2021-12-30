@@ -5,10 +5,10 @@ type="Translation"
 
 [deps]
 
-files=[ "res://resources/i18n/labels.es.translation" ]
+files=[ "res://resources/i18n/labels.es.translation", "res://resources/i18n/labels.en.translation" ]
 
 source_file="res://resources/i18n/labels.csv"
-dest_files=[ "res://resources/i18n/labels.es.translation" ]
+dest_files=[ "res://resources/i18n/labels.es.translation", "res://resources/i18n/labels.en.translation" ]
 
 [params]
 

@@ -28,7 +28,7 @@ _global_script_class_icons={
 
 config/name="Phantomas en la sierra"
 config/description="A Phantomas adventure"
-run/main_scene="res://scenes/TitleScreen/TitleScreen.tscn"
+run/main_scene="res://scenes/Splash/Splash.tscn"
 boot_splash/image="res://resources/sprites/logos/blank-splash.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
@@ -123,7 +123,7 @@ Action={
 
 [locale]
 
-translations=PoolStringArray( "res://resources/i18n/labels.es.translation" )
+translations=PoolStringArray( "res://resources/i18n/labels.es.translation", "res://resources/i18n/labels.en.translation" )
 locale_filter=[ 0, [  ] ]
 
 [rendering]

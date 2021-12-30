@@ -1,6 +1,7 @@
 extends Node2D
 
-const IntroScene = preload("res://scenes/Cutscenes/Intro/Intro.tscn")
+#const IntroScene = preload("res://scenes/Cutscenes/Intro/Intro.tscn")
+const TitleScreen = preload("res://scenes/TitleScreen/TitleScreen.tscn")
 
 onready var transition_in = $TransitionIn
 onready var transition_out = $TransitionOut
@@ -23,4 +24,4 @@ func on_transition_in_finished():
 
 func on_transition_out_finished():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene_to(IntroScene)
+	get_tree().change_scene_to(TitleScreen)

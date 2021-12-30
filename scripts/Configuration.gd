@@ -8,7 +8,15 @@ var key_down = 16777234 setget set_key_down
 var key_left = 16777231 setget set_key_left
 var key_right = 16777233 setget set_key_right
 var key_action = 32 setget set_key_action
+var save_slot = 1 setget set_save_slot
 
+func set_save_slot(value):
+	if (value<1):
+		value=1
+	if (value>3):
+		value=3
+	save_slot = value
+	save()
 
 func set_key_up(value):
 	key_up = value
@@ -61,13 +69,18 @@ func save():
 	config.set_value("control", "key_left", self.key_left)
 	config.set_value("control", "key_right", self.key_right)
 	config.set_value("control", "key_action", self.key_action)
+	config.set_value("save","slot",self.save_slot)
 	config.save("user://phmountains.cfg")
-
 
 func load_and_save_config():
 	var config = ConfigFile.new()
 	var err = config.load("user://phmountains.cfg")
 	if err == OK:
+
+		if not config.has_section_key("save", "slot"):
+			config.set_value("save", "slot", self.save_slot)
+		else:
+			self.save_slot = config.get_value("save", "slot", 1)
 
 		if not config.has_section_key("display", "fullscreen"):
 			config.set_value("display", "fullscreen", self.fullscreen)

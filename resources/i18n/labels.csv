@@ -1,25 +1,33 @@
-keys,es
-INTRO_MESSAGE_01,"En una celda tenebrosa, Phantomas se pudre solo... abandonado..."
-INTRO_MESSAGE_02,"¿Cuánto tiempo lleva encerrado? no hay manera de saberlo, meses, años quizás..."
-INTRO_MESSAGE_03,"No tiene importancia, su batería se está agotando y el final parece más cerca que nunca..."
-INTRO_MESSAGE_04,"...hasta que un día..."
-DLG_TIOJUAN_01,"Güenas zagal.{sep}Ve al huerto a ver si coges alguna zanahoria para el macho."
-DLG_TIOJUAN_02,"Eso está hecho."
-MENU_MAIN_START,"Empezar"
-MENU_MAIN_OPTIONS,"Opciones"
-MENU_MAIN_QUIT,"Salir"
-MENU_OPTIONS_GRAPHICS,"Gráficos"
-MENU_OPTIONS_SOUNDS,"Sonidos"
-MENU_GRAPHICS_FULLSCREEN,"Pantalla completa"
-MENU_SOUNDS_SFX_VOLUME,"Volumen de los efectos de sonido"
-MENU_SOUNDS_MUSIC_VOLUME,"Volumen de la música"
-MENU_HRULE,""
-MENU_LABEL_SFX,"Efectos de sonido"
-MENU_LABEL_MUSIC,"Música"
-MENU_OPTIONS_BACK,"Volver"
-MENU_CONTROL_REDEFINE,"Redefinir las teclas"
-MENU_CONTROL_REDEFINE_UP,"Arriba"
-MENU_CONTROL_REDEFINE_DOWN,"Abajo"
-MENU_CONTROL_REDEFINE_LEFT,"Izquierda"
-MENU_CONTROL_REDEFINE_RIGHT,"Derecha"
-MENU_CONTROL_REDEFINE_ACTION,"Bomba"
+keys,es,en
+LANGUAGE,Español,English
+INTRO_MESSAGE_01,"En una celda tenebrosa, Phantomas se pudre solo... abandonado...","In a gloomy cell, Phantomas rots alone ... abandoned …"
+INTRO_MESSAGE_02,"¿Cuánto tiempo lleva encerrado? no hay manera de saberlo, meses, años quizás...","How long have you been locked up? there is no way to know, months, years maybe …"
+INTRO_MESSAGE_03,"No tiene importancia, su batería se está agotando y el final parece más cerca que nunca...","It doesn't matter, your battery is running low and the end seems closer than ever …"
+INTRO_MESSAGE_04,...hasta que un día...,...until one day...
+DLG_TIOJUAN_01,Güenas zagal.{sep}Ve al huerto a ver si coges alguna zanahoria para el macho.,Hi boy. {Sep} Go to the orchard to see if you can get any carrots for the male.
+DLG_TIOJUAN_02,Eso está hecho.,That is done.
+MENU_MAIN_START,Empezar,Start
+MENU_MAIN_OPTIONS,Opciones,Options
+MENU_MAIN_QUIT,Salir,Exit
+MENU_OPTIONS_GRAPHICS,Gráficos,Graphics
+MENU_OPTIONS_SOUNDS,Sonidos,Sounds
+MENU_GRAPHICS_FULLSCREEN,Pantalla completa,Full Screen
+MENU_SOUNDS_SFX_VOLUME,Volumen de los efectos de sonido,Sound effect volume
+MENU_SOUNDS_MUSIC_VOLUME,Volumen de la música,Music volume
+MENU_HRULE,,
+MENU_SAVE_SLOT,Ranura de Partida,Game Save Slot
+MENU_SAVE_SLOT#1,Ranura #1,Slot #1
+MENU_SAVE_SLOT#2,Ranura #2,Slot #2
+MENU_SAVE_SLOT#3,Ranura #3,Slot #3
+MENU_LABEL_SFX,Efectos de sonido,Sound effect
+MENU_LABEL_MUSIC,Música,Music
+MENU_OPTIONS_BACK,Volver,Return
+MENU_LANGUAGE,Seleccionar Idioma,Select Languague
+MENU_CONTROL_REDEFINE,Redefinir las teclas,Redefine keys
+MENU_CONTROL_REDEFINE_UP,Arriba,Up
+MENU_CONTROL_REDEFINE_DOWN,Abajo,Down
+MENU_CONTROL_REDEFINE_LEFT,Izquierda,Left
+MENU_CONTROL_REDEFINE_RIGHT,Derecha,Right
+MENU_CONTROL_REDEFINE_ACTION,Bomba,Bomb
+MENU_CONTROL_REDEFINE_INVENTORY,Inventario,Inventory
+MENU_CONTROL_REDEFINE_EXIT,Salir,Exit

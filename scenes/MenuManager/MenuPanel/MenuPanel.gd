@@ -18,6 +18,11 @@ enum ACTIONS {
 	Up, Down, Left, Right, Action
 }
 
+func _get_text_entry(entry) -> String:
+	if (entry.has('method_text') && entry['method_text'] != null):
+		return call(entry['method_text'], entry)
+	else:
+		return entry['id']
 
 func _ready() -> void:
 	var has_keypress: bool = false
@@ -49,12 +54,17 @@ func _input(event: InputEvent) -> void:
 			_change_key(event)
 			can_change_key = false
 
+func _correct_method(entry) -> void:
+	if (entry['next']):
+		if (!entry['method']):
+			entry['method']='_on_menu_generic_option_selected'
 
 func _create_button(entry):
 	var button = Button.new()
 	vbox.add_child(button)
-	button.text = entry['id']
+	button.text = _get_text_entry(entry)
 	button.theme = ThemeResource
+	_correct_method(entry)	
 	if entry['method']:
 		if entry['next']:
 			Utils.connect_signal(button, 'pressed', get_node("../../"), entry['method'], [entry['next']])
@@ -65,8 +75,9 @@ func _create_button(entry):
 func _create_check(entry):
 	var check = CheckBox.new()
 	vbox.add_child(check)
-	check.text = entry['id']
+	check.text = _get_text_entry(entry)
 	check.theme = ThemeResource
+	_correct_method(entry)	
 	if entry['method']:
 		Utils.connect_signal(check, 'pressed', get_node("../../"), entry['method'], [check])
 	if entry['init_method']:
@@ -80,6 +91,7 @@ func _create_slider(entry):
 	slider.step = 0.1
 	slider.min_value = 0
 	slider.max_value = 1
+	_correct_method(entry)	
 	if entry['method']:
 		if entry['next']:
 			Utils.connect_signal(slider, 'value_changed', get_node("../../"), entry['method'], [entry['next']])
@@ -99,7 +111,7 @@ func _create_label(entry):
 	var label = Label.new()
 	label.theme = ThemeResource
 	label.align = Label.ALIGN_CENTER
-	label.text = entry['id']
+	label.text = _get_text_entry(entry)
 	vbox.add_child(label)
 
 
@@ -110,7 +122,7 @@ func _create_keypress(entry):
 	hbox.theme = ThemeResource
 	var label: Label = Label.new()
 	label.theme = ThemeResource
-	label.text = entry['id']
+	label.text = _get_text_entry(entry)
 	label.size_flags_horizontal = SIZE_EXPAND_FILL
 	var button: Button = Button.new()
 	button.theme = ThemeResource
@@ -205,3 +217,9 @@ func _on_redefine_button_pressed(entry, button: Button):
 	selected_action = entry['action']
 	selected_button = button
 	can_change_key = button.is_pressed()
+
+# Obtención del texto de menu para SlotSave
+#
+func _get_save_slot_info(entry) -> String:
+	return TranslationServer.translate(entry.id) +": #"+String(Configuration.save_slot)
+

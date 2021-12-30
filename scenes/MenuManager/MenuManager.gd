@@ -65,18 +65,21 @@ func set_current_menu(value):
 func get_current_menu():
 	return current_menu
 
+func _on_menu_generic_option_selected(params):
+	self.current_menu = params
 
 func _on_menu_main_start_selected():
 	emit_signal("menu_selected", "start")
 
-
 func _on_menu_main_options_selected(params):
-	self.current_menu = params
-
+	print('miguel angel')
+	#self.current_menu = params
 
 func _on_menu_options_back_selected(params):
 	self.current_menu = params
 
+func _on_menu_profiles_back_selected(params):
+	self.current_menu = params
 
 func _on_menu_main_quit_selected():
 	emit_signal("menu_selected", "quit")
@@ -99,3 +102,16 @@ func _on_menu_options_music_volume_value_changed(_value, slider):
 
 func _on_menu_control_redefine_selected(params):
 	self.current_menu = params
+
+
+func _on_menu_saveslots_selected1(params):
+	self.current_menu = params
+	Configuration.save_slot=1
+
+func _on_menu_saveslots_selected2(params):
+	self.current_menu = params
+	Configuration.save_slot=2
+
+func _on_menu_saveslots_selected3(params):
+	self.current_menu = params
+	Configuration.save_slot=3
