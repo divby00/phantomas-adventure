@@ -29,8 +29,7 @@ func _process(delta: float) -> void:
 
 
 func _prepare_timer():
-	wind_timer.wait_time = rand_range(0.1, 0.5)
-	wind_timer.start()
+	wind_timer.wait_time = rand_range(.2, 1)
 
 
 func _on_menu_selected(menu):

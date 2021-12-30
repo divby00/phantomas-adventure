@@ -64,7 +64,7 @@ func _create_button(entry):
 	vbox.add_child(button)
 	button.text = _get_text_entry(entry)
 	button.theme = ThemeResource
-	_correct_method(entry)	
+	_correct_method(entry)
 	if entry['method']:
 		if entry['next']:
 			Utils.connect_signal(button, 'pressed', get_node("../../"), entry['method'], [entry['next']])
@@ -77,7 +77,7 @@ func _create_check(entry):
 	vbox.add_child(check)
 	check.text = _get_text_entry(entry)
 	check.theme = ThemeResource
-	_correct_method(entry)	
+	_correct_method(entry)
 	if entry['method']:
 		Utils.connect_signal(check, 'pressed', get_node("../../"), entry['method'], [check])
 	if entry['init_method']:
@@ -91,7 +91,7 @@ func _create_slider(entry):
 	slider.step = 0.1
 	slider.min_value = 0
 	slider.max_value = 1
-	_correct_method(entry)	
+	_correct_method(entry)
 	if entry['method']:
 		if entry['next']:
 			Utils.connect_signal(slider, 'value_changed', get_node("../../"), entry['method'], [entry['next']])
