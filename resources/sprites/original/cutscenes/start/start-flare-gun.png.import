@@ -6,7 +6,7 @@ valid=false
 
 [deps]
 
-source_file="res://resources/sprites/maps/water.png"
+source_file="res://resources/sprites/original/cutscenes/start/start-flare-gun.png"
 [params]
 
 compress/mode=0
