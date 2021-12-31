@@ -3,7 +3,6 @@ extends Node
 signal player_destroyed
 signal health_changed(health)
 
-
 export var MAX_HEALTH: int = 141
 
 var health = MAX_HEALTH setget set_health

@@ -18,8 +18,8 @@ func _ready():
 	nodes = json.result[0]["nodes"]
 	var messages = _get_messages()
 	for message in messages:
-		var character = message['character'][0]
-		var text = message['text']['ENG']
+		var character = message["character"][0]
+		var text = message["text"]["ENG"]
 		var message_panel = MessagePanelScene.instance()
 		Utils.connect_signal(message_panel, "message_finished", self, "_on_message_finished")
 		message_panel.character = character
@@ -33,15 +33,15 @@ func start():
 
 func _split_message(message, max_length_per_line: int = 123):
 	var line_length: int = 0
-	var current_message: String = ''
+	var current_message: String = ""
 	var messages: Array = []
-	var tokens: Array = message.split(' ');
+	var tokens: Array = message.split(" ")
 	var first_iter: bool = true
 	for index in tokens.size():
 		var token_length: int = _get_token_length(tokens[index])
 		if token_length + line_length < max_length_per_line:
 			line_length += token_length
-			current_message += ' ' if not first_iter else ''
+			current_message += " " if not first_iter else ""
 			current_message += tokens[index]
 			# If we reach the end of the array append the message to the messages list
 			if index >= tokens.size() - 1:
@@ -50,13 +50,13 @@ func _split_message(message, max_length_per_line: int = 123):
 		else:
 			first_iter = true
 			messages.append(current_message + " " + tokens[index].strip_edges())
-			current_message = ''
+			current_message = ""
 			line_length = 0
 			if messages.size() % 3 == 0 and index < tokens.size() - 1:
 				var last_message: String = messages.pop_back()
 				messages.append(last_message + "{sep}")
 
-	var final_message: String = ''
+	var final_message: String = ""
 	for msg in messages:
 		final_message += msg
 		if not "{sep}" in msg:
@@ -77,7 +77,7 @@ func _get_token_length(token: String) -> int:
 
 func _get_messages():
 	var start = _find_start_node()
-	var next = start['next']
+	var next = start["next"]
 	var sorted_messages = []
 	var next_node = _find_next_message(next)
 	while next_node != null:
@@ -89,7 +89,7 @@ func _get_messages():
 
 func _find_start_node():
 	for node in nodes:
-		if node['node_name'] == 'START':
+		if node["node_name"] == "START":
 			return node
 	return null
 
@@ -100,7 +100,7 @@ func _find_message_nodes():
 
 func _find_next_message(node_name):
 	for node in nodes:
-		if node['node_name'] == node_name:
+		if node["node_name"] == node_name:
 			return node
 	return null
 

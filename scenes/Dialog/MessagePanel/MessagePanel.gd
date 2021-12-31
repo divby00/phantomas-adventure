@@ -24,9 +24,10 @@ var current_glyph: int = 0
 var current_message: int = 0
 var wait_for_user: bool = false
 
+
 func _ready():
 	name_label.text = char_name
-	message_label.text = ''
+	message_label.text = ""
 	portrait.texture = char_portrait
 	portrait_background.texture = char_background
 
@@ -61,9 +62,9 @@ func _print_glyph():
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == 'open':
+	if anim_name == "open":
 		glyph_timer.start()
-	if anim_name == 'close':
+	if anim_name == "close":
 		emit_signal("message_finished", self)
 
 

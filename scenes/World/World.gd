@@ -4,10 +4,7 @@ onready var camera: Camera2D = $Camera2D
 onready var player: KinematicBody2D = $Player
 onready var lifebar: TextureProgress = $UI/LifeBar
 
-
-const Levels = {
-	"01": preload("res://scenes/World/Levels/Level01.tscn")
-}
+const Levels = {"01": preload("res://scenes/World/Levels/Level01.tscn")}
 
 
 func _ready():
@@ -35,6 +32,7 @@ func _connect_signals():
 	_connect_enemies()
 	pass
 
+
 #	var platforms = get_tree().get_nodes_in_group("PlatformGroup")
 #	for platform in platforms:
 #		Utils.connect_signal(platform, "is_over_platform", player, "_over_platform")
@@ -42,6 +40,8 @@ func _connect_signals():
 
 func _connect_enemies():
 	pass
+
+
 #	var enemies = get_tree().get_nodes_in_group("EnemyGroup")
 #	for enemy in enemies:
 #		Utils.connect_signal(enemy, "")

@@ -1,13 +1,7 @@
 extends CanvasLayer
 
-
 const MESSAGES: Array = [
-	"2022 M.A Software + Love4Retro",
-	"Program by:", "Miguel Ángel Jiménez & Jesús Chicharro",
-	"Graphics by:", "Jesús Chicharro",
-	"Music by:", "Miguel Ángel Jiménez",
-	"This is free software",
-	"We hope you enjoy it!",
+	"CREDITS_MESSAGE_01", "CREDITS_MESSAGE_02", "CREDITS_MESSAGE_03", "CREDITS_MESSAGE_04", "CREDITS_MESSAGE_05"
 ]
 
 onready var label: Label = $Label
@@ -26,7 +20,9 @@ func _ready() -> void:
 func _start_tween():
 	label.rect_position.x = -192
 	label.text = MESSAGES[message_index]
-	tween.interpolate_property(label, "rect_position", Vector2(-192, 256), Vector2(384, 256), 2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.interpolate_property(
+		label, "rect_position", Vector2(-192, 256), Vector2(384, 256), 2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+	)
 	tween.start()
 
 

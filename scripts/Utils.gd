@@ -1,7 +1,7 @@
 extends Node
 
 
-func connect_signal(source, signal_name, target, method_name, parameters=[]):
+func connect_signal(source, signal_name, target, method_name, parameters = []):
 	if not source.is_connected(signal_name, target, method_name):
 		source.connect(signal_name, target, method_name, parameters)
 
@@ -20,4 +20,3 @@ static func text_file_read(path: String):
 static func json_file_read(path: String):
 	var text = text_file_read(path)
 	return JSON.parse(text)
-

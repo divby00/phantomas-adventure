@@ -2,107 +2,128 @@ extends Object
 class_name Characters
 
 const data = {
-	"Player": {
+	"Player":
+	{
 		"name": "Phantomas",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-phantomas.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-gray.png")
 	},
-	"Unknown": {
+	"Unknown":
+	{
 		"name": "Extraño",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-brown.png")
 	},
-	"Lorenzo": {
+	"Lorenzo":
+	{
 		"name": "Lorenzo",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-lorenzo.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-red.png")
 	},
-	"TioJuan": {
+	"TioJuan":
+	{
 		"name": "Tio Juan",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-tiojuan.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-pink.png")
 	},
-	"TioRamon": {
+	"TioRamon":
+	{
 		"name": "Tio Ramón",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-tioramon.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-green.png")
 	},
-	"TiaSimona": {
+	"TiaSimona":
+	{
 		"name": "Tia Simona",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-tiasimona.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-blue.png")
 	},
-	"Agustin": {
+	"Agustin":
+	{
 		"name": "Agustín",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-agustin.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-brown.png")
 	},
-	"Maximina": {
+	"Maximina":
+	{
 		"name": "Maximina",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-red.png")
 	},
-	"Heladia": {
+	"Heladia":
+	{
 		"name": "Heladia",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-pink.png")
 	},
-	"TioEleuterio": {
+	"TioEleuterio":
+	{
 		"name": "Tio Eleuterio",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-green.png")
 	},
-	"TioCalixto": {
+	"TioCalixto":
+	{
 		"name": "Tio Calixto",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-blue.png")
 	},
-	"TioValentin": {
+	"TioValentin":
+	{
 		"name": "Tio Valentín",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-brown.png")
 	},
-	"DonFrancisco": {
+	"DonFrancisco":
+	{
 		"name": "Don Francisco",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-brown.png")
 	},
-	"Flora": {
+	"Flora":
+	{
 		"name": "Flora",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-brown.png")
 	},
-	"Felipa": {
+	"Felipa":
+	{
 		"name": "Felipa",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-brown.png")
 	},
-	"TioVenancio": {
+	"TioVenancio":
+	{
 		"name": "Tio Venancio",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-brown.png")
 	},
-	"TiaSusana": {
+	"TiaSusana":
+	{
 		"name": "Tia Susana",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-brown.png")
 	},
-	"DomingueroPadre": {
+	"DomingueroPadre":
+	{
 		"name": "Dominguero Padre",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-brown.png")
 	},
-	"DomingueraMadre": {
+	"DomingueraMadre":
+	{
 		"name": "Dominguera Madre",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-brown.png")
 	},
-	"DomingueroHijo": {
+	"DomingueroHijo":
+	{
 		"name": "Dominguero Hijo",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-brown.png")
 	},
-	"DomingueraHija": {
+	"DomingueraHija":
+	{
 		"name": "Dominguera Hija",
 		"portrait": preload("res://resources/sprites/dialogs/portrait-unknown.png"),
 		"background": preload("res://resources/sprites/dialogs/frame-bg-brown.png")
@@ -111,12 +132,12 @@ const data = {
 
 
 static func get_name(id) -> String:
-	return data[id].name;
+	return data[id].name
 
 
 static func get_portrait(id) -> Texture:
-	return data[id].portrait;
+	return data[id].portrait
 
 
 static func get_background(id) -> Texture:
-	return data[id].background;
+	return data[id].background

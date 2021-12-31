@@ -1,6 +1,5 @@
 extends Node2D
 
-
 const Steps = preload("res://resources/sounds/intro-steps.wav")
 const WorldScene: PackedScene = preload("res://scenes/World/World.tscn")
 
@@ -81,4 +80,3 @@ func _on_dialog_finished(_dialog):
 func _on_TransitionOut_transition_out_finished():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene_to(WorldScene)
-

@@ -1,11 +1,10 @@
 extends Node2D
 
-
 const Love4RetroScene = preload("res://scenes/Love4Retro/Love4Retro.tscn")
 
 
 func _ready() -> void:
-	print("Starting 'Phantomas en la sierra' version " + ProjectSettings.get("application/config/version"));
+	print("Starting 'Phantomas en la sierra' version " + ProjectSettings.get("application/config/version"))
 	Configuration.load_and_save_config()
 
 

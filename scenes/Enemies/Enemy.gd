@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 onready var hitbox: Area2D = $Hitbox
 
 

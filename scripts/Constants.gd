@@ -1,6 +1,5 @@
 extends Node
 
-
 const GRAVITY: int = 200
 const FRICTION: float = .5
 const MAX_SPEED: int = 48

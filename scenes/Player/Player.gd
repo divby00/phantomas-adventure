@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 const BombScene: PackedScene = preload("res://scenes/Player/Bomb/Bomb.tscn")
 
 onready var timer = $Timer
@@ -23,8 +22,10 @@ var phantom = true setget set_phantom
 
 
 func _physics_process(delta):
-	if bomb: _handle_bomb()
-	if phantom: _handle_phantom()
+	if bomb:
+		_handle_bomb()
+	if phantom:
+		_handle_phantom()
 	var input_vector: Vector2 = _get_input_vector()
 	_apply_horizontal_force(input_vector, delta)
 	_apply_friction(input_vector)
@@ -89,11 +90,11 @@ func _jump_check(_input_vector, _delta):
 			motion.y = -Constants.JUMP_FORCE
 		if Input.is_action_just_pressed("Down"):
 			jumping = true
-			motion.y = -(Constants.JUMP_FORCE/5) * 4
+			motion.y = -(Constants.JUMP_FORCE / 5) * 4
 	else:
-		if Input.is_action_just_released("Up") and motion.y < -Constants.JUMP_FORCE/2:
+		if Input.is_action_just_released("Up") and motion.y < -Constants.JUMP_FORCE / 2:
 			jumping = true
-			motion.y = -Constants.JUMP_FORCE/2
+			motion.y = -Constants.JUMP_FORCE / 2
 
 
 func _update_animation(input_vector):
@@ -133,7 +134,7 @@ func _on_Area2D_body_exited(_body: Node) -> void:
 
 
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
-	if anim_name == 'phantom-right' or anim_name == 'phantom-left':
+	if anim_name == "phantom-right" or anim_name == "phantom-left":
 		using_phantom = false
 
 

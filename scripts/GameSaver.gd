@@ -1,6 +1,5 @@
 extends Node
 
-
 const SaveGame = preload("res://scripts/SaveGame.gd")
 const SAVE_NAME_TEMPLATE: String = "save_%03d.tres"
 

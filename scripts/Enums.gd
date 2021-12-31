@@ -1,6 +1,3 @@
 extends Node
 
-
-enum FACING {
-	LEFT, RIGHT
-}
+enum FACING { LEFT, RIGHT }

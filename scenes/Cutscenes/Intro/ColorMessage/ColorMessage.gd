@@ -4,8 +4,8 @@ extends Node2D
 signal remove
 signal message_removed
 
-export var message_key: String;
-export var speed: float = 0.5;
+export var message_key: String
+export var speed: float = 0.5
 
 const ColorGlyphScene: PackedScene = preload("res://scenes/Cutscenes/Intro/ColorMessage/ColorGlyph.tscn")
 const AsepriteFont: DynamicFont = preload("res://resources/fonts/aseprite.tres")
@@ -15,7 +15,7 @@ onready var timer: Timer = $Timer
 onready var remove_timer: Timer = $RemoveTimer
 
 var message: String
-var cursor_position: int = 0;
+var cursor_position: int = 0
 var character_position: Vector2 = Vector2.ZERO
 var characters_buffer: PoolByteArray = []
 
@@ -38,7 +38,7 @@ func start():
 
 
 func remove():
-	emit_signal('remove')
+	emit_signal("remove")
 	remove_timer.start()
 
 

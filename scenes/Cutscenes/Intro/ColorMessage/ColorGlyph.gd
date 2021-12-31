@@ -13,4 +13,3 @@ func start():
 
 func on_remove():
 	animation_player.play("remove")
-

@@ -15,6 +15,6 @@ func _process(_delta: float) -> void:
 func _on_BaseItem_body_entered(_body: Node) -> void:
 	collision = true
 
+
 func _on_BaseItem_body_exited(_body: Node) -> void:
 	collision = false
-

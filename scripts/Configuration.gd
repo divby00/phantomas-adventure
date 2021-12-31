@@ -16,49 +16,55 @@ var key_exit = 16777217 setget set_key_exit
 var save_slot = 1 setget set_save_slot
 var locale = TranslationServer.get_locale() setget set_locale
 
+
 func set_locale(value):
-	if ['es','en'].has(value):
+	if ["es", "en"].has(value):
 		locale = value
 	else:
-		locale = 'en'
+		locale = "en"
 	TranslationServer.set_locale(locale)
 	save()
 
+
 func set_save_slot(value):
-	if (value<1):
-		value=1
-	if (value>3):
-		value=3
-	save_slot = value
+	save_slot = clamp(value, 1, 3)
 	save()
+
 
 func set_key_up(value):
 	key_up = value
 	save()
 
+
 func set_key_down(value):
 	key_down = value
 	save()
+
 
 func set_key_left(value):
 	key_left = value
 	save()
 
+
 func set_key_right(value):
 	key_right = value
 	save()
+
 
 func set_key_action(value):
 	key_action = value
 	save()
 
+
 func set_key_inventory(value):
 	key_inventory = value
 	save()
 
+
 func set_key_exit(value):
 	key_exit = value
 	save()
+
 
 func set_fullscreen(value):
 	if OS.get_name() != "HTML5":
@@ -93,15 +99,15 @@ func save():
 	config.set_value("control", "key_action", self.key_action)
 	config.set_value("control", "key_inventory", self.key_inventory)
 	config.set_value("control", "key_exit", self.key_exit)
-	config.set_value("save","slot",self.save_slot)
-	config.set_value("language","locale",self.locale)
+	config.set_value("save", "slot", self.save_slot)
+	config.set_value("language", "locale", self.locale)
 	config.save(file_config)
+
 
 func load_and_save_config():
 	var config = ConfigFile.new()
 	var err = config.load(file_config)
 	if err == OK:
-
 		if not config.has_section_key("language", "locale"):
 			config.set_value("language", "locale", self.locale)
 		else:
@@ -163,4 +169,3 @@ func load_and_save_config():
 			self.key_exit = config.get_value("control", "key_exit", InputMap.get_action_list("Exit")[0])
 
 	config.save(file_config)
-
