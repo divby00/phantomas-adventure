@@ -86,8 +86,8 @@ func _on_menu_init(menu):
 			menu.button.text = OS.get_scancode_string(Configuration.key_action)
 		"MENU_CONTROL_REDEFINE_INVENTORY":
 			menu.button.text = OS.get_scancode_string(Configuration.key_inventory)
-		"MENU_CONTROL_REDEFINE_EXIT":
-			menu.button.text = OS.get_scancode_string(Configuration.key_exit)
+		"MENU_CONTROL_REDEFINE_CANCEL":
+			menu.button.text = OS.get_scancode_string(Configuration.key_cancel)
 
 
 func _on_menu_selected(menu):
@@ -121,19 +121,19 @@ func _on_menu_selected(menu):
 			Configuration.locale = "en"
 
 
-func _on_key_redefined(action, scancode):
+func _on_key_redefined(action, keyevent):
 	match action:
 		"Up":
-			Configuration.key_up = scancode
+			Configuration.key_up = keyevent.scancode
 		"Down":
-			Configuration.key_down = scancode
+			Configuration.key_down = keyevent.scancode
 		"Left":
-			Configuration.key_left = scancode
+			Configuration.key_left = keyevent.scancode
 		"Right":
-			Configuration.key_right = scancode
+			Configuration.key_right = keyevent.scancode
 		"Action":
-			Configuration.key_action = scancode
+			Configuration.key_action = keyevent.scancode
 		"Inventory":
-			Configuration.key_inventory = scancode
-		"Exit":
-			Configuration.key_exit = scancode
+			Configuration.key_inventory = keyevent.scancode
+		"Cancel":
+			Configuration.key_cancel = keyevent.scancode

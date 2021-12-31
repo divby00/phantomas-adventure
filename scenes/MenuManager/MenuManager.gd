@@ -1,8 +1,8 @@
 class_name MenuManager extends CanvasLayer
 
-signal menu_selected(menu)
-signal menu_init(menu)
-signal key_redefined(action, scancode)
+signal menu_selected(item)
+signal menu_init(item)
+signal key_redefined(action, keyevent)
 
 const ThemeResource: Theme = preload("res://resources/theme.tres")
 
@@ -50,7 +50,7 @@ func _redefine_key(new_key):
 	InputMap.action_add_event(redefine_key.action, new_key)
 	redefine_key.button.text = scancode_label
 	redefine_key.button.pressed = false
-	self.emit_signal("key_redefined", redefine_key.action, scancode)
+	self.emit_signal("key_redefined", redefine_key.action, new_key)
 	redefine_key = null
 	new_key.pressed = false
 

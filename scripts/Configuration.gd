@@ -11,7 +11,7 @@ var key_left = 16777231 setget set_key_left
 var key_right = 16777233 setget set_key_right
 var key_action = 32 setget set_key_action
 var key_inventory = 73 setget set_key_inventory
-var key_exit = 16777217 setget set_key_exit
+var key_cancel = 16777217 setget set_key_cancel
 
 var save_slot = 1 setget set_save_slot
 var locale = TranslationServer.get_locale() setget set_locale
@@ -61,8 +61,8 @@ func set_key_inventory(value):
 	save()
 
 
-func set_key_exit(value):
-	key_exit = value
+func set_key_cancel(value):
+	key_cancel = value
 	save()
 
 
@@ -98,7 +98,7 @@ func save():
 	config.set_value("control", "key_right", self.key_right)
 	config.set_value("control", "key_action", self.key_action)
 	config.set_value("control", "key_inventory", self.key_inventory)
-	config.set_value("control", "key_exit", self.key_exit)
+	config.set_value("control", "key_cancel", self.key_cancel)
 	config.set_value("save", "slot", self.save_slot)
 	config.set_value("language", "locale", self.locale)
 	config.save(file_config)
@@ -137,35 +137,49 @@ func load_and_save_config():
 			config.set_value("control", "key_up", self.key_up)
 		else:
 			self.key_up = config.get_value("control", "key_up", InputMap.get_action_list("Up")[0])
-
+		_init_input_map("Up",self.key_up)
+				
 		if not config.has_section_key("control", "key_down"):
 			config.set_value("control", "key_down", self.key_down)
 		else:
 			self.key_down = config.get_value("control", "key_down", InputMap.get_action_list("Down")[0])
+		_init_input_map("Down",self.key_down)
 
 		if not config.has_section_key("control", "key_left"):
 			config.set_value("control", "key_left", self.key_left)
 		else:
 			self.key_left = config.get_value("control", "key_left", InputMap.get_action_list("Left")[0])
+		_init_input_map("Left",self.key_left)
 
 		if not config.has_section_key("control", "key_right"):
 			config.set_value("control", "key_right", self.key_right)
 		else:
 			self.key_right = config.get_value("control", "key_right", InputMap.get_action_list("Right")[0])
+		_init_input_map("Right",self.key_right)
 
 		if not config.has_section_key("control", "key_action"):
 			config.set_value("control", "key_action", self.key_action)
 		else:
 			self.key_action = config.get_value("control", "key_action", InputMap.get_action_list("Action")[0])
+		_init_input_map("Action",self.key_action)
 
 		if not config.has_section_key("control", "key_inventory"):
 			config.set_value("control", "key_inventory", self.key_inventory)
 		else:
 			self.key_inventory = config.get_value("control", "key_inventory", InputMap.get_action_list("Inventory")[0])
+		_init_input_map("Inventory",self.key_inventory)
 
-		if not config.has_section_key("control", "key_exit"):
-			config.set_value("control", "key_exit", self.key_exit)
+		if not config.has_section_key("control", "key_cancel"):
+			config.set_value("control", "key_cancel", self.key_cancel)
 		else:
-			self.key_exit = config.get_value("control", "key_exit", InputMap.get_action_list("Exit")[0])
+			self.key_cancel = config.get_value("control", "key_cancel", InputMap.get_action_list("Cancel")[0])
+		_init_input_map("Cancel",self.key_cancel)
 
 	config.save(file_config)
+
+
+func _init_input_map(action,scancode):
+	InputMap.action_erase_events(action)
+	var event = InputEventKey.new()
+	event.scancode = scancode
+	InputMap.action_add_event(action, event)

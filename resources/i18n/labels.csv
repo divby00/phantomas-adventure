@@ -32,9 +32,9 @@ MENU_CONTROL_REDEFINE_LEFT,Izquierda,Left
 MENU_CONTROL_REDEFINE_RIGHT,Derecha,Right
 MENU_CONTROL_REDEFINE_ACTION,Bomba,Bomb
 MENU_CONTROL_REDEFINE_INVENTORY,Inventario,Inventory
-MENU_CONTROL_REDEFINE_EXIT,Salir,Exit
-CREDITS_MESSAGE_01,"2022 M.A Software + Love4Retro","2022 M.A Software + Love4Retro"
-CREDITS_MESSAGE_02,"Creado por:","Created by:"
-CREDITS_MESSAGE_03,"Miguel Ángel Jiménez y Jesús Chicharro","Miguel Ángel Jiménez & Jesús Chicharro"
-CREDITS_MESSAGE_04,"Este juego es software libre","This game is free software"
-CREDITS_MESSAGE_05,"¡Esperamos que te guste!","We hope you enjoy it!"
+MENU_CONTROL_REDEFINE_CANCEL,Salir,Exit
+CREDITS_MESSAGE_01,2022 M.A Software + Love4Retro,2022 M.A Software + Love4Retro
+CREDITS_MESSAGE_02,Creado por:,Created by:
+CREDITS_MESSAGE_03,Miguel Ángel Jiménez y Jesús Chicharro,Miguel Ángel Jiménez & Jesús Chicharro
+CREDITS_MESSAGE_04,Este juego es software libre,This game is free software
+CREDITS_MESSAGE_05,¡Esperamos que te guste!,We hope you enjoy it!

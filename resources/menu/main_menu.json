@@ -178,9 +178,9 @@
         "action": "Inventory"
       },
       {
-        "text": "MENU_CONTROL_REDEFINE_EXIT",
+        "text": "MENU_CONTROL_REDEFINE_CANCEL",
         "type": "keypress",
-        "action": "Exit"
+        "action": "Cancel"
       },
       {
         "text": "MENU_HRULE",
