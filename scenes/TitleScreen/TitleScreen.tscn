@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://resources/sprites/title/title-sky.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Transition/TransitionIn.tscn" type="PackedScene" id=2]
@@ -10,8 +10,13 @@
 [ext_resource path="res://scenes/MenuManager/MenuManager.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Transition/TransitionOut.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/TitleScreen/Credits/Credits.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/TitleScreen/Tree/Tree.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/TitleScreen/Trees/TallTree.tscn" type="PackedScene" id=11]
 [ext_resource path="res://resources/sounds/blip.wav" type="AudioStream" id=12]
+[ext_resource path="res://scenes/TitleScreen/Trees/ShortTree.tscn" type="PackedScene" id=13]
+[ext_resource path="res://resources/sprites/title/title-tree-4.png" type="Texture" id=14]
+[ext_resource path="res://resources/sprites/title/title-tree-1.png" type="Texture" id=15]
+[ext_resource path="res://resources/sprites/title/title-tree-3.png" type="Texture" id=16]
+[ext_resource path="res://resources/sprites/title/title-tree-2.png" type="Texture" id=17]
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource( 5 )
@@ -57,232 +62,461 @@ texture = ExtResource( 7 )
 position = Vector2( 240, 80 )
 texture = ExtResource( 6 )
 
-[node name="TreeContainer" type="Node2D" parent="."]
+[node name="FurtherTreesContainer" type="Node2D" parent="."]
+position = Vector2( 0, -12 )
 
-[node name="Tree" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 0, 208 )
+[node name="TallTree" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( -4, 176 )
+texture = ExtResource( 14 )
 
-[node name="Tree6" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 12, 218 )
+[node name="TallTree2" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 16, 184 )
+texture = ExtResource( 14 )
 
-[node name="Tree7" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 12, 218 )
+[node name="TallTree3" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 44, 196 )
+texture = ExtResource( 14 )
 
-[node name="Tree2" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 32, 216 )
+[node name="TallTree4" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 70, 198 )
+texture = ExtResource( 14 )
 
-[node name="Tree3" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 6, 214 )
+[node name="TallTree5" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 96, 204 )
+texture = ExtResource( 14 )
 
-[node name="Tree8" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( -4, 212 )
+[node name="TallTree6" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 128, 210 )
+texture = ExtResource( 14 )
 
-[node name="Tree9" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 40, 224 )
+[node name="TallTree7" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 152, 206 )
+texture = ExtResource( 14 )
 
-[node name="Tree10" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 36, 218 )
+[node name="TallTree8" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 178, 208 )
+texture = ExtResource( 14 )
 
-[node name="Tree11" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 50, 230 )
+[node name="TallTree9" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 200, 210 )
+texture = ExtResource( 14 )
 
-[node name="Tree12" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 46, 218 )
+[node name="TallTree10" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 220, 214 )
+texture = ExtResource( 14 )
 
-[node name="Tree13" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 50, 222 )
+[node name="TallTree11" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 244, 208 )
+texture = ExtResource( 14 )
 
-[node name="Tree14" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 56, 220 )
+[node name="TallTree12" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 276, 208 )
+texture = ExtResource( 14 )
 
-[node name="Tree15" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 60, 226 )
+[node name="TallTree27" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 270, 204 )
+texture = ExtResource( 14 )
 
-[node name="Tree16" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 74, 236 )
+[node name="TallTree28" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 120, 210 )
+texture = ExtResource( 14 )
 
-[node name="Tree17" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 84, 226 )
+[node name="TallTree29" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 104, 202 )
+texture = ExtResource( 14 )
 
-[node name="Tree18" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 96, 236 )
+[node name="TallTree30" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 76, 198 )
+texture = ExtResource( 14 )
 
-[node name="Tree19" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 110, 228 )
+[node name="TallTree31" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 52, 200 )
+texture = ExtResource( 14 )
 
-[node name="Tree20" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 120, 224 )
+[node name="TallTree32" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 90, 208 )
+texture = ExtResource( 14 )
 
-[node name="Tree21" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 116, 226 )
+[node name="TallTree13" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 298, 208 )
+texture = ExtResource( 14 )
 
-[node name="Tree25" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 136, 224 )
+[node name="TallTree14" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 322, 202 )
+texture = ExtResource( 14 )
 
-[node name="Tree26" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 156, 230 )
+[node name="TallTree15" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 344, 204 )
+texture = ExtResource( 14 )
 
-[node name="Tree27" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 148, 224 )
+[node name="TallTree16" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 364, 194 )
+texture = ExtResource( 14 )
 
-[node name="Tree28" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 168, 226 )
+[node name="TallTree17" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 384, 190 )
+texture = ExtResource( 14 )
 
-[node name="Tree29" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 142, 218 )
+[node name="TallTree18" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 404, 188 )
+texture = ExtResource( 14 )
 
-[node name="Tree30" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 128, 226 )
+[node name="TallTree19" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 422, 188 )
+texture = ExtResource( 14 )
 
-[node name="Tree31" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 182, 234 )
+[node name="TallTree20" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 436, 192 )
+texture = ExtResource( 14 )
 
-[node name="Tree32" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 174, 232 )
+[node name="TallTree21" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 450, 174 )
+texture = ExtResource( 14 )
 
-[node name="Tree33" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 192, 240 )
+[node name="TallTree22" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 468, 174 )
+texture = ExtResource( 14 )
 
-[node name="Tree34" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 190, 222 )
+[node name="TallTree23" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 460, 178 )
+texture = ExtResource( 14 )
 
-[node name="Tree35" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 192, 232 )
+[node name="TallTree24" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 310, 208 )
+texture = ExtResource( 14 )
 
-[node name="Tree36" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 204, 226 )
+[node name="TallTree25" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 284, 212 )
+texture = ExtResource( 14 )
 
-[node name="Tree37" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 202, 236 )
+[node name="TallTree26" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 284, 212 )
+texture = ExtResource( 14 )
 
-[node name="Tree38" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 212, 228 )
+[node name="ShortTree" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 6, 176 )
+texture = ExtResource( 16 )
 
-[node name="Tree39" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 222, 222 )
+[node name="ShortTree2" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 12, 184 )
+texture = ExtResource( 16 )
 
-[node name="Tree40" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 232, 224 )
+[node name="ShortTree3" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 26, 182 )
+texture = ExtResource( 16 )
 
-[node name="Tree41" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 250, 222 )
+[node name="ShortTree4" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 36, 192 )
+texture = ExtResource( 16 )
 
-[node name="Tree42" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 258, 228 )
+[node name="ShortTree5" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 60, 198 )
+texture = ExtResource( 16 )
 
-[node name="Tree54" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 292, 224 )
+[node name="ShortTree6" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 82, 204 )
+texture = ExtResource( 16 )
 
-[node name="Tree55" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 298, 228 )
+[node name="ShortTree7" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 108, 204 )
+texture = ExtResource( 16 )
 
-[node name="Tree56" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 310, 226 )
+[node name="ShortTree8" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 140, 212 )
+texture = ExtResource( 16 )
 
-[node name="Tree57" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 320, 234 )
+[node name="ShortTree9" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 164, 210 )
+texture = ExtResource( 16 )
 
-[node name="Tree58" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 330, 228 )
+[node name="ShortTree10" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 190, 208 )
+texture = ExtResource( 16 )
 
-[node name="Tree59" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 338, 236 )
+[node name="ShortTree11" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 210, 216 )
+texture = ExtResource( 16 )
 
-[node name="Tree60" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 348, 222 )
+[node name="ShortTree12" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 232, 206 )
+texture = ExtResource( 16 )
 
-[node name="Tree61" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 358, 230 )
+[node name="ShortTree13" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 256, 208 )
+texture = ExtResource( 16 )
 
-[node name="Tree62" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 366, 228 )
+[node name="ShortTree14" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 262, 206 )
+texture = ExtResource( 16 )
 
-[node name="Tree63" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 374, 234 )
+[node name="ShortTree15" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 290, 210 )
+texture = ExtResource( 16 )
 
-[node name="Tree64" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 384, 222 )
+[node name="ShortTree16" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 354, 196 )
+texture = ExtResource( 16 )
 
-[node name="Tree65" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 392, 232 )
+[node name="ShortTree19" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 318, 204 )
+texture = ExtResource( 16 )
 
-[node name="Tree66" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 402, 226 )
+[node name="ShortTree20" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 372, 194 )
+texture = ExtResource( 16 )
 
-[node name="Tree67" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 470, 212 )
+[node name="ShortTree21" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 392, 190 )
+texture = ExtResource( 16 )
 
-[node name="Tree73" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 470, 212 )
+[node name="ShortTree22" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 414, 184 )
+texture = ExtResource( 16 )
 
-[node name="Tree68" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 466, 218 )
+[node name="ShortTree23" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 430, 182 )
+texture = ExtResource( 16 )
 
-[node name="Tree69" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 456, 212 )
+[node name="ShortTree24" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 442, 176 )
+texture = ExtResource( 16 )
 
-[node name="Tree70" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 452, 218 )
+[node name="ShortTree25" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 458, 174 )
+texture = ExtResource( 16 )
 
-[node name="Tree71" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 426, 220 )
+[node name="ShortTree17" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 332, 200 )
+texture = ExtResource( 16 )
 
-[node name="Tree74" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 422, 226 )
+[node name="ShortTree18" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 332, 200 )
+texture = ExtResource( 16 )
 
-[node name="Tree75" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 422, 226 )
+[node name="CloserTreesContainer" type="Node2D" parent="."]
 
-[node name="Tree43" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 242, 226 )
+[node name="Tree" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( -6, 202 )
+texture = ExtResource( 15 )
 
-[node name="Tree22" parent="TreeContainer" instance=ExtResource( 11 )]
+[node name="Tree2" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 16, 204 )
+texture = ExtResource( 15 )
+
+[node name="Tree3" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 44, 216 )
+texture = ExtResource( 15 )
+
+[node name="Tree4" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 72, 220 )
+texture = ExtResource( 15 )
+
+[node name="Tree5" parent="CloserTreesContainer" instance=ExtResource( 11 )]
 position = Vector2( 102, 224 )
+texture = ExtResource( 15 )
 
-[node name="Tree23" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 90, 230 )
+[node name="Tree6" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 128, 230 )
+texture = ExtResource( 15 )
 
-[node name="Tree24" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 68, 222 )
+[node name="Tree7" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 148, 226 )
+texture = ExtResource( 15 )
 
-[node name="Tree44" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 410, 236 )
+[node name="Tree26" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 154, 230 )
+texture = ExtResource( 15 )
 
-[node name="Tree45" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 414, 222 )
+[node name="Tree8" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 170, 234 )
+texture = ExtResource( 15 )
 
-[node name="Tree46" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 432, 230 )
+[node name="Tree9" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 192, 224 )
+texture = ExtResource( 15 )
 
-[node name="Tree47" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 444, 220 )
+[node name="Tree10" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 214, 230 )
+texture = ExtResource( 15 )
 
-[node name="Tree72" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 444, 220 )
+[node name="Tree11" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 234, 220 )
+texture = ExtResource( 15 )
 
-[node name="Tree48" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 462, 218 )
+[node name="Tree12" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 248, 228 )
+texture = ExtResource( 15 )
 
-[node name="Tree49" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 440, 226 )
+[node name="Tree13" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 270, 222 )
+texture = ExtResource( 15 )
 
-[node name="Tree50" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 284, 230 )
+[node name="Tree14" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 288, 230 )
+texture = ExtResource( 15 )
 
-[node name="Tree51" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 274, 236 )
+[node name="Tree15" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 306, 224 )
+texture = ExtResource( 15 )
 
-[node name="Tree52" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 268, 226 )
+[node name="Tree16" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 326, 228 )
+texture = ExtResource( 15 )
 
-[node name="Tree53" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 268, 226 )
+[node name="Tree17" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 342, 220 )
+texture = ExtResource( 15 )
 
-[node name="Tree4" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 16, 208 )
+[node name="Tree18" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 362, 218 )
+texture = ExtResource( 15 )
 
-[node name="Tree5" parent="TreeContainer" instance=ExtResource( 11 )]
-position = Vector2( 24, 224 )
+[node name="Tree19" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 380, 220 )
+texture = ExtResource( 15 )
+
+[node name="Tree20" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 400, 228 )
+texture = ExtResource( 15 )
+
+[node name="Tree21" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 426, 222 )
+texture = ExtResource( 15 )
+
+[node name="Tree22" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 444, 216 )
+texture = ExtResource( 15 )
+
+[node name="Tree23" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 460, 216 )
+texture = ExtResource( 15 )
+
+[node name="Tree24" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 448, 220 )
+texture = ExtResource( 15 )
+
+[node name="Tree25" parent="CloserTreesContainer" instance=ExtResource( 11 )]
+position = Vector2( 472, 206 )
+texture = ExtResource( 15 )
+
+[node name="ShortTree" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 4, 204 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree2" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 30, 210 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree3" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 36, 214 )
+
+[node name="ShortTree4" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 54, 212 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree5" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 62, 222 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree6" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 84, 222 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree7" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 94, 228 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree8" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 114, 220 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree9" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 120, 228 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree10" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 138, 220 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree11" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 160, 222 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree12" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 180, 224 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree13" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 202, 228 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree14" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 226, 226 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree15" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 244, 222 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree16" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 258, 222 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree17" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 266, 220 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree18" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 278, 228 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree19" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 296, 224 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree20" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 316, 226 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree21" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 334, 220 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree22" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 352, 218 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree23" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 372, 222 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree24" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 388, 226 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree25" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 22, 208 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree26" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 408, 222 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree27" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 418, 224 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree28" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 436, 220 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree29" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 454, 214 )
+texture = ExtResource( 17 )
+
+[node name="ShortTree30" parent="CloserTreesContainer" instance=ExtResource( 13 )]
+position = Vector2( 466, 212 )
+texture = ExtResource( 17 )
 
 [node name="WindTimer" type="Timer" parent="."]
 wait_time = 0.1

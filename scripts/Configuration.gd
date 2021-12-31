@@ -137,48 +137,48 @@ func load_and_save_config():
 			config.set_value("control", "key_up", self.key_up)
 		else:
 			self.key_up = config.get_value("control", "key_up", InputMap.get_action_list("Up")[0])
-		_init_input_map("Up",self.key_up)
-				
+		_init_input_map("Up", self.key_up)
+
 		if not config.has_section_key("control", "key_down"):
 			config.set_value("control", "key_down", self.key_down)
 		else:
 			self.key_down = config.get_value("control", "key_down", InputMap.get_action_list("Down")[0])
-		_init_input_map("Down",self.key_down)
+		_init_input_map("Down", self.key_down)
 
 		if not config.has_section_key("control", "key_left"):
 			config.set_value("control", "key_left", self.key_left)
 		else:
 			self.key_left = config.get_value("control", "key_left", InputMap.get_action_list("Left")[0])
-		_init_input_map("Left",self.key_left)
+		_init_input_map("Left", self.key_left)
 
 		if not config.has_section_key("control", "key_right"):
 			config.set_value("control", "key_right", self.key_right)
 		else:
 			self.key_right = config.get_value("control", "key_right", InputMap.get_action_list("Right")[0])
-		_init_input_map("Right",self.key_right)
+		_init_input_map("Right", self.key_right)
 
 		if not config.has_section_key("control", "key_action"):
 			config.set_value("control", "key_action", self.key_action)
 		else:
 			self.key_action = config.get_value("control", "key_action", InputMap.get_action_list("Action")[0])
-		_init_input_map("Action",self.key_action)
+		_init_input_map("Action", self.key_action)
 
 		if not config.has_section_key("control", "key_inventory"):
 			config.set_value("control", "key_inventory", self.key_inventory)
 		else:
 			self.key_inventory = config.get_value("control", "key_inventory", InputMap.get_action_list("Inventory")[0])
-		_init_input_map("Inventory",self.key_inventory)
+		_init_input_map("Inventory", self.key_inventory)
 
 		if not config.has_section_key("control", "key_cancel"):
 			config.set_value("control", "key_cancel", self.key_cancel)
 		else:
 			self.key_cancel = config.get_value("control", "key_cancel", InputMap.get_action_list("Cancel")[0])
-		_init_input_map("Cancel",self.key_cancel)
+		_init_input_map("Cancel", self.key_cancel)
 
 	config.save(file_config)
 
 
-func _init_input_map(action,scancode):
+func _init_input_map(action, scancode):
 	InputMap.action_erase_events(action)
 	var event = InputEventKey.new()
 	event.scancode = scancode
