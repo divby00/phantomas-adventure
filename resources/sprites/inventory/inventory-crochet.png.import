@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/inventory-botijo.png-d86469305ef631f4a30e5e84e3625800.stex"
+path="res://.import/inventory-crochet.png-6dfa93a4ec43f443a3f75e2bafa89f81.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/inventory/inventory-botijo.png"
-dest_files=[ "res://.import/inventory-botijo.png-d86469305ef631f4a30e5e84e3625800.stex" ]
+source_file="res://resources/sprites/inventory/inventory-crochet.png"
+dest_files=[ "res://.import/inventory-crochet.png-6dfa93a4ec43f443a3f75e2bafa89f81.stex" ]
 
 [params]
 
