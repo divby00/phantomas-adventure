@@ -1,0 +1,24 @@
+{
+  "main": {
+    "entries": [
+      {
+        "text": "INTRO_QUESTION_01",
+        "type": "label"
+      },
+      {
+        "text": "MENU_HRULE",
+        "type": "hrule"
+      },
+      {
+        "text": "INTRO_CHOICE_YES",
+        "type": "button"
+      },
+      {
+        "text": "INTRO_CHOICE_NO",
+        "type": "button"
+      }
+    ]
+  }
+}
+
+

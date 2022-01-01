@@ -144,6 +144,29 @@
     ]
   },
 
+  "overwritegame": {
+    "entries": [
+      {
+        "text": "MENU_QUESTION_01",
+        "type": "label"
+      },
+      {
+        "text": "MENU_HRULE",
+        "type": "hrule"
+      },
+      {
+        "text": "MENU_CHOICE_OVERWRITE_YES",
+        "type": "button"
+      },
+      {
+        "text": "MENU_CHOICE_OVERWRITE_NO",
+        "type": "button",
+        "menu": "main"
+      }
+    ]
+  },
+
+
   "redefine":{
     "previous": "options",
     "entries": [

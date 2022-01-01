@@ -14,20 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/Characters.gd"
 }, {
+"base": "Reference",
+"class": "GameSlotData",
+"language": "GDScript",
+"path": "res://scripts/GameSlotData.gd"
+}, {
 "base": "CanvasLayer",
 "class": "MenuManager",
 "language": "GDScript",
 "path": "res://scenes/MenuManager/MenuManager.gd"
-}, {
-"base": "Resource",
-"class": "SaveGame",
-"language": "GDScript",
-"path": "res://scripts/SaveGame.gd"
 } ]
 _global_script_class_icons={
 "Characters": "",
-"MenuManager": "",
-"SaveGame": ""
+"GameSlotData": "",
+"MenuManager": ""
 }
 
 [application]
@@ -44,10 +44,10 @@ config/version="1.0.0"
 
 [autoload]
 
+GameSlotHandler="*res://scripts/GameSlotHandler.gd"
 Configuration="*res://scripts/Configuration.gd"
 Utils="*res://scripts/Utils.gd"
 EgaColors="*res://scripts/EgaColors.gd"
-GameSaver="*res://scripts/GameSaver.gd"
 Enums="*res://scripts/Enums.gd"
 Constants="*res://scripts/Constants.gd"
 Levels="*res://scripts/Levels.gd"

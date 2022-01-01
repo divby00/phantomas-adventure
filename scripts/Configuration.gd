@@ -28,6 +28,7 @@ func set_locale(value):
 
 func set_save_slot(value):
 	save_slot = clamp(value, 1, 3)
+	GameSlotHandler.set_slot(save_slot)
 	save()
 
 
@@ -117,6 +118,7 @@ func load_and_save_config():
 			config.set_value("save", "slot", self.save_slot)
 		else:
 			self.save_slot = config.get_value("save", "slot", 1)
+		GameSlotHandler.set_slot(self.save_slot)
 
 		if not config.has_section_key("display", "fullscreen"):
 			config.set_value("display", "fullscreen", self.fullscreen)

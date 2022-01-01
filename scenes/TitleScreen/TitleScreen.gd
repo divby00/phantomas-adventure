@@ -93,10 +93,20 @@ func _on_menu_init(menu):
 func _on_menu_selected(menu):
 	match menu.text:
 		"MENU_MAIN_NEWGAME":
+			if (GameSlotHandler.GameData.intro_viewed):
+				menu_manager.show_menu("overwritegame")
+			else:
+				where_to_go = Destination.NEW_GAME
+				transition_out.start()
+		"MENU_CHOICE_OVERWRITE_YES":
+			GameSlotHandler.init_slot()
 			where_to_go = Destination.NEW_GAME
 			transition_out.start()
 		"MENU_MAIN_CONTINUEGAME":
-			where_to_go = Destination.CONTINUE_GAME
+			if (GameSlotHandler.GameData.intro_viewed):
+				where_to_go = Destination.CONTINUE_GAME
+			else:
+				where_to_go = Destination.NEW_GAME
 			transition_out.start()
 		"MENU_MAIN_QUIT":
 			where_to_go = Destination.EXIT

@@ -13,6 +13,7 @@ onready var transition_out: CanvasLayer = $TransitionOut
 onready var music_player: AudioStreamPlayer = $MusicPlayer
 onready var animation_player: AnimationPlayer = $AnimationPlayer
 onready var acts = [$ColorMessage, $ColorMessage2, $ColorMessage3, $ColorMessage4]
+onready var menu_manager : MenuManager = $MenuManager
 
 var current_act = 0
 
@@ -22,10 +23,20 @@ func _ready():
 	for act in acts:
 		Utils.connect_signal(act, "message_removed", self, "_on_message_removed")
 	Utils.connect_signal(dialog, "dialog_finished", self, "_on_dialog_finished")
+	Utils.connect_signal(menu_manager, "menu_selected", self, "_on_menu_selected")
+
 	acts[current_act].start()
 # warning-ignore:return_value_discarded
 	music_tween.interpolate_property(music_player, "volume_db", 0, -80, 2.00, 1, Tween.EASE_IN, 0)
 
+func _process(delta):
+	if (menu_manager.is_visible()):
+		return
+
+	if Input.is_action_just_pressed("Cancel") or Input.is_action_just_pressed("ui_cancel"):
+		act_timer.paused=true
+		dialog.pause(true)
+		menu_manager.show_menu()
 
 func _on_Timer_timeout():
 	timer.stop()
@@ -79,4 +90,19 @@ func _on_dialog_finished(_dialog):
 
 func _on_TransitionOut_transition_out_finished():
 # warning-ignore:return_value_discarded
+	GameSlotHandler.GameData.intro_viewed=true
+	GameSlotHandler.update_slot()
 	get_tree().change_scene_to(WorldScene)
+
+func _on_menu_selected(menuitem):
+	match menuitem.text:
+		"INTRO_CHOICE_YES":
+			menu_manager.hide_menu()
+			dialog.pause(false)
+			dialog.stop()
+		"INTRO_CHOICE_NO":
+			menu_manager.hide_menu()
+			dialog.pause(false)
+			act_timer.paused=false
+
+
