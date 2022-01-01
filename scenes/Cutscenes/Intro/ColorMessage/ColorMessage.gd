@@ -8,7 +8,7 @@ export var message_key: String
 export var speed: float = 0.5
 
 const ColorGlyphScene: PackedScene = preload("res://scenes/Cutscenes/Intro/ColorMessage/ColorGlyph.tscn")
-const AsepriteFont: DynamicFont = preload("res://resources/fonts/aseprite.tres")
+const GameFont: DynamicFont = preload("res://resources/fonts/pixelphantom.tres")
 
 onready var label: Label = $Label
 onready var timer: Timer = $Timer
@@ -66,7 +66,7 @@ func _init_glyph(character, char_size):
 func _get_glyph_size(index):
 	var current_character = int(characters_buffer[index])
 	var next_character = int(characters_buffer[index + 1]) if index < message.length() - 1 else 0
-	return AsepriteFont.get_char_size(current_character, next_character)
+	return GameFont.get_char_size(current_character, next_character)
 
 
 func _on_RemoveTimer_timeout():

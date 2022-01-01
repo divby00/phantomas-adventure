@@ -4,7 +4,7 @@ signal dialog_finished
 
 export var file: String
 
-const MessageFont: DynamicFont = preload("res://resources/fonts/aseprite.tres")
+const MessageFont: DynamicFont = preload("res://resources/fonts/pixelphantom.tres")
 const MessagePanelScene: PackedScene = preload("res://scenes/Dialog/MessagePanel/MessagePanel.tscn")
 
 var nodes: Array = []
@@ -32,7 +32,7 @@ func start():
 
 func stop():
 	emit_signal("dialog_finished", self)
-	
+
 func pause(p:bool):
 	for mp in message_panels:
 		if (is_instance_valid(mp)):
