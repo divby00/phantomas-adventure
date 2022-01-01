@@ -44,3 +44,53 @@ CREDITS_MESSAGE_05,¡Esperamos que te guste!,We hope you enjoy it!
 INTRO_QUESTION_01,¿Seguro que quieres saltar la introducción?,Are you sure do you want to quit intro?
 INTRO_CHOICE_YES,"Sí, no quiero soportar este tostón","Yes, I don't want to take this mess"
 INTRO_CHOICE_NO,"No, no, es muy interesante","No, no, it's interesting"
+ITEM_WORM_LABEL,Gusano,Worm
+ITEM_WORM_TEXT,"Ummm, podría valer para pescar","Ummm, it will be good for fishing"
+ITEM_CROCHET_LABEL,Agujas de ganchillo,Crochet needles
+ITEM_CROCHET_TEXT,Vendrían muy bien estas agujas a alguien que sepa tejer,These crochet needles would be very useful to someone who knows how to knit
+ITEM_HORSESHOE_LABEL,Herradura,Horseshoe
+ITEM_HORSESHOE_TEXT,"Buena herradura, vendrá muy bien a algun caballo o asno","Good horseshoe, it will be very good for a horse or donkey"
+ITEM_TROUT_LABEL,Trucha,Trout
+ITEM_TROUT_TEXT,"Que buena pinta tiene esta trucha, para quien le guste el pescado, claro","How good this trout looks, for those who like fish, of course"
+ITEM_CAT_LABEL,Gato,Cat
+ITEM_CAT_TEXT,"Ahora que tengo a este bicho, solo tengo que buscar la forma de regresar","Now that I have this bug, I just have to find a way to return"
+ITEM_APPLE_LABEL,Manzana,Apple
+ITEM_APPLE_TEXT,"Tienen una pinta impresionante, seguro que saben mejor","They look awesome, they sure taste better"
+ITEM_JUG_LABEL,Botijo,Jug
+ITEM_JUG_TEXT,Contiene agua fresca y muy buena conductora,Contains fresh and a very good conductor water
+ITEM_BLANKET_LABEL,Manta,Blanket
+ITEM_BLANKET_TEXT,Que color rojo tan llamativo tiene esta manta,What a beautiful red color so striking this blanket has
+ITEM_MAGAZINE_LABEL,Revista,Magazine
+ITEM_MAGAZINE_TEXT,¡Guau! vaya pedazo de tetas tienen las gachis de esta revista,Woof! what a piece of tits the cunts in this magazine have
+ITEM_SALT_LABEL,Sal,Salt
+ITEM_SALT_TEXT,¡Vaya! esta sal es buena de verdad. Con solo una pizca se sazonaría un puchero entero,Wow! this salt is really good. Just a pinch would season an entire pot
+ITEM_SAUSAGE_LABEL,Chorizo,Sausage
+ITEM_SAUSAGE_TEXT,"Con el hambre que tengo, no se si podre aguantar sin comerme estos chorizos","With the hunger that I have, I do not know if I can endure without eating these sausages"
+ITEM_WINE_LABEL,Vino,Wine
+ITEM_WINE_TEXT,"Ummm, huele delicioso. Podría beberlo o usarlo para condimentar algo","Ummm, it smells delicious. I could drink it or use it to spice something up"
+ITEM_AXE_LABEL,Hacha,Axe
+ITEM_AXE_TEXT,Buena herramienta para cortar leña... o cabezas,Good tool for chopping firewood ... or heads
+ITEM_FIREWOOD_LABEL,Leña,Firewood
+ITEM_FIREWOOD_TEXT,Buena leña para hacer carbón,Good firewood for making charcoal
+ITEM_COAL_LABEL,Carbón,Coal
+ITEM_COAL_TEXT,Este carbón es de calidad,This charcoal is of quality
+ITEM_LOCKPICK_LABEL,Ganzúa,Lock pick
+ITEM_LOCKPICK_TEXT,Con esta ganzúa alguien como yo podría abrir cualquier cosa,With this lock pick someone like me could open anything
+ITEM_BATTERIES_LABEL,Pilas,Batteries
+ITEM_BATTERIES_TEXT,Hace tiempo que no chupo pilas... ¡Me encantan esas cosquillas!,I haven't sucked batteries in a long time ... I love those tickles!
+ITEM_ANTLERS_LABEL,Cornamenta de corzo,Roe deer antler
+ITEM_ANTLERS_TEXT,¡Menudo cabezón hará falta para soportar esta cornamenta!,What a big head it will take to support this roe deer antler!
+ITEM_KEYGOLD_LABEL,Llave dorada,Golden key
+ITEM_KEYGOLD_TEXT,Es una llave dorada,It's a golden key
+ITEM_KEYRED_LABEL,Llave roja,Red key
+ITEM_KEYRED_TEXT,Es una llave roja,It's a red key
+ITEM_KEYGREEN_LABEL,Llave verde,Green key
+ITEM_KEYGREEN_TEXT,Es una llave verde,It's a green key
+ITEM_MANDRAKE_LABEL,Mandrágora,Mandrake
+ITEM_MANDRAKE_TEXT,Siempre he creido que la mandrágora tiene propiedades mágicas,I have always believed that the mandrake has magical properties
+ITEM_MISTLETOE_LABEL,Muérdago,Mistletoe
+ITEM_MISTLETOE_TEXT,¡Que pena! No hay ninguna chica guapa por aquí para poder usarlo,What a pity! There ain't no pretty girl around to wear it
+ITEM_BELLADONNA_LABEL,Belladona,Belladonna
+ITEM_BELLADONNA_TEXT,¡Otra hierva que gusta a las brujas!,Another herb that witches like!
+ITEM_MUSHROOM_LABEL,Seta,Mushroom
+ITEM_MUSHROOM_TEXT,Tiene toda la pinta de ser una seta alucinógena,It has all the earmarks of being a hallucinogenic mushroom
