@@ -70,11 +70,15 @@ func _split_message(message):
 				current_message += current_line
 			current_line = token
 		else:
-			current_line += " " + token	
+			if (current_line!=""):
+				current_line += " "
+			current_line += token
+			
 	if (current_line!=""):
 		if (current_message!=""):
 			current_message+="\n"
-		messages.append(current_message+current_line)					
+		messages.append(current_message+current_line)	
+		
 	return messages
 
 
