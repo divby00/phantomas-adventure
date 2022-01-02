@@ -6,6 +6,8 @@ export var file: String
 
 const MessageFont: DynamicFont = preload("res://resources/fonts/pixelphantom.tres")
 const MessagePanelScene: PackedScene = preload("res://scenes/Dialog/MessagePanel/MessagePanel.tscn")
+const max_line_width = 195
+const max_lines = 3
 
 var nodes: Array = []
 var current_panel: int = 0
@@ -15,11 +17,17 @@ var message_panels: Array = []
 func _ready():
 	var path = "res://resources/i18n/dialogs/" + file
 	var json = Utils.json_file_read(path)
+	var locale = Configuration.locale
+	match(locale):
+		"es":
+			locale="SPA"
+		"en":
+			locale="ENG"
 	nodes = json.result[0]["nodes"]
 	var messages = _get_messages()
 	for message in messages:
 		var character = message["character"][0]
-		var text = message["text"]["ENG"]
+		var text = message["text"][locale]
 		var message_panel = MessagePanelScene.instance()
 		Utils.connect_signal(message_panel, "message_finished", self, "_on_message_finished")
 		message_panel.character = character
@@ -40,39 +48,34 @@ func pause(p: bool):
 		if is_instance_valid(mp):
 			mp.set_process(!p)
 
-
-func _split_message(message, max_length_per_line: int = 123):
-	var line_length: int = 0
-	var current_message: String = ""
+func _split_message(message):
 	var messages: Array = []
 	var tokens: Array = message.split(" ")
-	var first_iter: bool = true
-	for index in tokens.size():
-		var token_length: int = _get_token_length(tokens[index])
-		if token_length + line_length < max_length_per_line:
-			line_length += token_length
-			current_message += " " if not first_iter else ""
-			current_message += tokens[index]
-			# If we reach the end of the array append the message to the messages list
-			if index >= tokens.size() - 1:
-				messages.append(current_message.strip_edges())
-			first_iter = false
+	var current_message: String = ""
+	var current_line:String = ""
+	var text_width:int = 0
+	var lines:int = 0
+	for token in tokens:
+		text_width = MessageFont.get_string_size(current_line + " " + token).x
+		if text_width > max_line_width:
+			lines += 1
+			if (current_message!=""):
+				current_message+="\n"
+			if lines >= max_lines:
+				messages.append(current_message+current_line)
+				current_message = ""
+				current_line = ""
+				lines=0
+			else:
+				current_message += current_line
+			current_line = token
 		else:
-			first_iter = true
-			messages.append(current_message + " " + tokens[index].strip_edges())
-			current_message = ""
-			line_length = 0
-			if messages.size() % 3 == 0 and index < tokens.size() - 1:
-				var last_message: String = messages.pop_back()
-				messages.append(last_message + "{sep}")
-
-	var final_message: String = ""
-	for msg in messages:
-		final_message += msg
-		if not "{sep}" in msg:
-			final_message += "\n"
-
-	return final_message.split("{sep}")
+			current_line += " " + token	
+	if (current_line!=""):
+		if (current_message!=""):
+			current_message+="\n"
+		messages.append(current_message+current_line)					
+	return messages
 
 
 func _get_token_length(token: String) -> int:

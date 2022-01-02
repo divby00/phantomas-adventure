@@ -31,7 +31,6 @@ func _ready():
 	portrait.texture = char_portrait
 	portrait_background.texture = char_background
 
-
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept") and wait_for_user:
 		if current_message < messages.size() - 1:
