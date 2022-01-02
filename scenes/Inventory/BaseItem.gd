@@ -27,7 +27,7 @@ func get_id_name() -> String:
 
 func get_id_label() -> String:
 	return "ITEM_"+get_id_name()+"_LABEL"
-	
+
 func get_id_text() -> String:
 	return "ITEM_"+get_id_name()+"_TEXT"
 
@@ -50,7 +50,7 @@ func _load_icon():
 	var icon_path="res://resources/sprites/inventory/inventory-"+icontype.keys()[icon].to_lower()+".png"
 	if (icon!=icontype.NONE && sprite):
 		sprite.set_texture(load(icon_path))
-		
+
 func _on_BaseItem_body_entered(_body: Node) -> void:
 	collision = true
 

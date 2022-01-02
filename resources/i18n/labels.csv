@@ -1,6 +1,6 @@
 keys,es,en
 LANG_ES,Español,Spanish
-LANG_EN,Ingles,English
+LANG_EN,Inglés,English
 INTRO_MESSAGE_01,"En una celda tenebrosa, Phantomas se pudre solo... abandonado...","In a gloomy cell, Phantomas rots alone ... abandoned …"
 INTRO_MESSAGE_02,"¿Cuánto tiempo lleva encerrado? no hay manera de saberlo, meses, años quizás...","How long have you been locked up? there is no way to know, months, years maybe …"
 INTRO_MESSAGE_03,"No tiene importancia, su batería se está agotando y el final parece más cerca que nunca...","It doesn't matter, your battery is running low and the end seems closer than ever …"
@@ -13,18 +13,18 @@ MENU_MAIN_OPTIONS,Opciones,Options
 MENU_MAIN_QUIT,Salir,Exit
 MENU_OPTIONS_GRAPHICS,Gráficos,Graphics
 MENU_OPTIONS_SOUNDS,Sonidos,Sounds
-MENU_GRAPHICS_FULLSCREEN,Pantalla completa,Full Screen
-MENU_SOUNDS_SFX_VOLUME,Volumen de los efectos de sonido,Sound effect volume
+MENU_GRAPHICS_FULLSCREEN,Pantalla completa,Full screen
+MENU_SOUNDS_SFX_VOLUME,Volumen de los efectos de sonido,Sound effects volume
 MENU_SOUNDS_MUSIC_VOLUME,Volumen de la música,Music volume
 MENU_HRULE,,
-MENU_SAVE_SLOT,Ranura de Partida,Game Save Slot
+MENU_SAVE_SLOT,Ranura de partida,Game save slot
 MENU_SAVE_SLOT#1,Ranura #1,Slot #1
 MENU_SAVE_SLOT#2,Ranura #2,Slot #2
 MENU_SAVE_SLOT#3,Ranura #3,Slot #3
-MENU_LABEL_SFX,Efectos de sonido,Sound effect
+MENU_LABEL_SFX,Efectos de sonido,Sound effects
 MENU_LABEL_MUSIC,Música,Music
 MENU_OPTIONS_BACK,Volver,Return
-MENU_LANGUAGE,Seleccionar Idioma,Select Language
+MENU_LANGUAGE,Seleccionar idioma,Select language
 MENU_CONTROL_REDEFINE,Redefinir las teclas,Redefine keys
 MENU_CONTROL_REDEFINE_UP,Arriba,Up
 MENU_CONTROL_REDEFINE_DOWN,Abajo,Down
@@ -34,18 +34,18 @@ MENU_CONTROL_REDEFINE_ACTION,Bomba,Bomb
 MENU_CONTROL_REDEFINE_INVENTORY,Inventario,Inventory
 MENU_CONTROL_REDEFINE_CANCEL,Salir,Exit
 MENU_CHOICE_OVERWRITE_YES,"Sí, reemplaza","Yes, overwrite"
-MENU_CHOICE_OVERWRITE_NO,"No, ¡Por Dios!","No, My God!"
-MENU_QUESTION_01,¿Está seguro de querer sobre escribir la partida?,Are you sure to overwrite the game?
+MENU_CHOICE_OVERWRITE_NO,"No, ¡por Dios!","No, my God!"
+MENU_QUESTION_01,¿Seguro que quieres sobrescribir la partida?,Are you sure you want to overwrite the game?
 CREDITS_MESSAGE_01,M.A Software + Love4Retro (2022),M.A Software + Love4Retro (2022)
 CREDITS_MESSAGE_02,Creado por:,Created by:
 CREDITS_MESSAGE_03,Miguel Ángel Jiménez y Jesús Chicharro,Miguel Ángel Jiménez & Jesús Chicharro
 CREDITS_MESSAGE_04,Este juego es software libre,This game is free software
 CREDITS_MESSAGE_05,¡Esperamos que te guste!,We hope you enjoy it!
-INTRO_QUESTION_01,¿Seguro que quieres saltar la introducción?,Are you sure do you want to quit intro?
-INTRO_CHOICE_YES,"Sí, no quiero soportar este tostón","Yes, I don't want to take this mess"
-INTRO_CHOICE_NO,"No, no, es muy interesante","No, no, it's interesting"
+INTRO_QUESTION_01,¿Seguro que quieres saltar la introducción?,Are you sure you want to skip the intro?
+INTRO_CHOICE_YES,"Sí, no quiero soportar este tostón","Yes, I have had enough of this"
+INTRO_CHOICE_NO,"No, no, es muy interesante","No, no, it's very interesting"
 ITEM_WORM_LABEL,Gusano,Worm
-ITEM_WORM_TEXT,"Ummm, podría valer para pescar","Ummm, it will be good for fishing"
+ITEM_WORM_TEXT,"Ummm, podría valer para pescar","Ummm, it could be good for fishing"
 ITEM_CROCHET_LABEL,Agujas de ganchillo,Crochet needles
 ITEM_CROCHET_TEXT,Vendrían muy bien estas agujas a alguien que sepa tejer,These crochet needles would be very useful to someone who knows how to knit
 ITEM_HORSESHOE_LABEL,Herradura,Horseshoe
@@ -61,15 +61,15 @@ ITEM_JUG_TEXT,Contiene agua fresca y muy buena conductora,Contains fresh and a v
 ITEM_BLANKET_LABEL,Manta,Blanket
 ITEM_BLANKET_TEXT,Que color rojo tan llamativo tiene esta manta,What a beautiful red color so striking this blanket has
 ITEM_MAGAZINE_LABEL,Revista,Magazine
-ITEM_MAGAZINE_TEXT,¡Guau! vaya pedazo de tetas tienen las gachis de esta revista,Woof! what a piece of tits the cunts in this magazine have
+ITEM_MAGAZINE_TEXT,¡Guau! vaya pedazo de tetas tienen las gachís de esta revista,Woof! what a piece of tits the cunts in this magazine have
 ITEM_SALT_LABEL,Sal,Salt
 ITEM_SALT_TEXT,¡Vaya! esta sal es buena de verdad. Con solo una pizca se sazonaría un puchero entero,Wow! this salt is really good. Just a pinch would season an entire pot
 ITEM_SAUSAGE_LABEL,Chorizo,Sausage
-ITEM_SAUSAGE_TEXT,"Con el hambre que tengo, no se si podre aguantar sin comerme estos chorizos","With the hunger that I have, I do not know if I can endure without eating these sausages"
+ITEM_SAUSAGE_TEXT,"Con el hambre que tengo, no se si podré aguantar sin comerme estos chorizos","With the hunger that I have, I do not know if I can endure without eating these sausages"
 ITEM_WINE_LABEL,Vino,Wine
 ITEM_WINE_TEXT,"Ummm, huele delicioso. Podría beberlo o usarlo para condimentar algo","Ummm, it smells delicious. I could drink it or use it to spice something up"
 ITEM_AXE_LABEL,Hacha,Axe
-ITEM_AXE_TEXT,Buena herramienta para cortar leña... o cabezas,Good tool for chopping firewood ... or heads
+ITEM_AXE_TEXT,Buena herramienta para cortar leña... o cabezas,Good tool for chopping firewood... or heads
 ITEM_FIREWOOD_LABEL,Leña,Firewood
 ITEM_FIREWOOD_TEXT,Buena leña para hacer carbón,Good firewood for making charcoal
 ITEM_COAL_LABEL,Carbón,Coal
@@ -91,6 +91,6 @@ ITEM_MANDRAKE_TEXT,Siempre he creido que la mandrágora tiene propiedades mágic
 ITEM_MISTLETOE_LABEL,Muérdago,Mistletoe
 ITEM_MISTLETOE_TEXT,¡Que pena! No hay ninguna chica guapa por aquí para poder usarlo,What a pity! There ain't no pretty girl around to wear it
 ITEM_BELLADONNA_LABEL,Belladona,Belladonna
-ITEM_BELLADONNA_TEXT,¡Otra hierva que gusta a las brujas!,Another herb that witches like!
+ITEM_BELLADONNA_TEXT,¡Otra hierba que gusta a las brujas!,Another herb that witches like!
 ITEM_MUSHROOM_LABEL,Seta,Mushroom
 ITEM_MUSHROOM_TEXT,Tiene toda la pinta de ser una seta alucinógena,It has all the earmarks of being a hallucinogenic mushroom

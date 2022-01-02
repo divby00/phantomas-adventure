@@ -17,8 +17,8 @@ var menu_previous
 var redefine_key = null
 
 
-func show_menu(menu_id=""):
-	if (menu_id==""):
+func show_menu(menu_id = ""):
+	if menu_id == "":
 		_build_menu(main_menu)
 	else:
 		_build_menu(menu_id)
@@ -30,8 +30,10 @@ func hide_menu():
 	_clear_items()
 	set_process(false)
 
+
 func is_visible():
 	return panel_container.visible
+
 
 func _ready():
 	panel_container.visible = false
