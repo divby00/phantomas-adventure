@@ -15,7 +15,7 @@ func _process(_delta):
 			inventory.close()
 			self.emit_signal("inventory_visible",false)
 			
-	if Input.is_action_just_pressed("Cancel") and inventory.visible:
+	if (Input.is_action_just_pressed("Cancel") or Input.is_action_just_pressed("ui_cancel")) and inventory.visible:
 		inventory.close()
 		self.emit_signal("inventory_visible",false)
 		

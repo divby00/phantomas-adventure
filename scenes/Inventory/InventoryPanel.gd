@@ -26,22 +26,22 @@ func close():
 	set_process(false)
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("Left"):
+	if Input.is_action_just_pressed("Left") or Input.is_action_just_pressed("ui_left"):
 		if (cursor.position.x>14):
 			cursor.position.x -= cursor_desp
 			slot -= 1
 			_show_item_info()
-	if Input.is_action_just_pressed("Right"):
+	if Input.is_action_just_pressed("Right") or Input.is_action_just_pressed("ui_right"):
 		if (cursor.position.x<119):
 			cursor.position.x += cursor_desp
 			slot += 1
 			_show_item_info()
-	if Input.is_action_just_pressed("Up"):
+	if Input.is_action_just_pressed("Up") or Input.is_action_just_pressed("ui_up"):
 		if (cursor.position.y>14):
 			cursor.position.y -= cursor_desp
 			slot -= 6
 			_show_item_info()
-	if Input.is_action_just_pressed("Down"):
+	if Input.is_action_just_pressed("Down") or Input.is_action_just_pressed("ui_down"):
 		if (cursor.position.y<56):
 			cursor.position.y += cursor_desp
 			slot += 6
