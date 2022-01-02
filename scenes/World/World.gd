@@ -7,6 +7,7 @@ onready var ui = $UI
 
 const Levels = {"01": preload("res://scenes/World/Levels/Level01.tscn")}
 
+
 func _ready():
 	Configuration.load_and_save_config()
 	_load_level("01")
@@ -29,7 +30,7 @@ func _set_camera_limits(level):
 func _connect_signals():
 	Utils.connect_signal(PlayerStats, "health_changed", self, "_on_health_changed")
 	Utils.connect_signal(PlayerStats, "player_destroyed", self, "_on_player_destroyed")
-	Utils.connect_signal(ui,"inventory_visible",self,"_on_inventory_visible")
+	Utils.connect_signal(ui, "inventory_visible", self, "_on_inventory_visible")
 	_connect_enemies()
 	pass
 
@@ -54,6 +55,7 @@ func _on_health_changed(health):
 
 func _on_player_destroyed():
 	pass
+
 
 func _on_inventory_visible(ivisible):
 	get_tree().paused = ivisible

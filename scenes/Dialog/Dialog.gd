@@ -18,11 +18,11 @@ func _ready():
 	var path = "res://resources/i18n/dialogs/" + file
 	var json = Utils.json_file_read(path)
 	var locale = Configuration.locale
-	match(locale):
+	match locale:
 		"es":
-			locale="SPA"
+			locale = "SPA"
 		"en":
-			locale="ENG"
+			locale = "ENG"
 	nodes = json.result[0]["nodes"]
 	var messages = _get_messages()
 	for message in messages:
@@ -48,37 +48,38 @@ func pause(p: bool):
 		if is_instance_valid(mp):
 			mp.set_process(!p)
 
+
 func _split_message(message):
 	var messages: Array = []
 	var tokens: Array = message.split(" ")
 	var current_message: String = ""
-	var current_line:String = ""
-	var text_width:int = 0
-	var lines:int = 0
+	var current_line: String = ""
+	var text_width: int = 0
+	var lines: int = 0
 	for token in tokens:
 		text_width = MessageFont.get_string_size(current_line + " " + token).x
 		if text_width > max_line_width:
 			lines += 1
-			if (current_message!=""):
-				current_message+="\n"
+			if current_message != "":
+				current_message += "\n"
 			if lines >= max_lines:
-				messages.append(current_message+current_line)
+				messages.append(current_message + current_line)
 				current_message = ""
 				current_line = ""
-				lines=0
+				lines = 0
 			else:
 				current_message += current_line
 			current_line = token
 		else:
-			if (current_line!=""):
+			if current_line != "":
 				current_line += " "
 			current_line += token
-			
-	if (current_line!=""):
-		if (current_message!=""):
-			current_message+="\n"
-		messages.append(current_message+current_line)	
-		
+
+	if current_line != "":
+		if current_message != "":
+			current_message += "\n"
+		messages.append(current_message + current_line)
+
 	return messages
 
 
