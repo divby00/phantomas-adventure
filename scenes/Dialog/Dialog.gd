@@ -30,13 +30,16 @@ func _ready():
 func start():
 	add_child(message_panels[current_panel])
 
+
 func stop():
 	emit_signal("dialog_finished", self)
 
-func pause(p:bool):
+
+func pause(p: bool):
 	for mp in message_panels:
-		if (is_instance_valid(mp)):
+		if is_instance_valid(mp):
 			mp.set_process(!p)
+
 
 func _split_message(message, max_length_per_line: int = 123):
 	var line_length: int = 0
