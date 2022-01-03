@@ -191,7 +191,7 @@ position = Vector2( 200, 210 )
 texture = ExtResource( 14 )
 
 [node name="TallTree10" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
-position = Vector2( 220, 214 )
+position = Vector2( 220, 208 )
 texture = ExtResource( 14 )
 
 [node name="TallTree11" parent="FurtherTreesContainer" instance=ExtResource( 11 )]
@@ -323,7 +323,7 @@ position = Vector2( 190, 208 )
 texture = ExtResource( 16 )
 
 [node name="ShortTree11" parent="FurtherTreesContainer" instance=ExtResource( 13 )]
-position = Vector2( 210, 216 )
+position = Vector2( 210, 209 )
 texture = ExtResource( 16 )
 
 [node name="ShortTree12" parent="FurtherTreesContainer" instance=ExtResource( 13 )]

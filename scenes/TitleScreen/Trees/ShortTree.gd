@@ -9,13 +9,11 @@ onready var animation_player: AnimationPlayer = $AnimationPlayer
 func _ready() -> void:
 	randomize()
 	sprite.texture = texture
-	animation_player.queue("idle")
-	var offset: float = rand_range(0, animation_player.current_animation_length)
-	animation_player.advance(offset)
+	animation_player.play("idle")
 
 
 func _on_Tree_area_entered(_area: Area2D) -> void:
-	animation_player.queue("wind")
+	animation_player.play("wind")
 
 
 func _on_Tree_area_exited(_area: Area2D) -> void:

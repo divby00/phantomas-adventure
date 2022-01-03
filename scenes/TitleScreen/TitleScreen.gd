@@ -11,8 +11,8 @@ onready var transition_in = $TransitionIn
 onready var parallax = $ParallaxBackground
 onready var transition_out = $TransitionOut
 onready var wind_timer: Timer = $WindTimer
-onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 onready var audio_sfx_player: AudioStreamPlayer = $AudioSfxPlayer
+onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 enum Destination { NEW_GAME, CONTINUE_GAME, EXIT }
 var where_to_go = Destination.NEW_GAME
@@ -57,6 +57,8 @@ func _on_WindTimer_timeout() -> void:
 	var wind = WindScene.instance()
 	Utils.connect_signal(wind, "finished", self, "_on_wind_finished")
 	get_tree().current_scene.add_child(wind)
+	var y_position = randi() % 2
+	wind.position.y = 250 if y_position == 0 else 184
 
 
 func _on_wind_finished(wind):

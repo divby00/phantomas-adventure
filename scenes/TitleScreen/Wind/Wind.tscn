@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/TitleScreen/Wind/Wind.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 48 )
+extents = Vector2( 64, 16 )
 
 [node name="Wind" type="Area2D"]
 collision_layer = 16
