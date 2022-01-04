@@ -146,6 +146,7 @@ scale = Vector2( 4.25, 4.25 )
 texture = ExtResource( 7 )
 
 [node name="MountainLogo" type="Sprite" parent="."]
+visible = false
 position = Vector2( 240, 72 )
 texture = ExtResource( 6 )
 hframes = 98
