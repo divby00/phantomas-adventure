@@ -30,7 +30,7 @@ func _ready():
 	music_tween.interpolate_property(music_player, "volume_db", 0, -80, 2.00, 1, Tween.EASE_IN, 0)
 
 
-func _process(delta):
+func _process(_delta):
 	if menu_manager.is_visible():
 		return
 

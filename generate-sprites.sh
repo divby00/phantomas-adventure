@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
+
+ASEPRITE_PATH=~/.steam/debian-installation/steamapps/common/Aseprite/aseprite
+
 # Get sprites from 'root' folder
 rm resources/sprites/*.png 
 for file in resources/sprites/original/*.ase
 do
     f=${file%%.*}
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
@@ -15,7 +19,7 @@ rm resources/sprites/title/*.png
 for file in resources/sprites/original/title/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/title/*.png resources/sprites/title/
@@ -25,7 +29,7 @@ rm resources/sprites/characters/*.png
 for file in resources/sprites/original/characters/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/characters/*.png resources/sprites/characters/
@@ -35,7 +39,7 @@ rm resources/sprites/dialogs/*.png
 for file in resources/sprites/original/dialogs/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/dialogs/*.png resources/sprites/dialogs/
@@ -45,7 +49,7 @@ rm resources/sprites/enemies/*.png
 for file in resources/sprites/original/enemies/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/enemies/*.png resources/sprites/enemies/
@@ -55,7 +59,7 @@ rm resources/sprites/transitions/*.png
 for file in resources/sprites/original/transitions/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/transitions/*.png resources/sprites/transitions/
@@ -65,7 +69,7 @@ rm resources/sprites/menu/*.png
 for file in resources/sprites/original/menu/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/menu/*.png resources/sprites/menu/
@@ -75,7 +79,7 @@ rm resources/sprites/ui/*.png
 for file in resources/sprites/original/ui/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/ui/*.png resources/sprites/ui/
@@ -85,7 +89,7 @@ rm resources/sprites/logos/*.png
 for file in resources/sprites/original/logos/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/logos/*.png resources/sprites/logos/
@@ -95,7 +99,7 @@ rm resources/sprites/effects/*.png
 for file in resources/sprites/original/effects/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/effects/*.png resources/sprites/effects/
@@ -105,7 +109,7 @@ rm resources/sprites/player/*.png
 for file in resources/sprites/original/player/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/player/*.png resources/sprites/player/
@@ -115,7 +119,7 @@ rm resources/sprites/inventory/*.png
 for file in resources/sprites/original/inventory/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/inventory/*.png resources/sprites/inventory/
@@ -125,7 +129,7 @@ rm resources/sprites/maps/*.png
 for file in resources/sprites/original/maps/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/maps/*.png resources/sprites/maps/
@@ -135,7 +139,7 @@ rm resources/sprites/cutscenes/intro/*.png
 for file in resources/sprites/original/cutscenes/intro/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/cutscenes/intro/*.png resources/sprites/cutscenes/intro/
@@ -145,7 +149,7 @@ rm resources/sprites/cutscenes/start/*.png
 for file in resources/sprites/original/cutscenes/start/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/cutscenes/start/*.png resources/sprites/cutscenes/start/
@@ -158,7 +162,7 @@ mv resources/sprites/original/cutscenes/start/*.png resources/sprites/cutscenes/
 for file in resources/sprites/original/dialogs/separate/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --save-as ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --save-as ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/dialogs/separate/*.png resources/sprites/dialogs/
@@ -167,7 +171,7 @@ mv resources/sprites/original/dialogs/separate/*.png resources/sprites/dialogs/
 for file in resources/sprites/original/transitions/separate/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --save-as ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --save-as ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/transitions/separate/*.png resources/sprites/transitions/
@@ -177,7 +181,7 @@ rm resources/sprites/maps/*.png
 for file in resources/sprites/original/maps/*.ase
 do
     f=${file%%.*}
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --save-as ${f}.png
+    ${ASEPRITE_PATH} -b ${f}.ase --save-as ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/maps/*.png resources/sprites/maps/
