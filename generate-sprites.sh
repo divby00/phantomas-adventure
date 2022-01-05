@@ -177,13 +177,12 @@ done
 mv resources/sprites/original/transitions/separate/*.png resources/sprites/transitions/
 
 # Get sprites from 'maps' folder
-rm resources/sprites/maps/*.png 
-for file in resources/sprites/original/maps/*.ase
+for file in resources/sprites/original/maps/separate/*.ase
 do
     f=${file%%.*}
     ${ASEPRITE_PATH} -b ${f}.ase --save-as ${f}.png
     echo ${f}.png
 done
-mv resources/sprites/original/maps/*.png resources/sprites/maps/
+mv resources/sprites/original/maps/separate/*.png resources/sprites/maps/
 
 echo Done!
