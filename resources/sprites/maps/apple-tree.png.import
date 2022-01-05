@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/water.png-acddf4508d2b5782d7dfe1a47b4236b2.stex"
+path="res://.import/apple-tree.png-2c9380ceab36190db1a4703243f2e431.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/maps/water.png"
-dest_files=[ "res://.import/water.png-acddf4508d2b5782d7dfe1a47b4236b2.stex" ]
+source_file="res://resources/sprites/maps/apple-tree.png"
+dest_files=[ "res://.import/apple-tree.png-2c9380ceab36190db1a4703243f2e431.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/water.png-acddf4508d2b5782d7dfe1a47b4236b2.stex"
+path="res://.import/pine-tree.png-d2ef2731fa5cb4bb0ca29fc9082c1a5b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/maps/water.png"
-dest_files=[ "res://.import/water.png-acddf4508d2b5782d7dfe1a47b4236b2.stex" ]
+source_file="res://resources/sprites/maps/pine-tree.png"
+dest_files=[ "res://.import/pine-tree.png-d2ef2731fa5cb4bb0ca29fc9082c1a5b.stex" ]
 
 [params]
 
