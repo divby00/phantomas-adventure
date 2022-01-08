@@ -1,5 +1,18 @@
 # Phantomas en la sierra
 
+## Cambios
+
+- Eliminar referencias al pajar por referencias al molino, que es donde se encuentran las _agujas de ganchillo_.
+- El **cazador cegato** pasa a llamarse **el Tenazas** y está cazando lobos dentro de la pequeña cueva que une con el prao.
+- Se ha añadido en el nivel 2 el cementerio y la cripta con el _rosario_. El _rosario_ se puede convertir en un _rosario bendecido_ que necesitaremos para pasar dentro de la cueva de las brujas. Lo bendice el párroco **D. Francisco**.
+- No hay que echar todos los ingredientes por la chimenea para los _chorizos al vino_, simplemente la _sal_ para estropear la sopa de la **Flora**. Hasta este momento, **Flora** no nos dejará entrar en su casa, cuando le estropeemos la sopa se echará a llorar y podremos aprovechar a entrar para echar los ingredientes en el caldero.
+- El párroco **D. Francisco** no nos dejará entrar en la iglesia hasta que no le entretengamos con la _revista de tetas_.
+- Cuando entremos en casa de **Jose Mari**, el combate con el se activará en el momento que cojamos el _chorizo_, entrará diciendo que le estamos robando.
+- El **tio Calixto** puede darnos el _hacha_ en cuanto hablemos con el, no nos servirá de nada hasta que nos dé la tecnología de _bomba_, una vez le demos los _chorizos al vino_.
+- La **_senda de Esteban_** (une con el prao) la desbloquea **Heladia** en lugar de **Flora**.
+- El **tio Valentín** no está encerrado en una casa, sino en una celda del cuartelillo por dar una pedrada a un guardia. En el cuartelillo está el Guardia Civil **Bonifacio**, que es muy confiado y se fía de la pinta de buena persona de Phantomas para dejarle entrar y hablar con el **tío Valentín**, que solo hablará a cambio de que
+le saque de la celda.
+
 ## Descripción del juego
 
 Juego de plataformas con tecnología **QSVP-EGA**, o lo que es lo mismo, paleta de colores **EGA y Que Se Vean los Píxels** pero adaptado a monitores panorámicos. Mucho esquivar enemigos, calcular cuando se puede pasar, llevar objetos a distintos sitios y volver sobre nuestros pasos en algunas ocasiones para poder avanzar. Tiene un toque Metroidvania en el aspecto de que no podremos acceder a determinados sitios hasta que no hayamos obtenido algunas Habilidades. Al contrario que muchos otros plataformas, tiene Jefes que nos proporcionan estás Habilidades cuando les derrotamos. También existen Sendas que cuando son desbloqueadas nos permiten acceder a otras zonas más rápido.
@@ -125,18 +138,18 @@ Podemos distinguir entre enemigos vivos, objetos encantados y seres sobrenatural
 
 ### Jefes
 
-- Cazador cegato
-- Toro 'Peligroso'
-- Jose Mari, el tonto del pueblo
-- Águila
-- Bruja Blanca
+- El Tenazas: Dispara balas que nos da tiempo a esquivar, cuando las balas impactan contra las paredes desprenden piedras que si le caen encima le van quitando vida.
+- Toro 'Peligroso': La mecánica de combate es: El toro embiste de lado a lado, Phantomas debe pulsar una serie de teclas para hacer un recorte exitosamente, tras varios recortes el toro embiste de forma imparable y Phantomas sale por el tejado.
+- Jose Mari, el tonto del pueblo: Cuando Phantomas roba el _chorizo_, aparece diciendo que le está robando, cierra la puerta y ataca. En la despensa tiene un sistema de trampas que se activan al pasar por determinadas placas en el suelo, estas placas disparan flechas que afectan tanto a Phantomas como a **Jose Mari**, una vez tenga una cierta cantidad de impactos se va harto y tendremos paso libre.
+- Águila: Para acabar con el **águila** deberemos usar la bomba. El **águila** hace picados contra Phantomas, habrá que calcular el uso de la bomba para que explote justo cuando pase ella. Tras x impactos es eliminada.
+- Bruja Blanca: Ni idea todavía, la idea es tener que usar todas las habilidades de Phantomas para destruirla.
 
 ## Lugares
 
-### Nivel 1: El arroyo
+### Nivel 1: El río
 
 - Enemigos: Animales
-- Descripción: Está el _gato_. Tiene un arroyo, donde el **pescador** pesca _truchas_. Hay un pajar donde se encuentran las _agujas de ganchillo_. Está el **tio Juan** con **Apacible**, su borrico. Tiene el _módulo de control de salto_. Hay una cerca electrificada que proteje la zona con los caballos donde está la _herradura_. Está el **cazador cegato**. Está la _mandrágora_ (necesario _tecnología fantasma_.
+- Descripción: Está el _gato_. Tiene un río, donde el **pescador** pesca _truchas_. Hay un pajar donde se encuentran las _agujas de ganchillo_. Está el **tio Juan** con **Apacible**, su borrico. Tiene el _módulo de control de salto_. Hay una cerca electrificada que proteje la zona con los caballos donde está la _herradura_. Está el **cazador cegato**. Está la _mandrágora_ (necesario _tecnología fantasma_.
 - Decorado: Agua, mucha vegetación, un molino con una noria, el pajar, el cercado con los caballos. Se puede poner en un lateral algo del parador nacional.
 
 ### Nivel 2: El prao
@@ -164,7 +177,7 @@ Podemos distinguir entre enemigos vivos, objetos encantados y seres sobrenatural
 Las sendas son formas rápidas de acceder a otras partes del juego. Se desbloquean cuando se completan ciertas tareas. No aparecen hasta que no son desbloqueadas.
 
 - Senda de Bienvenida. Une el arroyo con la aldea. Desbloqueada por **Maximina**
-- Senda de Esteban. Une el prao con la aldea. Desbloqueada por **Flora**
+- Senda de Esteban. Une el prao con la aldea. Desbloqueada por **Heladia**
 - Senda de María. Une la montaña con la aldea. Desbloqueada por **tio Valentín**
 
 ## Desarrollo del juego
@@ -393,7 +406,7 @@ Las sendas son formas rápidas de acceder a otras partes del juego. Se desbloque
 - Condiciones: Encuentro con el tio Valentín
 - Descripción: Justo antes de llegar a la montaña, Phantomas se encuentra con el **tio Venancio**, que vive en la falda de la montaña junto a su rebaño de ovejas. Le comenta que el no se atreve a subir a la montaña puesto que es muy peligroso por las brujas y los horrores que invocan. También habla sobre lo mucho que echa de menos a su carnero **Cabezón**, que un día se escapó montaña arriba pero el no se atreve a subir a buscarle.
 
-  > Nota: ¿Cómo ha llegado el **tio Venancio** a la montaña si la **_senda de Maria_** solo la conoce el **tio Valentín**?, para evitar este agujero del guión podríamos hacer que los habitantes de la aldea comenten que el **tio Venancio** se adentró con las ovejas hacia la montaña y nunca más se le ha vuelto a ver, de este modo esto sería un encuentro casual con una persona que vive en la falda de la montaña pero no se atreve a subir más arriba por miedo a las brujas.
+  > Nota: ¿Cómo ha llegado el **tio Venancio** a la montaña si la **_senda de Maria_** solo la conoce el **tio Valentín**?, para evitar este agujero del guión podríamos hacer que los habitantes de la aldea comenten que el **tio Venancio** se adentró con las ovejas hacia la montaña y nunca más se le ha vuelto a ver, de este modo esto sería un encuentro casual con una persona que vive en la falda de la montaña pero no se atreve a subir más arriba por miedo a las brujas, o mejor todavía, está esperando a ver si vuelve cabezón pero no se atreve a subir por miedo a las brujas.
 
 ### Obtención de la cornamenta
 

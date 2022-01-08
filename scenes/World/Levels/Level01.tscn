@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://resources/maps/tileset-blue-stone/tileset_tileset-blue-stone.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Enemies/Boar/Boar.tscn" type="PackedScene" id=2]
@@ -8,8 +8,8 @@
 [ext_resource path="res://resources/paths/diagonal.tres" type="Curve2D" id=6]
 [ext_resource path="res://scenes/World/Levels/Level01.gd" type="Script" id=7]
 [ext_resource path="res://resources/sprites/maps/background-sky.png" type="Texture" id=8]
-[ext_resource path="res://resources/sprites/maps/background-mountain.png" type="Texture" id=9]
-[ext_resource path="res://resources/sprites/maps/background-hills.png" type="Texture" id=10]
+[ext_resource path="res://resources/sprites/maps/level01-further-background.png" type="Texture" id=9]
+[ext_resource path="res://resources/sprites/maps/level01-closer-background.png" type="Texture" id=10]
 [ext_resource path="res://resources/sprites/maps/holm-oak.png" type="Texture" id=11]
 [ext_resource path="res://scenes/Enemies/Toad/Toad.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/Inventory/EnergyItem.tscn" type="PackedScene" id=13]
@@ -25,6 +25,10 @@
 [ext_resource path="res://resources/sprites/maps/bush-04.png" type="Texture" id=23]
 [ext_resource path="res://resources/sprites/maps/bush-03.png" type="Texture" id=24]
 [ext_resource path="res://resources/sprites/maps/apple-tree.png" type="Texture" id=25]
+[ext_resource path="res://resources/sprites/maps/other-tree.png" type="Texture" id=26]
+[ext_resource path="res://resources/sprites/maps/grass-01.png" type="Texture" id=27]
+[ext_resource path="res://resources/sprites/maps/flower-02.png" type="Texture" id=28]
+[ext_resource path="res://resources/sprites/maps/flower-01.png" type="Texture" id=29]
 
 [sub_resource type="Animation" id=6]
 resource_name = "Nueva Animación"
@@ -151,18 +155,18 @@ texture = ExtResource( 8 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.4, 0.4 )
-motion_mirroring = Vector2( 960, 0 )
+motion_mirroring = Vector2( 480, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 480, 272 )
+position = Vector2( 240, 184 )
 texture = ExtResource( 9 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.8, 0.8 )
-motion_mirroring = Vector2( 960, 0 )
+motion_mirroring = Vector2( 480, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 512, 408 )
+position = Vector2( 240, 416 )
 texture = ExtResource( 10 )
 
 [node name="EnergyItem" parent="." instance=ExtResource( 13 )]
@@ -218,6 +222,10 @@ offset = Vector2( -1, -1 )
 position = Vector2( 824, 464 )
 texture = ExtResource( 19 )
 
+[node name="Tree8" type="Sprite" parent="Foliage"]
+position = Vector2( 880, 480 )
+texture = ExtResource( 26 )
+
 [node name="Tree2" type="Sprite" parent="Foliage"]
 position = Vector2( 1272, 464 )
 texture = ExtResource( 11 )
@@ -237,6 +245,66 @@ texture = ExtResource( 25 )
 [node name="Bush" type="Sprite" parent="Foliage"]
 position = Vector2( 592, 440 )
 texture = ExtResource( 20 )
+
+[node name="Bush11" type="Sprite" parent="Foliage"]
+position = Vector2( 568, 488 )
+texture = ExtResource( 20 )
+
+[node name="Bush17" type="Sprite" parent="Foliage"]
+position = Vector2( 248, 376 )
+texture = ExtResource( 27 )
+
+[node name="Bush18" type="Sprite" parent="Foliage"]
+position = Vector2( 248, 472 )
+texture = ExtResource( 27 )
+
+[node name="Bush19" type="Sprite" parent="Foliage"]
+position = Vector2( 192, 472 )
+texture = ExtResource( 27 )
+
+[node name="Bush20" type="Sprite" parent="Foliage"]
+position = Vector2( 56, 456 )
+texture = ExtResource( 27 )
+
+[node name="Bush21" type="Sprite" parent="Foliage"]
+position = Vector2( 312, 504 )
+texture = ExtResource( 27 )
+
+[node name="Bush22" type="Sprite" parent="Foliage"]
+position = Vector2( 520, 504 )
+texture = ExtResource( 27 )
+
+[node name="Bush23" type="Sprite" parent="Foliage"]
+position = Vector2( 624, 504 )
+texture = ExtResource( 27 )
+
+[node name="Bush24" type="Sprite" parent="Foliage"]
+position = Vector2( 664, 504 )
+texture = ExtResource( 27 )
+
+[node name="Bush25" type="Sprite" parent="Foliage"]
+position = Vector2( 840, 504 )
+texture = ExtResource( 27 )
+
+[node name="Bush12" type="Sprite" parent="Foliage"]
+position = Vector2( 328, 504 )
+texture = ExtResource( 28 )
+
+[node name="Bush13" type="Sprite" parent="Foliage"]
+position = Vector2( 328, 504 )
+texture = ExtResource( 28 )
+
+[node name="Bush14" type="Sprite" parent="Foliage"]
+position = Vector2( 80, 472 )
+texture = ExtResource( 28 )
+
+[node name="Bush15" type="Sprite" parent="Foliage"]
+position = Vector2( 200, 376 )
+texture = ExtResource( 29 )
+
+[node name="Bush16" type="Sprite" parent="Foliage"]
+position = Vector2( 392, 504 )
+texture = ExtResource( 29 )
 
 [node name="Bush8" type="Sprite" parent="Foliage"]
 position = Vector2( 824, 504 )
