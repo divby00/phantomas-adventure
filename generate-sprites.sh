@@ -9,7 +9,6 @@ for file in resources/sprites/original/*.ase
 do
     f=${file%%.*}
     ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
-    ~/.steam/debian-installation/steamapps/common/Aseprite/aseprite -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
 mv resources/sprites/original/*.png resources/sprites/

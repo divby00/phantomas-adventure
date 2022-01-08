@@ -4,23 +4,21 @@
 
 - Eliminar referencias al pajar por referencias al molino, que es donde se encuentran las _agujas de ganchillo_.
 - El **cazador cegato** pasa a llamarse **el Tenazas** y está cazando lobos dentro de la pequeña cueva que une con el prao.
-- Se ha añadido en el nivel 2 el cementerio y la cripta con el _rosario_. El _rosario_ se puede convertir en un _rosario bendecido_ que necesitaremos para pasar dentro de la cueva de las brujas. Lo bendice el párroco **D. Francisco**.
+- Se ha añadido en el nivel 2 el cementerio y la cripta con el _rosario_. El _rosario_ se puede convertir en un _rosario bendecido_ que es opcional pero permite recibir la mitad de daño al pelear contra la **Bruja Blanca**. Lo bendice el párroco **D. Francisco**.
 - No hay que echar todos los ingredientes por la chimenea para los _chorizos al vino_, simplemente la _sal_ para estropear la sopa de la **Flora**. Hasta este momento, **Flora** no nos dejará entrar en su casa, cuando le estropeemos la sopa se echará a llorar y podremos aprovechar a entrar para echar los ingredientes en el caldero.
 - El párroco **D. Francisco** no nos dejará entrar en la iglesia hasta que no le entretengamos con la _revista de tetas_.
 - Cuando entremos en casa de **Jose Mari**, el combate con el se activará en el momento que cojamos el _chorizo_, entrará diciendo que le estamos robando.
 - El **tio Calixto** puede darnos el _hacha_ en cuanto hablemos con el, no nos servirá de nada hasta que nos dé la tecnología de _bomba_, una vez le demos los _chorizos al vino_.
 - La **_senda de Esteban_** (une con el prao) la desbloquea **Heladia** en lugar de **Flora**.
-- El **tio Valentín** no está encerrado en una casa, sino en una celda del cuartelillo por dar una pedrada a un guardia. En el cuartelillo está el Guardia Civil **Bonifacio**, que es muy confiado y se fía de la pinta de buena persona de Phantomas para dejarle entrar y hablar con el **tío Valentín**, que solo hablará a cambio de que
-le saque de la celda.
+- El **tio Valentín** no está encerrado en una casa, sino en una celda del cuartelillo por dar una pedrada a un guardia. En el cuartelillo está el Guardia Civil **Bonifacio**, echándose la siesta, no se entera de nada y no es un obstáculo para hablar con el **tío Valentín** en la celda, el **tio Valentín** solo hablará a cambio de que le saque de la celda con la _ganzúa_.
 
 ## Descripción del juego
 
-Juego de plataformas con tecnología **QSVP-EGA**, o lo que es lo mismo, paleta de colores **EGA y Que Se Vean los Píxels** pero adaptado a monitores panorámicos. Mucho esquivar enemigos, calcular cuando se puede pasar, llevar objetos a distintos sitios y volver sobre nuestros pasos en algunas ocasiones para poder avanzar. Tiene un toque Metroidvania en el aspecto de que no podremos acceder a determinados sitios hasta que no hayamos obtenido algunas Habilidades. Al contrario que muchos otros plataformas, tiene Jefes que nos proporcionan estás Habilidades cuando les derrotamos. También existen Sendas que cuando son desbloqueadas nos permiten acceder a otras zonas más rápido.
+Juego de plataformas con tecnología **QSVP**, o lo que es lo mismo, paleta de colores **Que Se Vean los Píxels** pero adaptado a monitores panorámicos. Mucho esquivar enemigos, calcular cuando se puede pasar, llevar objetos a distintos sitios y volver sobre nuestros pasos en algunas ocasiones para poder avanzar. Tiene un toque Metroidvania en el aspecto de que no podremos acceder a determinados sitios hasta que no hayamos obtenido algunas Habilidades. Al contrario que muchos otros plataformas, tiene Jefes que nos proporcionan estás Habilidades cuando les derrotamos. También existen Sendas que cuando son desbloqueadas nos permiten acceder a otras zonas más rápido.
 
 ## Introducción
 
-Para variar, Phantomas está cumpliendo condena en la trena después de que su último golpe haya fallado. Un personaje poderoso pero desconocido le ofrece sacarle de la cárcel a cambio de recuperar un diamante en el collar de un gato perdido en la Sierra Negra, una zona incomunicada y de difícil acceso. El plan es transportar a Phantomas en helicóptero lo más cerca posible de la última posición conocida del gato y buscarle por ahí. Una vez localizado, usará una bengala para llamar al helicóptero. Phantomas aterrizará en el arroyo, cerca del gato y conseguirá al gato casi nada más empezar, pero se dará cuenta de que no tiene la pistola de bengalas así que tendrá que usar su habilidad para volver a la civilización. Según vaya avanzando y conociendo a los personajes que pueblan la Sierra Negra, se dará cuenta de que tienen un problema muy serio: las brujas que habitan en la montaña, y que solo ayudándoles podrá
-salir.
+Para variar, Phantomas está cumpliendo condena en la trena después de que su último golpe haya fallado. Un personaje poderoso pero desconocido le ofrece sacarle de la cárcel a cambio de recuperar un diamante en el collar de un gato perdido en la Sierra Negra, una zona incomunicada y de difícil acceso. El plan es transportar a Phantomas en helicóptero lo más cerca posible de la última posición conocida del gato y buscarle por ahí. Una vez localizado, usará una bengala para llamar al helicóptero. Phantomas aterrizará en el arroyo, cerca del gato y conseguirá al gato casi nada más empezar, pero se dará cuenta de que no tiene la pistola de bengalas así que tendrá que usar su habilidad para volver a la civilización. Según vaya avanzando y conociendo a los personajes que pueblan la Sierra Negra, se dará cuenta de que tienen un problema muy serio: las brujas que habitan en la montaña, y que solo ayudándoles podrá salir.
 
 ## Habilidades
 
@@ -49,6 +47,7 @@ salir.
 - Ganzúa
 - Pilas
 - Cornamenta de corzo
+- Rosario (no es obligatorio para el juego, si se lo llevamos al párroco y lo bendice se convierte en _rosario bendecido_ que permite que los ataques de la **Bruja Blanca** causen menos daño).
 - Llave celda 1
 - Llave celda 2
 - Llave celda 3
@@ -149,28 +148,43 @@ Podemos distinguir entre enemigos vivos, objetos encantados y seres sobrenatural
 ### Nivel 1: El río
 
 - Enemigos: Animales
-- Descripción: Está el _gato_. Tiene un río, donde el **pescador** pesca _truchas_. Hay un pajar donde se encuentran las _agujas de ganchillo_. Está el **tio Juan** con **Apacible**, su borrico. Tiene el _módulo de control de salto_. Hay una cerca electrificada que proteje la zona con los caballos donde está la _herradura_. Está el **cazador cegato**. Está la _mandrágora_ (necesario _tecnología fantasma_.
-- Decorado: Agua, mucha vegetación, un molino con una noria, el pajar, el cercado con los caballos. Se puede poner en un lateral algo del parador nacional.
+- Descripción: Está el _gato_. Tiene un río, donde el **pescador** pesca _truchas_. Hay un molino donde se encuentran las _agujas de ganchillo_. Está el **tio Juan** con **Apacible**, su borrico. Tiene el _módulo de control de salto_. Hay una cerca electrificada que proteje la zona con los caballos donde está la _herradura_. Está el **Tenazas**. Está la _mandrágora_ (necesario _tecnología fantasma_.
+- Decorado: Agua, mucha vegetación, un molino con una noria, el cercado con los caballos. Se puede poner en un lateral algo de parador nacional.
+
+#### Diseño de las pantallas
+![Diseño primer nivel](./docs/level01-design.png "Diseño primer nivel")
 
 ### Nivel 2: El prao
 
 - Enemigos: Animales. Objetos encantados.
-- Descripción: Hay manzanos, otros frutales y huertas. Está el **tio Ramón** cogiendo _manzanas_. Al lado del **tio Ramón** está el _botijo_. Está la **tia Simona** aburrida con las vacas, que nos da la _manta roja_ cuando le llevamos las _agujas de ganchillo_. Está el toril, con **Agustín** a la entrada, que no te deja entrar si no eres un verdadero torero y llevas la _manta roja_. Está el **toro 'Peligroso'** en el toril. Tiene el _módulo de doble salto_. Está el _muérdago_ (necesario _tecnología fantasma_)
+- Descripción: Hay manzanos, otros frutales y huertas. Está el **tio Ramón** cogiendo _manzanas_. Al lado del **tio Ramón** está el _botijo_. Está la **tia Simona** aburrida con las vacas, que nos da la _manta roja_ cuando le llevamos las _agujas de ganchillo_. Está el toril, con **Agustín** a la entrada, que no te deja entrar si no eres un verdadero torero y llevas la _manta roja_. Está el **toro 'Peligroso'** en el toril. Tiene el _módulo de doble salto_. Está el _muérdago_ (necesario _tecnología fantasma_). Está el cementerio y dentro el _rosario_.
+
+#### Diseño de las pantallas
+![Diseño segundo nivel](./docs/level02-design.png "Diseño segundo nivel")
 
 ### Nivel 3: La aldea
 
 - Enemigos: Objetos encantados
-- Descripción: Hay casas. Hay una fragua, una fuente, un horno, una carbonera , una iglesia y una cantina. Está la **Maximina** con la cesta de huevos.Está la **Heladia** en el horno con una barbaridad de bollos -nos da un poco de vida pero nunca un bollo entero- Está el **tio Eleuterio**, el herrero, que nos dará la _ganzúa_ cuando le llevemos _carbón_. Está el **tio Calixto**, el carbonero, nos da el _hacha_ cuando le llevemos los _chorizos al vino_. Está el **tio Valentín**, el valiente que salió de la montaña, encerrado en la casa en la que necesitamos usar la _ganzúa_ y que nos desbloquea la **_senda de María_**. Está **Jose Mari**, el tonto del pueblo. (Jefe). En casa de **Jose Mari** encontraremos la _revista de tetas_. Está **Don Francisco**, el párroco, al que podemos entretener con la _revista de tetas_ y robar el _cáliz de vino_ de la Iglesia. Está la **Flora** liada haciendo la sopa, que debemos arruinar echando _sal_ por la chimenea. Para hacer los _chorizos al vino_ tiraremos el _cáliz de vino_ y los _chorizos_ por la chimenea de la casa de Flora cuando estropeemos la sopa. Está la cantina, con **Felipa** aburrida. Tiene la _cornamenta de corzo_ colgada y nos la dará a cambio de unas _pilas_ para la radio. Está la _belladona_ (necesario _tecnología fantasma_)
+- Descripción: Hay casas. Hay una fragua, una fuente, un horno, una carbonera , una iglesia y una cantina. Está la **Maximina** con la cesta de huevos.Está la **Heladia** en el horno con una barbaridad de bollos -nos da un poco de vida pero nunca un bollo entero- Está el **tio Eleuterio**, el herrero, que nos dará la _ganzúa_ cuando le llevemos _carbón_. Está el **tio Calixto**, el carbonero, nos da el _hacha_ cuando le llevemos los _chorizos al vino_. Está el **tio Valentín**, el valiente que salió de la montaña, encerrado en el cuartelillo en la que necesitamos usar la _ganzúa_ y que nos desbloquea la **_senda de María_**. Está **Jose Mari**, el tonto del pueblo. (Jefe). En casa de **Jose Mari** encontraremos la _revista de tetas_. Está **Don Francisco**, el párroco, al que podemos entretener con la _revista de tetas_ y robar el _cáliz de vino_ de la Iglesia. Está la **Flora** liada haciendo la sopa, que debemos arruinar echando _sal_ por la chimenea. Para hacer los _chorizos al vino_ tiraremos el _cáliz de vino_ y los _chorizos_ por la chimenea de la casa de Flora cuando estropeemos la sopa. Está la cantina, con **Felipa** aburrida. Tiene la _cornamenta de corzo_ colgada y nos la dará a cambio de unas _pilas_ para la radio. Está la _belladona_ (necesario _tecnología fantasma_)
+
+#### Diseño de las pantallas
+![Diseño tercer nivel](./docs/level03-design.png "Diseño tercer nivel")
 
 ### Nivel 4: La montaña
 
 - Enemigos: Animales
 - Descripción: Está el **tio Venancio**, el desaparecido, viviendo en la falda de la montaña con sus ovejas. Está la **dominguera-madre** moribunda que ha escapado de la cueva de las brujas y nos da las _pilas_ y nos pide que rescatemos a **dominguero padre**, **dominguero hijo** y **dominguera hija**, las _pilas_ las debemos llevar a la **Felipa** para obtener la _cornamenta de corzo_ y que **Cabezón** nos impulse por el barranco. Está la cascada. Está **Cabezón**, el carnero. Hay un barranco que no podemos atravesar sin la inestimable ayuda de **Cabezón**. Está la **tia Susana**, que nos advierte del peligro y nos prepara una poción mágica tras recoger _mandrágora_, _belladona_, _muérdago_ y _seta alucinógena_ para poder encontrar la entrada a la **_cueva de las brujas_**. Está el **Águila (Jefe)**, que debemos derrotar para obtener la _tecnología fantasma_. La **tía Susana** además nos advierte de la necesidad de desactivar la **_joya roja_**, **_joya verde_** y **_joya azul_** si queremos derrotar a la **Bruja Blanca**.
 
+#### Diseño de las pantallas
+![Diseño cuarto nivel](./docs/level04-design.png "Diseño cuarto nivel")
+
 ### Nivel 5: La cueva de las brujas
 
 - Enemigos: Sobrenaturales
-- Descripción: Está el **dominguero-padre** preso. Es necesaria una _llave de celda 1_ para liberarle. Está el **dominguero-hijo** preso. Es necesaria una _llave de celda 2_ para liberarle. Está la **dominguera-hija** presa. Es necesaria una _llave de celda 3_ para liberarla. Hay unas **_estatuas_** que bloquean el paso a algunas zonas. Cuando liberamos a los **domingueros** nos cuentan cómo han visto que las brujas manipulan las **_estatuas_** para poder pasar. Están las 3 **_joyas_** que debemos desactivar. Está la **Bruja Blanca**. Cuando la derrotemos el juego termina.
+- Descripción: Está el **dominguero-padre** preso. Es necesaria una _llave de celda 1_ para liberarle. Está el **dominguero-hijo** preso. Es necesaria una _llave de celda 2_ para liberarle. Está la **dominguera-hija** presa. Es necesaria una _llave de celda 3_ para liberarla. Hay unas **_estatuas_** que bloquean el paso a algunas zonas. Cuando liberamos a los **domingueros** nos cuentan cómo han visto que las brujas manipulan las **_estatuas_** para poder pasar. Están las 3 **_joyas_** que debemos desactivar. Está la **Bruja Blanca**. Si llevamos el _rosario bendecido_ los ataques de la **Bruja Blanca** causan menos daño. Cuando la derrotemos el juego termina.
+
+#### Diseño de las pantallas
+![Diseño quinto nivel](./docs/level05-design.png "Diseño quinto nivel")
 
 ## Sendas
 
@@ -189,18 +203,18 @@ Las sendas son formas rápidas de acceder a otras partes del juego. Se desbloque
 - Condiciones: ninguna
 - Descripción: Obtener 3 _gusanos_ en el nivel 1 (donde hozan los jabalíes) y llevarlos al **pescador**, con cada _gusano_ sacará una _trucha_ y cuando saque la tercera nos la dará. Entonces podremos ir con la _trucha_ hasta donde se encuentra el _gato_ y atraerla hacia nosotros, si no tenemos la _trucha_ el _gato_ no se acercará a nosotros (estará en un lugar inaccesible). Una vez tengamos al _gato_ Phantomas presumirá de lo fácil que ha sido la misión, solamente para darse cuenta de que no sabe como volver a la civilización.
 
-### Combate con cazador cegato
+### Combate con El Tenazas
 
 - Nivel: 1
 - Habilidades requeridas: ninguna
 - Condiciones: Rescate del gato
-- Descripción: Más adelante Phantomas se encontrará con el primer jefe, es un **Cazador Cegato** que confunde a Phantomas con un corzo y dispara contra el, cada disparo que choque contra las paredes liberará piedras que si caen encima del **Cazador Cegato** le irán quitando vida. Cuando llega a un límite es eliminado y Phantomas puede continuar.
+- Descripción: Más adelante Phantomas se encontrará con el primer jefe, es **El Tenazas** que confunde a Phantomas con un corzo y dispara contra el, cada disparo que choque contra las paredes liberará piedras que si caen encima de **El Tenazas** le irán quitando vida. Cuando llega a un límite es eliminado y Phantomas puede continuar.
 
 ### Encuentro con el tio Juan
 
 - Nivel: 1
 - Habilidades requeridas: ninguna
-- Condiciones: Combate con cazador cegato
+- Condiciones: Combate con El Tenazas
 - Descripción: Después Phantomas se encontrará con el **tio Juan** con su burro **Apacible**, le comenta que ha visto como caía algo del cielo en una parte inaccesible para Phantomas (es el _módulo de control de salto_) y que el le puede ayudar a conseguirla a cambio de una _herradura_ para el borrico.
 
 ### Uso del burro ascensor, obtención del módulo de control de salto
@@ -236,14 +250,14 @@ Las sendas son formas rápidas de acceder a otras partes del juego. Se desbloque
 - Nivel: 2
 - Habilidades requeridas: ninguna
 - Condiciones: encuentro con tio Juan
-- Descripción: La **tia Simona** está aburrida cuidando unas ovejas, usa esos ratos para coser pero ha perdido las _agujas de ganchillo_ en el pajar del arroyo, por lo que no puede terminar la manta que está haciendo para el invierno. Comenta a Phantomas que perdió las _agujas de ganchillo_ en el pajar cerca del arroyo.
+- Descripción: La **tia Simona** está aburrida cuidando unas ovejas, usa esos ratos para coser pero ha perdido las _agujas de ganchillo_ en el molino del río, por lo que no puede terminar la manta que está haciendo para el invierno. Comenta a Phantomas que perdió las _agujas de ganchillo_ en el molino cerca del arroyo.
 
 ### Obtención de las agujas de ganchillo
 
 - Nivel: 1
 - Habilidades requeridas: Control de salto
 - Condiciones: obtención del módulo de control de salto.
-- Descripción: En el pajar Phantomas encontrará las _agujas de ganchillo_ para llevárselas a la **tia Simona** a cambio de la _manta roja_. Es necesario el _módulo de control de salto_ para acceder a ellas.
+- Descripción: En el molino Phantomas encontrará las _agujas de ganchillo_ para llevárselas a la **tia Simona** a cambio de la _manta roja_. Es necesario el _módulo de control de salto_ para acceder a ellas.
 
 ### Entrega de las agujas de ganchillo a la tia Simona
 
