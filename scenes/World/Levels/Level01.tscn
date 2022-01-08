@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://resources/maps/tileset-blue-stone/tileset_tileset-blue-stone.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Enemies/Boar/Boar.tscn" type="PackedScene" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://resources/sprites/maps/grass-01.png" type="Texture" id=27]
 [ext_resource path="res://resources/sprites/maps/flower-02.png" type="Texture" id=28]
 [ext_resource path="res://resources/sprites/maps/flower-01.png" type="Texture" id=29]
+[ext_resource path="res://resources/shaders/wind_tree.tres" type="Shader" id=30]
 
 [sub_resource type="Animation" id=6]
 resource_name = "Nueva Animación"
@@ -61,6 +62,90 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0 ]
 }
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 30 )
+shader_param/speed = 0.5
+shader_param/minStrength = 0.05
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = null
+shader_param/heightOffset = null
+shader_param/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 30 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.05
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = null
+shader_param/heightOffset = null
+shader_param/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 30 )
+shader_param/speed = 0.8
+shader_param/minStrength = 0.03
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = null
+shader_param/heightOffset = null
+shader_param/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 30 )
+shader_param/speed = 0.7
+shader_param/minStrength = 0.05
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = null
+shader_param/heightOffset = null
+shader_param/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 30 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.05
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = null
+shader_param/heightOffset = null
+shader_param/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = ExtResource( 30 )
+shader_param/speed = -1.0
+shader_param/minStrength = 0.02
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = null
+shader_param/heightOffset = null
+shader_param/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = ExtResource( 30 )
+shader_param/speed = 1.0
+shader_param/minStrength = 0.05
+shader_param/maxStrength = 0.01
+shader_param/strengthScale = 100.0
+shader_param/interval = 3.5
+shader_param/detail = 1.0
+shader_param/distortion = null
+shader_param/heightOffset = null
+shader_param/offset = 0.0
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -214,31 +299,38 @@ texture = ExtResource( 19 )
 offset = Vector2( 23, -33 )
 
 [node name="Tree6" type="Sprite" parent="Foliage"]
+material = SubResource( 8 )
 position = Vector2( 227, 337 )
 texture = ExtResource( 16 )
 offset = Vector2( -1, -1 )
 
 [node name="Tree5" type="Sprite" parent="Foliage"]
+material = SubResource( 9 )
 position = Vector2( 824, 464 )
 texture = ExtResource( 19 )
 
 [node name="Tree8" type="Sprite" parent="Foliage"]
+material = SubResource( 10 )
 position = Vector2( 880, 480 )
 texture = ExtResource( 26 )
 
 [node name="Tree2" type="Sprite" parent="Foliage"]
+material = SubResource( 11 )
 position = Vector2( 1272, 464 )
 texture = ExtResource( 11 )
 
 [node name="Tree3" type="Sprite" parent="Foliage"]
+material = SubResource( 12 )
 position = Vector2( 1072, 464 )
 texture = ExtResource( 11 )
 
 [node name="Tree4" type="Sprite" parent="Foliage"]
+material = SubResource( 13 )
 position = Vector2( 1144, 464 )
 texture = ExtResource( 11 )
 
 [node name="Tree7" type="Sprite" parent="Foliage"]
+material = SubResource( 14 )
 position = Vector2( 560, 176 )
 texture = ExtResource( 25 )
 
