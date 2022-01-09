@@ -8,7 +8,7 @@
 extents = Vector2( 6, 7.5 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 6, 7.5 )
+extents = Vector2( 6.5, 7.5 )
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -542,7 +542,7 @@ collision_layer = 2
 collision_mask = 13
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [  ],
+"_edit_horizontal_guides_": [ 2.0, 17.0 ],
 "_edit_vertical_guides_": [  ]
 }
 
@@ -556,11 +556,11 @@ position = Vector2( -9, -9 )
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
-position = Vector2( 40, 10.5 )
+position = Vector2( 40, 9.5 )
 shape = SubResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 8, 10.5 )
+position = Vector2( 8.5, 9.5 )
 shape = SubResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

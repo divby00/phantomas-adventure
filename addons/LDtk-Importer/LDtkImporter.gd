@@ -115,7 +115,7 @@ func get_level_layerInstances(level, options):
 					new_node = YSort.new()
 				else:
 					new_node = Node2D.new()
-				new_node.z_index = i
+				new_node.z_index = 0
 				new_node.name = layerInstance.__identifier
 				var entities = LDtk.get_layer_entities(layerInstance, level, options)
 				for entity in entities:
@@ -125,13 +125,13 @@ func get_level_layerInstances(level, options):
 			'Tiles', 'IntGrid', 'AutoLayer':
 				var new_layer = LDtk.new_tilemap(layerInstance, level)
 				if new_layer:
-					new_layer.z_index = i
+					new_layer.z_index = 0
 					layers.push_front(new_layer)
 
 		if layerInstance.__type == 'IntGrid':
 			var collision_layer = LDtk.import_collisions(layerInstance, level, options)
 			if collision_layer:
-				collision_layer.z_index = i
+				collision_layer.z_index = 0
 				layers.push_front(collision_layer)
 
 		i -= 1

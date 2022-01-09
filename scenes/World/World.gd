@@ -6,6 +6,7 @@ onready var lifebar: TextureProgress = $UI/LifeBar
 onready var ui = $UI
 
 const Levels = {"01": preload("res://scenes/World/Levels/Level01.tscn")}
+const PineTreeScene: PackedScene = preload("res://scenes/World/Trees/PineTree.tscn")
 
 
 func _ready():
@@ -16,8 +17,23 @@ func _ready():
 func _load_level(level_key):
 	var level = Levels[level_key].instance()
 	_set_camera_limits(level)
+	_set_level_entities(level)
 	get_tree().current_scene.add_child_below_node(camera, level, false)
 	_connect_signals()
+
+
+func _set_level_entities(level):
+	var data = level.get_node("./Data/Rio_nivel_1/Entities")
+	var entities: Array = data.get_children()
+	for entity in entities:
+		if entity.name == 'Start':
+			print('start found!')
+		if entity.name == 'PineTree':
+			var pine = PineTreeScene.instance()
+			level.add_child(pine)
+			print(entity)
+			pine.position = entity.position
+			print(entity.position)
 
 
 func _set_camera_limits(level):
