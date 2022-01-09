@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/Enemies/Boar/Boar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/World/Platform/Platform.tscn" type="PackedScene" id=3]
@@ -10,7 +10,6 @@
 [ext_resource path="res://resources/sprites/maps/level01-further-background.png" type="Texture" id=9]
 [ext_resource path="res://resources/sprites/maps/level01-closer-background.png" type="Texture" id=10]
 [ext_resource path="res://scenes/Enemies/Toad/Toad.tscn" type="PackedScene" id=12]
-[ext_resource path="res://scenes/Inventory/EnergyItem.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/World/Water/Water.tscn" type="PackedScene" id=14]
 [ext_resource path="res://resources/sprites/characters/lorenzo.png" type="Texture" id=17]
 [ext_resource path="res://resources/maps/level01.ldtk" type="PackedScene" id=18]
@@ -166,14 +165,6 @@ autoplay = "Nueva Animación"
 "anims/Nueva Animación" = SubResource( 6 )
 anims/RESET = SubResource( 7 )
 
-[node name="EnergyItem" parent="." instance=ExtResource( 13 )]
-visible = false
-position = Vector2( 544, 320 )
-
-[node name="EnergyItem2" parent="." instance=ExtResource( 13 )]
-visible = false
-position = Vector2( 344, 496 )
-
 [node name="Enemies" type="Node2D" parent="."]
 position = Vector2( 0, -8 )
 
@@ -227,8 +218,7 @@ anims/RESET = SubResource( 4 )
 anims/move = SubResource( 5 )
 
 [node name="Lorenzo" type="Sprite" parent="."]
-visible = false
-position = Vector2( 512, 504 )
+position = Vector2( 688, 448 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 texture = ExtResource( 17 )
