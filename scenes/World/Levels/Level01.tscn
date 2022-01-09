@@ -116,10 +116,11 @@ tracks/0/keys = {
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 544.0, 272.0 ],
-"_edit_vertical_guides_": [ 960.0, 480.0, 1440.0, 1920.0 ]
+"_edit_vertical_guides_": [ 960.0, 480.0, 1440.0, 1920.0, -944.0, 944.0 ]
 }
 camera_limit_bottom = 528
-camera_limit_right = 1920
+camera_limit_left = -944
+camera_limit_right = 944
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
