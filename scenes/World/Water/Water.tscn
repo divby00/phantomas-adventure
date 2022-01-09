@@ -24,9 +24,8 @@ animations = [ {
 [node name="Water" type="Area2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 8, 8 )
+position = Vector2( 48, 16 )
 frames = SubResource( 1 )
-frame = 6
 speed_scale = 2.0
 playing = true
 
