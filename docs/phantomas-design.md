@@ -20,6 +20,11 @@ Juego de plataformas con tecnología **QSVP**, o lo que es lo mismo, paleta de c
 
 Para variar, Phantomas está cumpliendo condena en la trena después de que su último golpe haya fallado. Un personaje poderoso pero desconocido le ofrece sacarle de la cárcel a cambio de recuperar un diamante en el collar de un gato perdido en la Sierra Negra, una zona incomunicada y de difícil acceso. El plan es transportar a Phantomas en helicóptero lo más cerca posible de la última posición conocida del gato y buscarle por ahí. Una vez localizado, usará una bengala para llamar al helicóptero. Phantomas aterrizará en el arroyo, cerca del gato y conseguirá al gato casi nada más empezar, pero se dará cuenta de que no tiene la pistola de bengalas así que tendrá que usar su habilidad para volver a la civilización. Según vaya avanzando y conociendo a los personajes que pueblan la Sierra Negra, se dará cuenta de que tienen un problema muy serio: las brujas que habitan en la montaña, y que solo ayudándoles podrá salir.
 
+## Resolución
+
+La pantalla de juego consta de 480 pixels de ancho por 272 pixels de alto, que da una resolución de casi 16:9, (16:9 sería 480x270 pero no nos quedaría una división entera entre 16). Está compuesta de 30 tiles horizontales por 17 tiles verticales de 16x16 pixels.
+
+
 ## Habilidades
 
 - Control de salto: Permite controlar la dirección durante el salto. Salto vertical útil para acceder a sitios inaccesibles.
