@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/World/World.gd" type="Script" id=1]
 [ext_resource path="res://scenes/World/UI/UI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node2D"]
 pause_mode = 1
@@ -13,16 +12,7 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 64, -32 )
 current = true
-
-[node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 64, -32 )
-
-[node name="RemoteTransform2D" parent="Player" index="5"]
-remote_path = NodePath("../../Camera2D")
 
 [node name="UI" parent="." instance=ExtResource( 2 )]
 pause_mode = 2
-
-[editable path="Player"]

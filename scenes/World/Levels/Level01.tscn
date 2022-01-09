@@ -137,7 +137,7 @@ motion_scale = Vector2( 0.4, 0.4 )
 motion_mirroring = Vector2( 480, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 240, 152 )
+position = Vector2( 240, 120 )
 texture = ExtResource( 9 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -145,7 +145,7 @@ motion_scale = Vector2( 0.8, 0.8 )
 motion_mirroring = Vector2( 480, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-position = Vector2( 240, 416 )
+position = Vector2( 240, 384 )
 texture = ExtResource( 10 )
 
 [node name="Data" parent="." instance=ExtResource( 18 )]
@@ -193,13 +193,13 @@ position = Vector2( 424, 424 )
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 272, 432 )
+position = Vector2( 280, 432 )
 
 [node name="Path2D" parent="Platforms/Platform" index="1"]
 curve = ExtResource( 4 )
 
 [node name="Platform2" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 168, 336 )
+position = Vector2( 192, 384 )
 
 [node name="KinematicBody2D" parent="Platforms/Platform2" index="0"]
 position = Vector2( -16, 0 )
@@ -213,7 +213,7 @@ anims/RESET = SubResource( 2 )
 anims/move = SubResource( 3 )
 
 [node name="Platform3" parent="Platforms" instance=ExtResource( 3 )]
-position = Vector2( 392, 376 )
+position = Vector2( 352, 376 )
 
 [node name="KinematicBody2D" parent="Platforms/Platform3" index="0"]
 position = Vector2( -16, 0 )
