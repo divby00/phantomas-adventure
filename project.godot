@@ -52,19 +52,21 @@ Enums="*res://scripts/Enums.gd"
 Constants="*res://scripts/Constants.gd"
 Levels="*res://scripts/Levels.gd"
 PlayerStats="*res://scripts/PlayerStats.gd"
+IntegerResolutionHandler="*res://addons/integer_resolution_handler/integer_resolution_handler.gd"
 
 [display]
 
+window/integer_resolution_handler/base_width=480
+window/integer_resolution_handler/base_height=270
 window/size/width=480
 window/size/height=272
-window/size/test_width=1440
-window/size/test_height=816
-window/stretch/mode="viewport"
+window/size/fullscreen=true
+window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/LDtk-Importer/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/LDtk-Importer/plugin.cfg", "res://addons/integer_resolution_handler/plugin.cfg" )
 
 [global]
 
