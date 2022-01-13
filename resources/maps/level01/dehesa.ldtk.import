@@ -1,0 +1,17 @@
+[remap]
+
+importer="LDtk.import"
+type="PackedScene"
+path="res://.import/dehesa.ldtk-de97371023da41a0370fcd537becd277.tscn"
+
+[deps]
+
+source_file="res://resources/maps/level01/dehesa.ldtk"
+dest_files=[ "res://.import/dehesa.ldtk-de97371023da41a0370fcd537becd277.tscn" ]
+
+[params]
+
+Import_Collisions=false
+Import_Custom_Entities=true
+Import_Metadata=true
+Import_YSort_Entities_Layer=false
