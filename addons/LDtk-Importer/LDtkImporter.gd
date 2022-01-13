@@ -75,19 +75,20 @@ func import(source_file, save_path, options, platform_v, r_gen_files):
 	LDtk.map_data = source_file
 
 	var map = Node2D.new()
-	map.name = source_file.get_file().get_basename()
+	map.name = "Data"
 
 	#add levels as Node2D
 	for level in LDtk.map_data.levels:
-		var new_level = Node2D.new()
-		new_level.name = level.identifier
-		map.add_child(new_level)
-		new_level.set_owner(map)
+#		COMMENTED TO KEEP THE LEVEL CONTENTS ON AN OUTER NODE
+#		var new_level = Node2D.new()
+#		new_level.name = level.identifier
+#		map.add_child(new_level)
+#		new_level.set_owner(map)
 
 		#add layers
 		var layerInstances = get_level_layerInstances(level, options)
 		for layerInstance in layerInstances:
-			new_level.add_child(layerInstance)
+			map.add_child(layerInstance)
 			layerInstance.set_owner(map)
 
 			for child in layerInstance.get_children():
