@@ -31,6 +31,25 @@
 	"flags": ["DiscardPreCsvIntGrid"],
 	"defs": { "layers": [
 		{
+			"__type": "Entities",
+			"identifier": "Entities",
+			"type": "Entities",
+			"uid": 22,
+			"gridSize": 16,
+			"displayOpacity": 1,
+			"pxOffsetX": 0,
+			"pxOffsetY": 0,
+			"requiredTags": [],
+			"excludedTags": [],
+			"intGridValues": [{ "value": 1, "identifier": null, "color": "#000000" }],
+			"autoTilesetDefUid": null,
+			"autoRuleGroups": [],
+			"autoSourceLayerDefUid": null,
+			"tilesetDefUid": null,
+			"tilePivotX": 0,
+			"tilePivotY": 0
+		},
+		{
 			"__type": "IntGrid",
 			"identifier": "Collisions",
 			"type": "IntGrid",
@@ -1149,25 +1168,6 @@
 			"tilesetDefUid": null,
 			"tilePivotX": 0,
 			"tilePivotY": 0
-		},
-		{
-			"__type": "Entities",
-			"identifier": "Entities",
-			"type": "Entities",
-			"uid": 22,
-			"gridSize": 16,
-			"displayOpacity": 1,
-			"pxOffsetX": 0,
-			"pxOffsetY": 0,
-			"requiredTags": [],
-			"excludedTags": [],
-			"intGridValues": [{ "value": 1, "identifier": null, "color": "#000000" }],
-			"autoTilesetDefUid": null,
-			"autoRuleGroups": [],
-			"autoSourceLayerDefUid": null,
-			"tilesetDefUid": null,
-			"tilePivotX": 0,
-			"tilePivotY": 0
 		}
 	], "entities": [
 		{
@@ -1528,6 +1528,133 @@
 			"externalRelPath": null,
 			"fieldInstances": [],
 			"layerInstances": [
+				{
+					"__identifier": "Entities",
+					"__type": "Entities",
+					"__cWid": 150,
+					"__cHei": 36,
+					"__gridSize": 16,
+					"__opacity": 1,
+					"__pxTotalOffsetX": 0,
+					"__pxTotalOffsetY": 0,
+					"__tilesetDefUid": null,
+					"__tilesetRelPath": null,
+					"levelId": 0,
+					"layerDefUid": 22,
+					"pxOffsetX": 0,
+					"pxOffsetY": 0,
+					"visible": true,
+					"optionalRules": [],
+					"intGridCsv": [],
+					"autoLayerTiles": [],
+					"seed": 5747640,
+					"overrideTilesetUid": null,
+					"gridTiles": [],
+					"entityInstances": [
+						{
+							"__identifier": "PineTree",
+							"__grid": [108,24],
+							"__pivot": [0,0],
+							"__tile": null,
+							"width": 51,
+							"height": 96,
+							"defUid": 24,
+							"px": [1728,384],
+							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Trees/PineTree.tscn", "__type": "String", "defUid": 25, "realEditorValues": [] }]
+						},
+						{
+							"__identifier": "PineTree",
+							"__grid": [95,26],
+							"__pivot": [0,0],
+							"__tile": null,
+							"width": 51,
+							"height": 96,
+							"defUid": 24,
+							"px": [1520,416],
+							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Trees/PineTree.tscn", "__type": "String", "defUid": 25, "realEditorValues": [] }]
+						},
+						{
+							"__identifier": "PineTree",
+							"__grid": [118,16],
+							"__pivot": [0,0],
+							"__tile": null,
+							"width": 51,
+							"height": 96,
+							"defUid": 24,
+							"px": [1888,256],
+							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Trees/PineTree.tscn", "__type": "String", "defUid": 25, "realEditorValues": [] }]
+						},
+						{
+							"__identifier": "Energy",
+							"__grid": [113,29],
+							"__pivot": [0,1],
+							"__tile": null,
+							"width": 16,
+							"height": 16,
+							"defUid": 29,
+							"px": [1808,480],
+							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/Inventory/EnergyItem.tscn", "__type": "String", "defUid": 30, "realEditorValues": [] }]
+						},
+						{
+							"__identifier": "Helicopter",
+							"__grid": [42,3],
+							"__pivot": [0,1],
+							"__tile": null,
+							"width": 130,
+							"height": 44,
+							"defUid": 27,
+							"px": [672,64],
+							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Helicopter/Helicopter.tscn", "__type": "String", "defUid": 28, "realEditorValues": [] }]
+						},
+						{
+							"__identifier": "Energy",
+							"__grid": [120,30],
+							"__pivot": [0,1],
+							"__tile": null,
+							"width": 16,
+							"height": 16,
+							"defUid": 29,
+							"px": [1920,496],
+							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/Inventory/EnergyItem.tscn", "__type": "String", "defUid": 30, "realEditorValues": [] }]
+						},
+						{
+							"__identifier": "Water",
+							"__grid": [139,32],
+							"__pivot": [0,0],
+							"__tile": null,
+							"width": 96,
+							"height": 32,
+							"defUid": 31,
+							"px": [2224,512],
+							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Water/Water.tscn", "__type": "String", "defUid": 32, "realEditorValues": [] }]
+						},
+						{
+							"__identifier": "Player",
+							"__grid": [44,2],
+							"__pivot": [0,0],
+							"__tile": null,
+							"width": 16,
+							"height": 16,
+							"defUid": 20,
+							"px": [704,32],
+							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/Player/Player.tscn", "__type": "String", "defUid": 26, "realEditorValues": [] }]
+						},
+						{
+							"__identifier": "MapLoader",
+							"__grid": [0,19],
+							"__pivot": [0,0],
+							"__tile": null,
+							"width": 2,
+							"height": 272,
+							"defUid": 33,
+							"px": [0,304],
+							"fieldInstances": [
+								{ "__identifier": "NodeType", "__value": "res://scenes/World/Maps/MapLoader/MapLoader.tscn", "__type": "String", "defUid": 34, "realEditorValues": [] },
+								{ "__identifier": "next_map", "__value": "Dehesa", "__type": "String", "defUid": 35, "realEditorValues": [] }
+							]
+						}
+					]
+				},
 				{
 					"__identifier": "Collisions",
 					"__type": "IntGrid",
@@ -2918,133 +3045,6 @@
 					"overrideTilesetUid": null,
 					"gridTiles": [],
 					"entityInstances": []
-				},
-				{
-					"__identifier": "Entities",
-					"__type": "Entities",
-					"__cWid": 150,
-					"__cHei": 36,
-					"__gridSize": 16,
-					"__opacity": 1,
-					"__pxTotalOffsetX": 0,
-					"__pxTotalOffsetY": 0,
-					"__tilesetDefUid": null,
-					"__tilesetRelPath": null,
-					"levelId": 0,
-					"layerDefUid": 22,
-					"pxOffsetX": 0,
-					"pxOffsetY": 0,
-					"visible": true,
-					"optionalRules": [],
-					"intGridCsv": [],
-					"autoLayerTiles": [],
-					"seed": 5747640,
-					"overrideTilesetUid": null,
-					"gridTiles": [],
-					"entityInstances": [
-						{
-							"__identifier": "PineTree",
-							"__grid": [108,24],
-							"__pivot": [0,0],
-							"__tile": null,
-							"width": 51,
-							"height": 96,
-							"defUid": 24,
-							"px": [1728,384],
-							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Trees/PineTree.tscn", "__type": "String", "defUid": 25, "realEditorValues": [] }]
-						},
-						{
-							"__identifier": "PineTree",
-							"__grid": [95,26],
-							"__pivot": [0,0],
-							"__tile": null,
-							"width": 51,
-							"height": 96,
-							"defUid": 24,
-							"px": [1520,416],
-							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Trees/PineTree.tscn", "__type": "String", "defUid": 25, "realEditorValues": [] }]
-						},
-						{
-							"__identifier": "PineTree",
-							"__grid": [118,16],
-							"__pivot": [0,0],
-							"__tile": null,
-							"width": 51,
-							"height": 96,
-							"defUid": 24,
-							"px": [1888,256],
-							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Trees/PineTree.tscn", "__type": "String", "defUid": 25, "realEditorValues": [] }]
-						},
-						{
-							"__identifier": "Energy",
-							"__grid": [113,29],
-							"__pivot": [0,1],
-							"__tile": null,
-							"width": 16,
-							"height": 16,
-							"defUid": 29,
-							"px": [1808,480],
-							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/Inventory/EnergyItem.tscn", "__type": "String", "defUid": 30, "realEditorValues": [] }]
-						},
-						{
-							"__identifier": "Helicopter",
-							"__grid": [42,3],
-							"__pivot": [0,1],
-							"__tile": null,
-							"width": 130,
-							"height": 44,
-							"defUid": 27,
-							"px": [672,64],
-							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Helicopter/Helicopter.tscn", "__type": "String", "defUid": 28, "realEditorValues": [] }]
-						},
-						{
-							"__identifier": "Energy",
-							"__grid": [120,30],
-							"__pivot": [0,1],
-							"__tile": null,
-							"width": 16,
-							"height": 16,
-							"defUid": 29,
-							"px": [1920,496],
-							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/Inventory/EnergyItem.tscn", "__type": "String", "defUid": 30, "realEditorValues": [] }]
-						},
-						{
-							"__identifier": "Water",
-							"__grid": [139,32],
-							"__pivot": [0,0],
-							"__tile": null,
-							"width": 96,
-							"height": 32,
-							"defUid": 31,
-							"px": [2224,512],
-							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Water/Water.tscn", "__type": "String", "defUid": 32, "realEditorValues": [] }]
-						},
-						{
-							"__identifier": "Player",
-							"__grid": [44,2],
-							"__pivot": [0,0],
-							"__tile": null,
-							"width": 16,
-							"height": 16,
-							"defUid": 20,
-							"px": [704,32],
-							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/Player/Player.tscn", "__type": "String", "defUid": 26, "realEditorValues": [] }]
-						},
-						{
-							"__identifier": "MapLoader",
-							"__grid": [0,19],
-							"__pivot": [0,0],
-							"__tile": null,
-							"width": 2,
-							"height": 272,
-							"defUid": 33,
-							"px": [0,304],
-							"fieldInstances": [
-								{ "__identifier": "NodeType", "__value": "res://scenes/World/Maps/MapLoader/MapLoader.tscn", "__type": "String", "defUid": 34, "realEditorValues": [] },
-								{ "__identifier": "next_map", "__value": "Dehesa", "__type": "String", "defUid": 35, "realEditorValues": [] }
-							]
-						}
-					]
 				}
 			],
 			"__neighbours": []
