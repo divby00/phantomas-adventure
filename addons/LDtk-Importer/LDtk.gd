@@ -1,7 +1,6 @@
 tool
 extends Reference
 
-
 var map_data setget _set_map_data
 
 
@@ -18,14 +17,14 @@ func load_LDtk_file(filepath):
 	var json = JSON.parse(json_file.get_as_text()).result
 	json_file.close()
 
-	json['base_dir'] = filepath.get_base_dir()
+	json["base_dir"] = filepath.get_base_dir()
 
 	return json
 
 
 #get layer entities
 func get_layer_entities(layer, level, options):
-	if layer.__type != 'Entities':
+	if layer.__type != "Entities":
 		return
 
 	var entities = []
@@ -45,17 +44,17 @@ func new_entity(entity_data, level, options):
 	var is_custom_entity = false
 	if entity_data.fieldInstances:
 		for field in entity_data.fieldInstances:
-			if field.__identifier == 'NodeType' and field.__type == 'String':
+			if field.__identifier == "NodeType" and field.__type == "String":
 				match field.__value:
-					'Position2D':
+					"Position2D":
 						new_entity = Position2D.new()
-					'Area2D':
+					"Area2D":
 						new_entity = Area2D.new()
-					'KinematicBody2D':
+					"KinematicBody2D":
 						new_entity = KinematicBody2D.new()
-					'RigidBody2D':
+					"RigidBody2D":
 						new_entity = RigidBody2D.new()
-					'StaticBody2D':
+					"StaticBody2D":
 						new_entity = StaticBody2D.new()
 					_:
 						if not options.Import_Custom_Entities:
@@ -66,10 +65,12 @@ func new_entity(entity_data, level, options):
 							printerr("Could not load resource: ", field.__value)
 							return
 						new_entity = resource.instance()
-						new_entity.position = Vector2(entity_data.px[0] + level.worldX, entity_data.px[1] + level.worldY)
+						new_entity.position = Vector2(
+							entity_data.px[0] + level.worldX, entity_data.px[1] + level.worldY
+						)
 						is_custom_entity = true
 			elif options.Import_Metadata:
-				metadata.append({'name': field.__identifier, 'value': field.__value})
+				metadata.append({"name": field.__identifier, "value": field.__value})
 	else:
 		printerr("Could not load entity data: ", entity_data)
 		return
@@ -78,16 +79,16 @@ func new_entity(entity_data, level, options):
 		return
 
 	for data in metadata:
-		if data['name'] in new_entity:
-			new_entity[data['name']] = data['value']
+		if data["name"] in new_entity:
+			new_entity[data["name"]] = data["value"]
 		else:
-			new_entity.set_meta(data['name'], data['value'])
+			new_entity.set_meta(data["name"], data["value"])
 
 	if is_custom_entity:
 		return new_entity
 
 	match new_entity.get_class():
-		'Area2D', 'KinematicBody2D', 'RigidBody2D', 'StaticBody2D':
+		"Area2D", "KinematicBody2D", "RigidBody2D", "StaticBody2D":
 			var col_shape = new_rectangle_collision_shape(get_entity_size(entity_data.__identifier))
 			new_entity.add_child(col_shape)
 
@@ -124,10 +125,10 @@ func new_tilemap(tilemap_data, level):
 	tilemap.name = tilemap_data.__identifier
 	tilemap.position = Vector2(level.worldX, level.worldY)
 	tilemap.cell_size = Vector2(tilemap_data.__gridSize, tilemap_data.__gridSize)
-	tilemap.modulate = Color(1,1,1, tilemap_data.__opacity)
+	tilemap.modulate = Color(1, 1, 1, tilemap_data.__opacity)
 
 	match tilemap_data.__type:
-		'Tiles':
+		"Tiles":
 			for tile in tilemap_data.gridTiles:
 				var flip = int(tile["f"])
 				var flipX = bool(flip & 1)
@@ -135,7 +136,7 @@ func new_tilemap(tilemap_data, level):
 				var grid_coords = coordId_to_gridCoords(tile.d[0], tilemap_data.__cWid)
 #				tilemap.set_cellv(grid_coords, tile.d[0], flipX, flipY)
 				tilemap.set_cellv(grid_coords, tile.t, flipX, flipY)
-		'IntGrid', 'AutoLayer':
+		"IntGrid", "AutoLayer":
 			for tile in tilemap_data.autoLayerTiles:
 				var flip = int(tile["f"])
 				var flipX = bool(flip & 1)
@@ -150,7 +151,7 @@ func new_tilemap(tilemap_data, level):
 #create new tileset from tileset_data.
 func new_tileset(tilemap_data, tileset_data):
 	var tileset = TileSet.new()
-	var texture_filepath = map_data.base_dir + '/' + tileset_data.relPath
+	var texture_filepath = map_data.base_dir + "/" + tileset_data.relPath
 	var texture = load(texture_filepath)
 
 	var texture_image = texture.get_data()
@@ -172,7 +173,9 @@ func new_tileset(tilemap_data, tileset_data):
 					var jsonObj = parse_json(data.data)
 
 					if "light_occluder_shape" in data.data:
-						tileset.tile_set_light_occluder(tileId, get_tile_light_occluder_custom_shape(tileId, jsonObj.light_occluder_shape))
+						tileset.tile_set_light_occluder(
+							tileId, get_tile_light_occluder_custom_shape(tileId, jsonObj.light_occluder_shape)
+						)
 					elif "light_occluder" in jsonObj and jsonObj.light_occluder == true:
 						tileset.tile_set_light_occluder(tileId, get_tile_light_occluder(tileId, tileset_data))
 
@@ -185,9 +188,9 @@ func get_layer_tileset_data(layerDefUid):
 	for layer in map_data.defs.layers:
 		if layer.uid == layerDefUid:
 			match layer.__type:
-				'AutoLayer', 'IntGrid':
+				"AutoLayer", "IntGrid":
 					tilesetId = layer.autoTilesetDefUid
-				'Tiles':
+				"Tiles":
 					tilesetId = layer.tilesetDefUid
 
 	for tileset_data in map_data.defs.tilesets:
@@ -232,8 +235,9 @@ func tileId_to_pxCoords(tileId, atlasGridSize, atlasGridWidth, padding, spacing)
 
 	return Vector2(pixelTileX, pixelTileY)
 
+
 func import_collisions(tilemap_data, level, options):
-	if tilemap_data.__type == 'IntGrid' and get_layer_tileset_data(tilemap_data.layerDefUid) == null:
+	if tilemap_data.__type == "IntGrid" and get_layer_tileset_data(tilemap_data.layerDefUid) == null:
 		return
 
 	var shouldImportCollisions = options.Import_Collisions and tilemap_data.__identifier == "Collisions"
@@ -248,7 +252,7 @@ func import_collisions(tilemap_data, level, options):
 		return
 
 	var layer = StaticBody2D.new()
-	layer.name = 'CollisionsLayer'
+	layer.name = "CollisionsLayer"
 	layer.position = Vector2(level.worldX, level.worldY)
 
 	var layer_width = tilemap_data.__cWid
@@ -263,7 +267,7 @@ func import_collisions(tilemap_data, level, options):
 	var current_tile_count = 1
 	for i in range(0, tilemap_data.intGridCsv.size()):
 		var should_end = false
-		if (tilemap_data.intGridCsv[i] == 0):
+		if tilemap_data.intGridCsv[i] == 0:
 			if not started_adding_collision:
 				current_tile_count += 1
 				continue
@@ -297,6 +301,7 @@ func import_collisions(tilemap_data, level, options):
 
 	return layer
 
+
 func get_collision_shape(tile_size, start_position, end_position, tile_count):
 	var col_shape = CollisionShape2D.new()
 	col_shape.shape = RectangleShape2D.new()
@@ -307,19 +312,18 @@ func get_collision_shape(tile_size, start_position, end_position, tile_count):
 
 	return col_shape
 
+
 # Returns a OccluderPolygon2D for the given tile
 func get_tile_light_occluder(tileId, tileset_data):
 	var region = get_tile_region(tileId, tileset_data)
 	var polygon = OccluderPolygon2D.new()
 
-	polygon.set_polygon(PoolVector2Array([
-		Vector2(region.size.x, 0), # top right
-		region.size,               # bottom right
-		Vector2(0, region.size.y), # bottom left
-		Vector2.ZERO               # top left
-	]))
+	polygon.set_polygon(  # top right  # bottom right  # bottom left  # top left
+		PoolVector2Array([Vector2(region.size.x, 0), region.size, Vector2(0, region.size.y), Vector2.ZERO])
+	)
 
 	return polygon
+
 
 # Returns a OccluderPolygon2D for the given tile with a predefined custom shape.
 func get_tile_light_occluder_custom_shape(tileId, pointArray):

@@ -20,10 +20,10 @@ texture = ExtResource( 5 )
 [node name="Sprite" parent="ParallaxBackground/ParallaxLayer3" index="0"]
 texture = ExtResource( 6 )
 
-[node name="Data" parent="." index="1" instance=ExtResource( 2 )]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
 stream = ExtResource( 3 )
 autoplay = true
+
+[node name="Data" parent="." index="2" instance=ExtResource( 2 )]
 
 [editable path="Data"]

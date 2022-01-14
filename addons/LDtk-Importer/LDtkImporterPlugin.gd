@@ -1,7 +1,6 @@
 tool
 extends EditorPlugin
 
-
 var import_plugin = null
 
 
