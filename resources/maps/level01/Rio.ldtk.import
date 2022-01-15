@@ -1,0 +1,17 @@
+[remap]
+
+importer="LDtk.import"
+type="PackedScene"
+path="res://.import/Rio.ldtk-fe3348355dbfdbe4c97b634abf11cc79.tscn"
+
+[deps]
+
+source_file="res://resources/maps/level01/Rio.ldtk"
+dest_files=[ "res://.import/Rio.ldtk-fe3348355dbfdbe4c97b634abf11cc79.tscn" ]
+
+[params]
+
+Import_Collisions=true
+Import_Custom_Entities=true
+Import_Metadata=true
+Import_YSort_Entities_Layer=false

@@ -2,7 +2,6 @@ extends Area2D
 
 signal door_entered(door)
 
-export var connection: Resource = null
 export(String, FILE, "*.tscn") var next_map = ""
 
 var active: bool = true
@@ -18,5 +17,4 @@ func _ready() -> void:
 func _on_body_entered(_player: Node) -> void:
 	if active:
 		emit_signal("door_entered", self)
-		print("Entered!")
 		active = false

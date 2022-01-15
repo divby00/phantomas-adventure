@@ -1,11 +1,8 @@
 extends Node2D
 
-
 onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-const animations: Array = [
-	"Idle", "Idle turning head", "Tongue", "Washing"
-]
+const animations: Array = ["Idle", "Idle turning head", "Tongue", "Washing"]
 
 
 func _ready() -> void:

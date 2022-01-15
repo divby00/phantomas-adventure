@@ -17,6 +17,6 @@ static func text_file_read(path: String):
 		return text
 
 
-static func json_file_read(path: String):
+static func json_file_read(path: String) -> JSONParseResult:
 	var text = text_file_read(path)
 	return JSON.parse(text)

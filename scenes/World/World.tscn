@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/World/World.gd" type="Script" id=1]
 [ext_resource path="res://scenes/World/UI/UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Transition/TransitionIn.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Transition/TransitionOut.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node2D"]
 pause_mode = 1
@@ -16,3 +18,7 @@ current = true
 
 [node name="UI" parent="." instance=ExtResource( 2 )]
 pause_mode = 2
+
+[node name="TransitionIn" parent="." instance=ExtResource( 3 )]
+
+[node name="TransitionOut" parent="." instance=ExtResource( 4 )]
