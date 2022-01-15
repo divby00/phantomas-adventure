@@ -34,7 +34,7 @@ _global_script_class_icons={
 
 config/name="Phantomas en la sierra"
 config/description="A Phantomas adventure"
-run/main_scene="res://scenes/Splash/Splash.tscn"
+run/main_scene="res://scenes/World/World.tscn"
 boot_splash/image="res://resources/sprites/logos/blank-splash.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
@@ -52,21 +52,20 @@ Enums="*res://scripts/Enums.gd"
 Constants="*res://scripts/Constants.gd"
 Levels="*res://scripts/Levels.gd"
 PlayerStats="*res://scripts/PlayerStats.gd"
-IntegerResolutionHandler="*res://addons/integer_resolution_handler/integer_resolution_handler.gd"
 
 [display]
 
-window/integer_resolution_handler/base_width=480
-window/integer_resolution_handler/base_height=270
 window/size/width=480
-window/size/height=272
+window/size/height=270
 window/size/fullscreen=true
+window/size/test_width=960
+window/size/test_height=540
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/LDtk-Importer/plugin.cfg", "res://addons/integer_resolution_handler/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/LDtk-Importer/plugin.cfg" )
 
 [global]
 
@@ -96,6 +95,12 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
+}
+LDtk.import={
+"Import_Collisions": true,
+"Import_Custom_Entities": true,
+"Import_Metadata": true,
+"Import_YSort_Entities_Layer": false
 }
 
 [input]
@@ -151,7 +156,6 @@ locale_filter=[ 0, [  ] ]
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
 vram_compression/import_etc=true
 quality/dynamic_fonts/use_oversampling=false
