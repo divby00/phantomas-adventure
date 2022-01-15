@@ -45,7 +45,6 @@ class EntityWriter(object):
         super().__init__()
         self._output_file = output_file
         self._entities = entities
-        print(self._entities)
         self._write_json()
 
     def _write_json(self):

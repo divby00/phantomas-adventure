@@ -20,9 +20,8 @@ func _on_transition_in_finished():
 
 
 func _on_Timer_timeout() -> void:
-	transition_out.start();
+	transition_out.start()
 
 
 func _on_transition_out_finished():
 	get_tree().change_scene_to(Love4RetroScene)
-
