@@ -23,6 +23,11 @@ texture = ExtResource( 6 )
 
 [node name="Data" parent="." index="1" instance=ExtResource( 2 )]
 
+[node name="Door" parent="Data/Entities" index="6"]
+position = Vector2( 304, 480 )
+id = ""
+next_door_id = ""
+
 [node name="Characters" type="Node2D" parent="." index="2"]
 
 [node name="Cat" parent="Characters" index="0" instance=ExtResource( 7 )]
