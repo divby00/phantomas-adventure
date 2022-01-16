@@ -11,7 +11,7 @@ dest_files=[ "res://.import/Dehesa.ldtk-f79fc6514ad68a90b9453cbbcc5b11e0.tscn" ]
 
 [params]
 
-Import_Collisions=false
+Import_Collisions=true
 Import_Custom_Entities=true
 Import_Metadata=true
 Import_YSort_Entities_Layer=false

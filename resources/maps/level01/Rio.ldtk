@@ -9,7 +9,7 @@
 		"url": "https://ldtk.io"
 	},
 	"jsonVersion": "0.9.3",
-	"nextUid": 36,
+	"nextUid": 39,
 	"worldLayout": "Free",
 	"worldGridWidth": 480,
 	"worldGridHeight": 272,
@@ -62,7 +62,7 @@
 			"excludedTags": [],
 			"intGridValues": [{ "value": 1, "identifier": "walls", "color": "#FFFFFF" }],
 			"autoTilesetDefUid": 1,
-			"autoRuleGroups": [{ "uid": 1, "name": "dirt", "active": true, "collapsed": true, "isOptional": false, "rules": [
+			"autoRuleGroups": [{ "uid": 1, "name": "dirt", "active": true, "collapsed": false, "isOptional": false, "rules": [
 				{
 					"uid": 15,
 					"active": true,
@@ -1171,7 +1171,7 @@
 		}
 	], "entities": [
 		{
-			"identifier": "Player",
+			"identifier": "Entrance",
 			"uid": 20,
 			"tags": [],
 			"width": 16,
@@ -1213,7 +1213,7 @@
 					"acceptFileTypes": null,
 					"defaultOverride": {
 						"id": "V_String",
-						"params": ["res://scenes/World/Player/Player.tscn"]
+						"params": ["Position2D"]
 					},
 					"textLanguageMode": null
 				}
@@ -1463,6 +1463,46 @@
 					"textLanguageMode": null
 				},
 				{
+					"identifier": "id",
+					"__type": "String",
+					"uid": 37,
+					"type": "F_String",
+					"isArray": false,
+					"canBeNull": true,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayPos": "Above",
+					"editorAlwaysShow": false,
+					"editorCutLongValues": true,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLanguageMode": null
+				},
+				{
+					"identifier": "next_door_id",
+					"__type": "String",
+					"uid": 38,
+					"type": "F_String",
+					"isArray": false,
+					"canBeNull": true,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayPos": "Above",
+					"editorAlwaysShow": false,
+					"editorCutLongValues": true,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLanguageMode": null
+				},
+				{
 					"identifier": "next_map",
 					"__type": "String",
 					"uid": 35,
@@ -1479,10 +1519,7 @@
 					"max": null,
 					"regex": null,
 					"acceptFileTypes": null,
-					"defaultOverride": {
-						"id": "V_String",
-						"params": ["Dehesa"]
-					},
+					"defaultOverride": null,
 					"textLanguageMode": null
 				}
 			]
@@ -1607,7 +1644,7 @@
 							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Water/Water.tscn", "__type": "String", "defUid": 32, "realEditorValues": [] }]
 						},
 						{
-							"__identifier": "Player",
+							"__identifier": "Entrance",
 							"__grid": [6,2],
 							"__pivot": [0,0],
 							"__tile": null,
@@ -1615,21 +1652,7 @@
 							"height": 16,
 							"defUid": 20,
 							"px": [96,32],
-							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Player/Player.tscn", "__type": "String", "defUid": 26, "realEditorValues": [] }]
-						},
-						{
-							"__identifier": "Door",
-							"__grid": [0,28],
-							"__pivot": [0,0],
-							"__tile": null,
-							"width": 16,
-							"height": 64,
-							"defUid": 33,
-							"px": [0,448],
-							"fieldInstances": [
-								{ "__identifier": "NodeType", "__value": "res://scenes/World/Door/Door.tscn", "__type": "String", "defUid": 34, "realEditorValues": [] },
-								{ "__identifier": "next_map", "__value": "Dehesa", "__type": "String", "defUid": 35, "realEditorValues": [] }
-							]
+							"fieldInstances": [{ "__identifier": "NodeType", "__value": "Position2D", "__type": "String", "defUid": 26, "realEditorValues": [] }]
 						},
 						{
 							"__identifier": "Door",
@@ -1650,6 +1673,94 @@
 									"realEditorValues": [{
 										"id": "V_String",
 										"params": ["Tenazas"]
+									}]
+								},
+								{ "__identifier": "id", "__value": null, "__type": "String", "defUid": 37, "realEditorValues": [] },
+								{ "__identifier": "next_door_id", "__value": null, "__type": "String", "defUid": 38, "realEditorValues": [] }
+							]
+						},
+						{
+							"__identifier": "Door",
+							"__grid": [0,28],
+							"__pivot": [0,0],
+							"__tile": null,
+							"width": 16,
+							"height": 64,
+							"defUid": 33,
+							"px": [0,448],
+							"fieldInstances": [
+								{ "__identifier": "NodeType", "__value": "res://scenes/World/Door/Door.tscn", "__type": "String", "defUid": 34, "realEditorValues": [] },
+								{
+									"__identifier": "next_map",
+									"__value": "Dehesa",
+									"__type": "String",
+									"defUid": 35,
+									"realEditorValues": [{
+										"id": "V_String",
+										"params": ["Dehesa"]
+									}]
+								},
+								{
+									"__identifier": "id",
+									"__value": "Rio01",
+									"__type": "String",
+									"defUid": 37,
+									"realEditorValues": [{
+										"id": "V_String",
+										"params": ["Rio01"]
+									}]
+								},
+								{
+									"__identifier": "next_door_id",
+									"__value": "Dehesa01",
+									"__type": "String",
+									"defUid": 38,
+									"realEditorValues": [{
+										"id": "V_String",
+										"params": ["Dehesa01"]
+									}]
+								}
+							]
+						},
+						{
+							"__identifier": "Door",
+							"__grid": [0,12],
+							"__pivot": [0,0],
+							"__tile": null,
+							"width": 16,
+							"height": 64,
+							"defUid": 33,
+							"px": [0,192],
+							"fieldInstances": [
+								{ "__identifier": "NodeType", "__value": "res://scenes/World/Door/Door.tscn", "__type": "String", "defUid": 34, "realEditorValues": [] },
+								{
+									"__identifier": "next_map",
+									"__value": "Dehesa",
+									"__type": "String",
+									"defUid": 35,
+									"realEditorValues": [{
+										"id": "V_String",
+										"params": ["Dehesa"]
+									}]
+								},
+								{
+									"__identifier": "id",
+									"__value": "Rio02",
+									"__type": "String",
+									"defUid": 37,
+									"realEditorValues": [{
+										"id": "V_String",
+										"params": ["Rio02"]
+									}]
+								},
+								{
+									"__identifier": "next_door_id",
+									"__value": "Dehesa02",
+									"__type": "String",
+									"defUid": 38,
+									"realEditorValues": [{
+										"id": "V_String",
+										"params": ["Dehesa02"]
 									}]
 								}
 							]
@@ -1751,7 +1862,7 @@
 						0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,
 						1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 						0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-						0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,
+						0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,
 						0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 						0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 						0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -2169,6 +2280,7 @@
 						{ "px": [464,544], "src": [96,32], "f": 0, "t": 28, "d": [80,5129] },
 						{ "px": [736,544], "src": [96,32], "f": 0, "t": 28, "d": [80,5146] },
 						{ "px": [272,448], "src": [128,32], "f": 0, "t": 30, "d": [82,4217] },
+						{ "px": [48,288], "src": [80,64], "f": 0, "t": 49, "d": [99,2703] },
 						{ "px": [688,352], "src": [96,64], "f": 0, "t": 50, "d": [100,3343] },
 						{ "px": [1872,368], "src": [96,64], "f": 0, "t": 50, "d": [100,3567] },
 						{ "px": [864,192], "src": [16,0], "f": 0, "t": 1, "d": [50,1854] },
@@ -2382,7 +2494,6 @@
 						{ "px": [912,240], "src": [32,16], "f": 0, "t": 13, "d": [62,2307] },
 						{ "px": [336,272], "src": [32,16], "f": 0, "t": 13, "d": [62,2571] },
 						{ "px": [1200,272], "src": [32,16], "f": 0, "t": 13, "d": [62,2625] },
-						{ "px": [48,288], "src": [32,16], "f": 0, "t": 13, "d": [62,2703] },
 						{ "px": [48,304], "src": [32,16], "f": 0, "t": 13, "d": [62,2853] },
 						{ "px": [320,304], "src": [32,16], "f": 0, "t": 13, "d": [62,2870] },
 						{ "px": [1184,304], "src": [32,16], "f": 0, "t": 13, "d": [62,2924] },
@@ -2469,6 +2580,9 @@
 						{ "px": [272,416], "src": [48,16], "f": 0, "t": 14, "d": [63,3917] },
 						{ "px": [272,432], "src": [48,16], "f": 0, "t": 14, "d": [63,4067] },
 						{ "px": [1136,464], "src": [48,16], "f": 0, "t": 14, "d": [63,4421] },
+						{ "px": [64,288], "src": [16,48], "f": 0, "t": 34, "d": [87,2704] },
+						{ "px": [80,288], "src": [16,48], "f": 0, "t": 34, "d": [87,2705] },
+						{ "px": [96,288], "src": [16,48], "f": 0, "t": 34, "d": [87,2706] },
 						{ "px": [912,480], "src": [16,48], "f": 0, "t": 34, "d": [87,4557] },
 						{ "px": [848,192], "src": [0,0], "f": 0, "t": 0, "d": [49,1853] },
 						{ "px": [304,208], "src": [0,0], "f": 0, "t": 0, "d": [49,1969] },
@@ -2625,6 +2739,7 @@
 						{ "px": [1856,368], "src": [0,48], "f": 0, "t": 33, "d": [86,3566] },
 						{ "px": [1584,400], "src": [0,48], "f": 0, "t": 33, "d": [86,3849] },
 						{ "px": [1680,432], "src": [0,48], "f": 0, "t": 33, "d": [86,4155] },
+						{ "px": [112,288], "src": [32,48], "f": 0, "t": 35, "d": [88,2707] },
 						{ "px": [1600,400], "src": [32,48], "f": 0, "t": 35, "d": [88,3850] },
 						{ "px": [384,432], "src": [32,48], "f": 0, "t": 35, "d": [88,4074] },
 						{ "px": [1696,432], "src": [32,48], "f": 0, "t": 35, "d": [88,4156] },
@@ -2649,6 +2764,9 @@
 						{ "px": [864,288], "src": [16,160], "f": 0, "t": 111, "d": [12,2754] },
 						{ "px": [880,288], "src": [64,160], "f": 0, "t": 114, "d": [12,2755] },
 						{ "px": [1104,288], "src": [48,160], "f": 0, "t": 113, "d": [12,2769] },
+						{ "px": [64,304], "src": [0,160], "f": 0, "t": 110, "d": [12,2854] },
+						{ "px": [80,304], "src": [0,160], "f": 0, "t": 110, "d": [12,2855] },
+						{ "px": [96,304], "src": [48,160], "f": 0, "t": 113, "d": [12,2856] },
 						{ "px": [336,304], "src": [64,160], "f": 0, "t": 114, "d": [12,2871] },
 						{ "px": [1120,304], "src": [80,160], "f": 0, "t": 115, "d": [12,2920] },
 						{ "px": [1200,304], "src": [112,160], "f": 0, "t": 117, "d": [12,2925] },
@@ -2720,6 +2838,8 @@
 						{ "px": [1200,240], "src": [160,144], "f": 0, "t": 109, "d": [14,2325] },
 						{ "px": [32,256], "src": [144,112], "f": 0, "t": 86, "d": [14,2402] },
 						{ "px": [48,256], "src": [16,112], "f": 0, "t": 78, "d": [14,2403] },
+						{ "px": [80,272], "src": [48,112], "f": 0, "t": 80, "d": [14,2555] },
+						{ "px": [96,272], "src": [80,96], "f": 0, "t": 71, "d": [14,2556] },
 						{ "px": [608,288], "src": [64,96], "f": 0, "t": 70, "d": [14,2738] },
 						{ "px": [624,288], "src": [48,128], "f": 0, "t": 91, "d": [14,2739] },
 						{ "px": [688,288], "src": [96,128], "f": 0, "t": 94, "d": [14,2743] },

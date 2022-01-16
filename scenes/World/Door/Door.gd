@@ -3,7 +3,9 @@ extends Area2D
 signal door_entered(door)
 
 var active: bool = true
-var next_map: String = ""
+export var id: String = ""
+export var next_map: String = ""
+export var next_door_id: String = ""
 
 
 func _ready() -> void:

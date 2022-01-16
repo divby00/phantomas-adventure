@@ -2,26 +2,30 @@ extends Node2D
 
 onready var ui = $UI
 onready var camera: Camera2D = $Camera2D
+onready var player: KinematicBody2D = $Player
 onready var lifebar: TextureProgress = $UI/LifeBar
 onready var transition_in: CanvasLayer = $TransitionIn
 onready var transition_out: CanvasLayer = $TransitionOut
+onready var remote_transform: RemoteTransform2D = $Player/RemoteTransform2D
 
 const PineTreeScene: PackedScene = preload("res://scenes/World/Trees/PineTree.tscn")
 
 var previous_level = null
 var current_level = null
 var next_map = null
+var next_door_id = null
 
 
 func _ready():
 	Configuration.load_and_save_config()
-	_load_level("Rio")
+	_load_level("Rio", null)
 
 
-func _load_level(level_key):
+func _load_level(level_key, next_door_id):
 	previous_level = current_level
 	current_level = Levels.Data[level_key].scene.instance()
 	get_tree().current_scene.add_child_below_node(camera, current_level, false)
+	_set_player(next_door_id)
 	_set_camera_limits(current_level)
 	_connect_signals()
 	transition_in.texture_rect.visible = true
@@ -30,14 +34,26 @@ func _load_level(level_key):
 	transition_in.start()
 
 
+func _set_player(next_door_id):
+	if next_door_id != null:
+		var doors = get_tree().get_nodes_in_group("DoorGroup")
+		for door in doors:
+			if door.id == next_door_id:
+				player.position.x = door.position.x
+				player.position.y = door.position.y + 48
+				break
+	else:
+		var entrance = current_level.get_entrance()
+		if entrance != null:
+			player.position = entrance.position
+
+
 func _set_camera_limits(level):
 	camera.limit_left = level.camera_limit_left
 	camera.limit_top = level.camera_limit_top
 	camera.limit_right = level.camera_limit_right
 	camera.limit_bottom = level.camera_limit_bottom
-	var player = get_tree().get_nodes_in_group("PlayerGroup")[0]
-	var player_remote_transform: RemoteTransform2D = player.get_node("RemoteTransform2D")
-	player_remote_transform.remote_path = "../../../../../Camera2D"
+	remote_transform.remote_path = "../../Camera2D"
 
 
 func _connect_signals():
@@ -80,6 +96,7 @@ func _on_door_entered(door):
 	transition_out.texture_rect.visible = true
 	transition_out.start()
 	next_map = door.next_map
+	next_door_id = door.next_door_id
 
 
 func _on_transition_in_finished():
@@ -89,4 +106,4 @@ func _on_transition_in_finished():
 func _on_transition_out_finished():
 	SoundManager.stop(Levels.Data[current_level.id].background_music)
 	current_level.queue_free()
-	_load_level(next_map)
+	_load_level(next_map, next_door_id)

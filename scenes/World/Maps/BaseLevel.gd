@@ -7,6 +7,10 @@ var camera_limit_bottom: int = 0
 var camera_limit_left: int = 0
 var camera_limit_right: int = 0
 
+var data = null setget , get_data
+var enemies = null setget , get_enemies
+var characters = null setget , get_characters
+
 # "id" will be "Rio" for Rio scene, "Dehesa" for Dehesa scene and so on...
 var id: String = "BaseLevel"
 
@@ -33,3 +37,19 @@ func _read_camera_limits_from_ldtk(json_data: JSONParseResult) -> void:
 # Currently children classes should override this method to handle these changes.
 func handle_map_changes() -> void:
 	pass
+
+
+func get_data() -> Node2D:
+	return get_node("Data") as Node2D
+
+
+func get_enemies() -> Node2D:
+	return get_node("Data/Entities/Enemies") as Node2D
+
+
+func get_characters() -> Node2D:
+	return get_node("Data/Entities/Characters") as Node2D
+
+
+func get_entrance() -> Position2D:
+	return get_node("Data/Entities/Entrance") as Position2D

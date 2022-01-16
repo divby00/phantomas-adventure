@@ -40,7 +40,7 @@ _global_script_class_icons={
 
 config/name="Phantomas en la sierra"
 config/description="A Phantomas adventure"
-run/main_scene="res://scenes/Cutscenes/Splash/Splash.tscn"
+run/main_scene="res://scenes/World/World.tscn"
 boot_splash/image="res://resources/sprites/logos/blank-splash.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
