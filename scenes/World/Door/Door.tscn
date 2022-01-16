@@ -4,7 +4,7 @@
 [ext_resource path="res://resources/sprites/maps/door.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4, 31.5 )
+extents = Vector2( 4, 32 )
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -47,7 +47,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 4, 31.5 )
+position = Vector2( 4, 32 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

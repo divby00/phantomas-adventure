@@ -1,7 +1,6 @@
 extends Area2D
 
 signal door_entered(door)
-signal door_exited(door)
 
 enum ENTER_DIRECTION {LEFT,RIGHT}
 
