@@ -43,7 +43,7 @@ func _set_player():
 				player.position.x = door.position.x
 				player.position.y = door.position.y + 48
 				if door.enter_direction == "RIGHT":
-					player.position.x -= 16
+					player.position.x -= 18
 				else:
 					player.position.x -= 1
 				break
