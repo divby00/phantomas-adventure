@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://resources/sprites/title/title-sky.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Transition/TransitionIn.tscn" type="PackedScene" id=2]
 [ext_resource path="res://resources/sprites/title/title-trees.png" type="Texture" id=3]
-[ext_resource path="res://resources/music/main_title.ogg" type="AudioStream" id=4]
 [ext_resource path="res://scenes/TitleScreen/TitleScreen.gd" type="Script" id=5]
 [ext_resource path="res://resources/sprites/logos/logo-mountains.png" type="Texture" id=6]
 [ext_resource path="res://resources/sprites/logos/logo-phantomas.png" type="Texture" id=7]
@@ -11,7 +10,6 @@
 [ext_resource path="res://scenes/Transition/TransitionOut.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/TitleScreen/Credits/Credits.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/TitleScreen/Trees/TallTree.tscn" type="PackedScene" id=11]
-[ext_resource path="res://resources/sounds/blip.wav" type="AudioStream" id=12]
 [ext_resource path="res://scenes/TitleScreen/Trees/ShortTree.tscn" type="PackedScene" id=13]
 [ext_resource path="res://resources/sprites/title/title-tree-4.png" type="Texture" id=14]
 [ext_resource path="res://resources/sprites/title/title-tree-1.png" type="Texture" id=15]
@@ -114,14 +112,6 @@ __meta__ = {
 [node name="Trees" type="Sprite" parent="."]
 position = Vector2( 240, 219 )
 texture = ExtResource( 3 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-bus = "Music"
-
-[node name="AudioSfxPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
-bus = "SFX"
 
 [node name="MenuManager" parent="." instance=ExtResource( 8 )]
 

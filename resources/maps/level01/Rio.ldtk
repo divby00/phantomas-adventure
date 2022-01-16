@@ -1213,7 +1213,7 @@
 					"acceptFileTypes": null,
 					"defaultOverride": {
 						"id": "V_String",
-						"params": ["res://scenes/Player/Player.tscn"]
+						"params": ["res://scenes/World/Player/Player.tscn"]
 					},
 					"textLanguageMode": null
 				}
@@ -1615,7 +1615,7 @@
 							"height": 16,
 							"defUid": 20,
 							"px": [96,32],
-							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/Player/Player.tscn", "__type": "String", "defUid": 26, "realEditorValues": [] }]
+							"fieldInstances": [{ "__identifier": "NodeType", "__value": "res://scenes/World/Player/Player.tscn", "__type": "String", "defUid": 26, "realEditorValues": [] }]
 						},
 						{
 							"__identifier": "Door",

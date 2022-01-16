@@ -2,9 +2,8 @@ extends Area2D
 
 signal door_entered(door)
 
-export(String, FILE, "*.tscn") var next_map = ""
-
 var active: bool = true
+var next_map: String = ""
 
 
 func _ready() -> void:

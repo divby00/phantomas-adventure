@@ -18,7 +18,6 @@ onready var text_continue: AnimatedSprite = $TextContinue
 onready var message_label: Label = $MessageFrame/MessageLabel
 onready var portrait_background: Sprite = $PortraitBackground
 onready var animation_player: AnimationPlayer = $AnimationPlayer
-onready var audio_player_text: AudioStreamPlayer = $AudioStreamPlayerText
 
 var current_glyph: int = 0
 var current_message: int = 0
@@ -57,7 +56,7 @@ func _process(_delta):
 
 func _print_glyph():
 	message_label.text = messages[current_message].substr(0, current_glyph)
-	audio_player_text.play()
+	SoundManager.play_se("DialogText")
 	current_glyph += 1
 
 

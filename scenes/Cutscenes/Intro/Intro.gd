@@ -7,7 +7,6 @@ onready var timer: Timer = $Timer
 onready var dialog: Node = $Dialog
 onready var act_timer: Timer = $ActTimer
 onready var music_tween: Tween = $MusicTween
-onready var sfx_player: AudioStreamPlayer = $SfxPlayer
 onready var transition_in: CanvasLayer = $TransitionIn
 onready var transition_out: CanvasLayer = $TransitionOut
 onready var music_player: AudioStreamPlayer = $MusicPlayer
@@ -64,8 +63,7 @@ func _change_act():
 
 
 func _play_step():
-	sfx_player.stream = Steps
-	sfx_player.play()
+	SoundManager.play_se("IntroKnock")
 
 
 func _on_message_removed(_act):
@@ -78,7 +76,7 @@ func _on_MusicTween_tween_completed(_object, _key):
 
 
 func _dialog_start():
-	sfx_player.play()
+	SoundManager.play_se("IntroWindowOpens")
 	animation_player.play("animate")
 
 

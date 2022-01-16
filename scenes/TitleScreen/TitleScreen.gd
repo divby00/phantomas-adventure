@@ -11,8 +11,6 @@ onready var transition_in = $TransitionIn
 onready var parallax = $ParallaxBackground
 onready var transition_out = $TransitionOut
 onready var wind_timer: Timer = $WindTimer
-onready var audio_sfx_player: AudioStreamPlayer = $AudioSfxPlayer
-onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 enum Destination { NEW_GAME, CONTINUE_GAME, EXIT }
 var where_to_go = Destination.NEW_GAME
@@ -38,12 +36,13 @@ func _prepare_timer():
 
 
 func _on_transition_in_finished():
-	audio_stream_player.play()
+	SoundManager.play_me("TitleSong")
 	menu_manager.show_menu()
 	transition_in.queue_free()
 
 
 func _on_transition_out_finished():
+	SoundManager.stop("TitleSong")
 	match where_to_go:
 		Destination.EXIT:
 			get_tree().quit(0)  # Quit
@@ -117,7 +116,7 @@ func _on_menu_selected(menu):
 			Configuration.fullscreen = menu.check.pressed
 		"MENU_SOUNDS_SFX_VOLUME":
 			AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear2db(menu.slider.value))
-			audio_sfx_player.play()
+			SoundManager.play_se("Blip")
 			Configuration.sfx_volume = menu.slider.value
 		"MENU_SOUNDS_MUSIC_VOLUME":
 			Configuration.music_volume = menu.slider.value

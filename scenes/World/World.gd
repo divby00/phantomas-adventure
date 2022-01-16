@@ -24,7 +24,9 @@ func _load_level(level_key):
 	get_tree().current_scene.add_child_below_node(camera, current_level, false)
 	_set_camera_limits(current_level)
 	_connect_signals()
+	transition_in.texture_rect.visible = true
 	transition_out.texture_rect.visible = false
+	SoundManager.play_me(Levels.Data[current_level.id].background_music)
 	transition_in.start()
 
 
@@ -39,12 +41,17 @@ func _set_camera_limits(level):
 
 
 func _connect_signals():
-	Utils.connect_signal(transition_out, "transition_out_finished", self, "_on_transition_out_finished")
+	_connect_transitions()
 	Utils.connect_signal(PlayerStats, "health_changed", self, "_on_health_changed")
 	Utils.connect_signal(PlayerStats, "player_destroyed", self, "_on_player_destroyed")
 	Utils.connect_signal(ui, "inventory_visible", self, "_on_inventory_visible")
 	_connect_enemies()
 	_connect_doors()
+
+
+func _connect_transitions():
+	Utils.connect_signal(transition_in, "transition_in_finished", self, "_on_transition_in_finished")
+	Utils.connect_signal(transition_out, "transition_out_finished", self, "_on_transition_out_finished")
 
 
 func _connect_enemies():
@@ -75,6 +82,11 @@ func _on_door_entered(door):
 	next_map = door.next_map
 
 
+func _on_transition_in_finished():
+	transition_in.texture_rect.visible = false
+
+
 func _on_transition_out_finished():
+	SoundManager.stop(Levels.Data[current_level.id].background_music)
 	current_level.queue_free()
 	_load_level(next_map)
