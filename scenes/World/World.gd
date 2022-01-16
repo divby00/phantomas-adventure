@@ -21,11 +21,12 @@ func _ready():
 	_load_level("Rio", null)
 
 
-func _load_level(level_key, next_door_id):
+func _load_level(level_key,door_id):
 	previous_level = current_level
 	current_level = Levels.Data[level_key].scene.instance()
+	next_door_id = door_id
 	get_tree().current_scene.add_child_below_node(camera, current_level, false)
-	_set_player(next_door_id)
+	_set_player()
 	_set_camera_limits(current_level)
 	_connect_signals()
 	transition_in.texture_rect.visible = true
@@ -34,13 +35,17 @@ func _load_level(level_key, next_door_id):
 	transition_in.start()
 
 
-func _set_player(next_door_id):
+func _set_player():
 	if next_door_id != null:
 		var doors = get_tree().get_nodes_in_group("DoorGroup")
 		for door in doors:
 			if door.id == next_door_id:
-				player.position.x = door.position.x
+				player.position.x = door.position.x 
 				player.position.y = door.position.y + 48
+				if (door.enter_direction=="LEFT"):
+					player.position.x += 8
+				else:
+					player.position.x -= 10
 				break
 	else:
 		var entrance = current_level.get_entrance()
@@ -79,7 +84,6 @@ func _connect_doors():
 	for door in doors:
 		Utils.connect_signal(door, "door_entered", self, "_on_door_entered")
 
-
 func _on_health_changed(health):
 	lifebar.value = health
 
@@ -93,11 +97,10 @@ func _on_inventory_visible(ivisible):
 
 
 func _on_door_entered(door):
-	transition_out.texture_rect.visible = true
-	transition_out.start()
 	next_map = door.next_map
 	next_door_id = door.next_door_id
-
+	transition_out.texture_rect.visible = true
+	transition_out.start()
 
 func _on_transition_in_finished():
 	transition_in.texture_rect.visible = false

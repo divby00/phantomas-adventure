@@ -9,7 +9,7 @@
 		"url": "https://ldtk.io"
 	},
 	"jsonVersion": "0.9.3",
-	"nextUid": 37,
+	"nextUid": 40,
 	"worldLayout": "Free",
 	"worldGridWidth": 480,
 	"worldGridHeight": 272,
@@ -1521,6 +1521,26 @@
 					"acceptFileTypes": null,
 					"defaultOverride": null,
 					"textLanguageMode": null
+				},
+				{
+					"identifier": "enter_direction",
+					"__type": "LocalEnum.ENTER_DIRECTION",
+					"uid": 39,
+					"type": { "id": "F_Enum", "params": [37] },
+					"isArray": false,
+					"canBeNull": false,
+					"arrayMinLength": null,
+					"arrayMaxLength": null,
+					"editorDisplayMode": "Hidden",
+					"editorDisplayPos": "Above",
+					"editorAlwaysShow": false,
+					"editorCutLongValues": true,
+					"min": null,
+					"max": null,
+					"regex": null,
+					"acceptFileTypes": null,
+					"defaultOverride": null,
+					"textLanguageMode": null
 				}
 			]
 		}
@@ -1545,7 +1565,7 @@
 				"averageColors": "f443f343f443f443f533f433f433f533f533f3230000f423f223f423f533f433f323f323f433f323f4230000f433f423f433f533f423f323f323f433f323f423f433f543f543f443f543f533f433f433f533f533f433f4230000000000000000f533f323f323f533f43300000000f223f223f223f223f223f223f223f223f223f223f22325551555156525553555355545553555555545556555267435631563056326741563166426631563366335632a7858771eaa274317432877399726632b780000000047435bb338744783275359aa278c664317651bcc1bb513331333133313332333233323331333000000000000"
 			}
 		}
-	], "enums": [], "externalEnums": [], "levelFields": [] },
+	], "enums": [{ "identifier": "ENTER_DIRECTION", "uid": 37, "values": [ { "id": "LEFT", "tileId": null, "color": 0, "__tileSrcRect": null }, { "id": "RIGHT", "tileId": null, "color": 0, "__tileSrcRect": null } ], "iconTilesetUid": null, "externalRelPath": null, "externalFileChecksum": null }], "externalEnums": [], "levelFields": [] },
 	"levels": [
 		{
 			"identifier": "Data",
@@ -1628,6 +1648,16 @@
 										"id": "V_String",
 										"params": ["Rio01"]
 									}]
+								},
+								{
+									"__identifier": "enter_direction",
+									"__value": "RIGHT",
+									"__type": "LocalEnum.ENTER_DIRECTION",
+									"defUid": 39,
+									"realEditorValues": [{
+										"id": "V_String",
+										"params": ["RIGHT"]
+									}]
 								}
 							]
 						},
@@ -1681,6 +1711,16 @@
 									"realEditorValues": [{
 										"id": "V_String",
 										"params": ["Rio02"]
+									}]
+								},
+								{
+									"__identifier": "enter_direction",
+									"__value": "RIGHT",
+									"__type": "LocalEnum.ENTER_DIRECTION",
+									"defUid": 39,
+									"realEditorValues": [{
+										"id": "V_String",
+										"params": ["RIGHT"]
 									}]
 								}
 							]
