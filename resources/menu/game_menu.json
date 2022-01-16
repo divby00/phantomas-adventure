@@ -12,7 +12,8 @@
       },
       {
         "text": "MENU_MAIN_QUIT",
-        "type": "button"
+        "type": "button",
+        "menu": "exitgame"
       }      
     ]
   },
@@ -104,7 +105,7 @@
   "exitgame": {
     "entries": [
       {
-        "text": "MENU_QUESTION_01",
+        "text": "MENU_QUESTION_02",
         "type": "label"
       },
       {
@@ -112,11 +113,11 @@
         "type": "hrule"
       },
       {
-        "text": "MENU_CHOICE_OVERWRITE_YES",
+        "text": "MENU_CHOICE_EXIT_YES",
         "type": "button"
       },
       {
-        "text": "MENU_CHOICE_OVERWRITE_NO",
+        "text": "MENU_CHOICE_EXIT_NO",
         "type": "button",
         "menu": "main"
       }

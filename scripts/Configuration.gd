@@ -185,3 +185,60 @@ func _init_input_map(action, scancode):
 	var event = InputEventKey.new()
 	event.scancode = scancode
 	InputMap.action_add_event(action, event)
+
+func on_menu_init(menu):
+	match menu.text:
+		"MENU_GRAPHICS_FULLSCREEN":
+			menu.check.pressed = Configuration.fullscreen
+		"MENU_SOUNDS_SFX_VOLUME":
+			menu.slider.value = Configuration.sfx_volume
+		"MENU_SOUNDS_MUSIC_VOLUME":
+			menu.slider.value = Configuration.music_volume
+		"MENU_CONTROL_REDEFINE_UP":
+			menu.button.text = OS.get_scancode_string(Configuration.key_up)
+		"MENU_CONTROL_REDEFINE_DOWN":
+			menu.button.text = OS.get_scancode_string(Configuration.key_down)
+		"MENU_CONTROL_REDEFINE_LEFT":
+			menu.button.text = OS.get_scancode_string(Configuration.key_left)
+		"MENU_CONTROL_REDEFINE_RIGHT":
+			menu.button.text = OS.get_scancode_string(Configuration.key_right)
+		"MENU_CONTROL_REDEFINE_ACTION":
+			menu.button.text = OS.get_scancode_string(Configuration.key_action)
+		"MENU_CONTROL_REDEFINE_INVENTORY":
+			menu.button.text = OS.get_scancode_string(Configuration.key_inventory)
+		"MENU_CONTROL_REDEFINE_CANCEL":
+			menu.button.text = OS.get_scancode_string(Configuration.key_cancel)
+
+
+func on_menu_selected(menu):
+	match menu.text:
+		"MENU_GRAPHICS_FULLSCREEN":
+			Configuration.fullscreen = menu.check.pressed
+		"MENU_SOUNDS_SFX_VOLUME":
+			AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear2db(menu.slider.value))
+			SoundManager.play_se("Blip")
+			Configuration.sfx_volume = menu.slider.value
+		"MENU_SOUNDS_MUSIC_VOLUME":
+			Configuration.music_volume = menu.slider.value
+		"LANG_ES":
+			Configuration.locale = "es"
+		"LANG_EN":
+			Configuration.locale = "en"
+
+
+func on_key_redefined(action, keyevent):
+	match action:
+		"Up":
+			Configuration.key_up = keyevent.scancode
+		"Down":
+			Configuration.key_down = keyevent.scancode
+		"Left":
+			Configuration.key_left = keyevent.scancode
+		"Right":
+			Configuration.key_right = keyevent.scancode
+		"Action":
+			Configuration.key_action = keyevent.scancode
+		"Inventory":
+			Configuration.key_inventory = keyevent.scancode
+		"Cancel":
+			Configuration.key_cancel = keyevent.scancode

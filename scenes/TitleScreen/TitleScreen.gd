@@ -67,29 +67,10 @@ func _on_wind_finished(wind):
 
 func _on_menu_init(menu):
 	match menu.text:
-		"MENU_GRAPHICS_FULLSCREEN":
-			menu.check.pressed = Configuration.fullscreen
-		"MENU_SOUNDS_SFX_VOLUME":
-			menu.slider.value = Configuration.sfx_volume
-		"MENU_SOUNDS_MUSIC_VOLUME":
-			menu.slider.value = Configuration.music_volume
 		"MENU_SAVE_SLOT":
 			menu.button.text = (TranslationServer.translate(menu.text) + ": #" + String(Configuration.save_slot))
-		"MENU_CONTROL_REDEFINE_UP":
-			menu.button.text = OS.get_scancode_string(Configuration.key_up)
-		"MENU_CONTROL_REDEFINE_DOWN":
-			menu.button.text = OS.get_scancode_string(Configuration.key_down)
-		"MENU_CONTROL_REDEFINE_LEFT":
-			menu.button.text = OS.get_scancode_string(Configuration.key_left)
-		"MENU_CONTROL_REDEFINE_RIGHT":
-			menu.button.text = OS.get_scancode_string(Configuration.key_right)
-		"MENU_CONTROL_REDEFINE_ACTION":
-			menu.button.text = OS.get_scancode_string(Configuration.key_action)
-		"MENU_CONTROL_REDEFINE_INVENTORY":
-			menu.button.text = OS.get_scancode_string(Configuration.key_inventory)
-		"MENU_CONTROL_REDEFINE_CANCEL":
-			menu.button.text = OS.get_scancode_string(Configuration.key_cancel)
-
+			return
+	Configuration.on_menu_init(menu)
 
 func _on_menu_selected(menu):
 	match menu.text:
@@ -99,52 +80,34 @@ func _on_menu_selected(menu):
 			else:
 				where_to_go = Destination.NEW_GAME
 				transition_out.start()
+			return
 		"MENU_CHOICE_OVERWRITE_YES":
 			GameSlotHandler.init_slot()
 			where_to_go = Destination.NEW_GAME
 			transition_out.start()
+			return
 		"MENU_MAIN_CONTINUEGAME":
 			if GameSlotHandler.GameData.intro_viewed:
 				where_to_go = Destination.CONTINUE_GAME
 			else:
 				where_to_go = Destination.NEW_GAME
 			transition_out.start()
+			return
 		"MENU_MAIN_QUIT":
 			where_to_go = Destination.EXIT
 			transition_out.start()
-		"MENU_GRAPHICS_FULLSCREEN":
-			Configuration.fullscreen = menu.check.pressed
-		"MENU_SOUNDS_SFX_VOLUME":
-			AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear2db(menu.slider.value))
-			SoundManager.play_se("Blip")
-			Configuration.sfx_volume = menu.slider.value
-		"MENU_SOUNDS_MUSIC_VOLUME":
-			Configuration.music_volume = menu.slider.value
+			return			
 		"MENU_SAVE_SLOT#1":
 			Configuration.save_slot = 1
+			return
 		"MENU_SAVE_SLOT#2":
 			Configuration.save_slot = 2
+			return
 		"MENU_SAVE_SLOT#3":
 			Configuration.save_slot = 3
-		"LANG_ES":
-			Configuration.locale = "es"
-		"LANG_EN":
-			Configuration.locale = "en"
+			return
+	Configuration.on_menu_selected(menu)
 
 
 func _on_key_redefined(action, keyevent):
-	match action:
-		"Up":
-			Configuration.key_up = keyevent.scancode
-		"Down":
-			Configuration.key_down = keyevent.scancode
-		"Left":
-			Configuration.key_left = keyevent.scancode
-		"Right":
-			Configuration.key_right = keyevent.scancode
-		"Action":
-			Configuration.key_action = keyevent.scancode
-		"Inventory":
-			Configuration.key_inventory = keyevent.scancode
-		"Cancel":
-			Configuration.key_cancel = keyevent.scancode
+	Configuration.on_key_redefined(action,keyevent)

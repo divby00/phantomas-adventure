@@ -17,6 +17,9 @@ var next_door_id = null
 
 
 func _ready():
+	Utils.connect_signal(ui, "inventory_visible", self, "_on_inventory_visible")
+	Utils.connect_signal(ui, "gamemenu_visible", self, "_on_gamemenu_visible")
+	Utils.connect_signal(ui, "gamemenu_selected_option", self, "_on_gamemenu_selected_option")
 	Configuration.load_and_save_config()
 	_load_level("Rio", null)
 
@@ -28,7 +31,7 @@ func _load_level(level_key, door_id):
 	get_tree().current_scene.add_child_below_node(camera, current_level, false)
 	_set_player()
 	_set_camera_limits(current_level)
-	_connect_signals()
+	_connect_level_signals()
 	transition_in.texture_rect.visible = true
 	transition_out.texture_rect.visible = false
 	SoundManager.play_me(Levels.Data[current_level.id].background_music)
@@ -61,11 +64,10 @@ func _set_camera_limits(level):
 	remote_transform.remote_path = "../../Camera2D"
 
 
-func _connect_signals():
+func _connect_level_signals():
 	_connect_transitions()
 	Utils.connect_signal(PlayerStats, "health_changed", self, "_on_health_changed")
 	Utils.connect_signal(PlayerStats, "player_destroyed", self, "_on_player_destroyed")
-	Utils.connect_signal(ui, "inventory_visible", self, "_on_inventory_visible")
 	_connect_enemies()
 	_connect_doors()
 
@@ -96,6 +98,15 @@ func _on_player_destroyed():
 func _on_inventory_visible(ivisible):
 	get_tree().paused = ivisible
 
+func _on_gamemenu_visible(ivisible):
+	get_tree().paused = ivisible
+
+func _on_gamemenu_selected_option(option):
+	if option.text=="MENU_CHOICE_EXIT_YES":
+		SoundManager.stop(Levels.Data[current_level.id].background_music)
+		get_tree().paused = false
+		get_tree().change_scene_to(load("res://scenes/TitleScreen/TitleScreen.tscn"))
+
 
 func _on_door_entered(door):
 	next_map = door.next_map
@@ -112,3 +123,4 @@ func _on_transition_out_finished():
 	SoundManager.stop(Levels.Data[current_level.id].background_music)
 	current_level.queue_free()
 	_load_level(next_map, next_door_id)
+
