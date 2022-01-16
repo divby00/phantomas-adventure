@@ -1764,13 +1764,13 @@
 						},
 						{
 							"__identifier": "Door",
-							"__grid": [0,12],
+							"__grid": [5,14],
 							"__pivot": [0,0],
 							"__tile": null,
 							"width": 16,
 							"height": 64,
 							"defUid": 33,
-							"px": [0,192],
+							"px": [80,224],
 							"fieldInstances": [
 								{ "__identifier": "NodeType", "__value": "res://scenes/World/Door/Door.tscn", "__type": "String", "defUid": 34, "realEditorValues": [] },
 								{

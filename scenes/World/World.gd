@@ -21,7 +21,7 @@ func _ready():
 	_load_level("Rio", null)
 
 
-func _load_level(level_key,door_id):
+func _load_level(level_key, door_id):
 	previous_level = current_level
 	current_level = Levels.Data[level_key].scene.instance()
 	next_door_id = door_id
@@ -40,12 +40,12 @@ func _set_player():
 		var doors = get_tree().get_nodes_in_group("DoorGroup")
 		for door in doors:
 			if door.id == next_door_id:
-				player.position.x = door.position.x 
+				player.position.x = door.position.x
 				player.position.y = door.position.y + 48
-				if (door.enter_direction=="LEFT"):
-					player.position.x += 8
+				if door.enter_direction == "RIGHT":
+					player.position.x -= 16
 				else:
-					player.position.x -= 10
+					player.position.x -= 1
 				break
 	else:
 		var entrance = current_level.get_entrance()
@@ -84,6 +84,7 @@ func _connect_doors():
 	for door in doors:
 		Utils.connect_signal(door, "door_entered", self, "_on_door_entered")
 
+
 func _on_health_changed(health):
 	lifebar.value = health
 
@@ -101,6 +102,7 @@ func _on_door_entered(door):
 	next_door_id = door.next_door_id
 	transition_out.texture_rect.visible = true
 	transition_out.start()
+
 
 func _on_transition_in_finished():
 	transition_in.texture_rect.visible = false
