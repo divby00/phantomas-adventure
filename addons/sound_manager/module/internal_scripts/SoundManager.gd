@@ -14,60 +14,70 @@ extends SoundManagerModule
 
 # Variables
 
-export (Dictionary) var Default_Sounds_Properties = {
-	"BGM" : {
-		"Volume" : 0,
-		"Pitch" : 1,
+export(Dictionary) var Default_Sounds_Properties = {
+	"BGM":
+	{
+		"Volume": 0,
+		"Pitch": 1,
 	},
-	"BGS" : {
-		"Volume" : 0,
-		"Pitch" : 1,
+	"BGS":
+	{
+		"Volume": 0,
+		"Pitch": 1,
 	},
-	"SE" : {
-		"Volume" : 0,
-		"Pitch" : 1,
+	"SE":
+	{
+		"Volume": 0,
+		"Pitch": 1,
 	},
-	"ME" : {
-		"Volume" : 0,
-		"Pitch" : 1,
+	"ME":
+	{
+		"Volume": 0,
+		"Pitch": 1,
 	},
 }
 
-export (bool) var preload_resources = false
-export (bool) var preinstantiate_nodes = false
-export (bool) var debug = true
+export(bool) var preload_resources = false
+export(bool) var preinstantiate_nodes = false
+export(bool) var debug = true
 
-onready var Audiostreams : Array = self.get_children()
+onready var Audiostreams: Array = self.get_children()
 onready var soundmgr_dir_rel_path = self.get_script().get_path().get_base_dir()
 
-var sounds_playing : Array = []
-var bgm_playing				: String
-var bgs_playing				: Array		= [ "BGS0" ]
-var se_playing				: Array		= [ "SE0" ]
-var me_playing				: Array		= [ "ME0" ]
+var sounds_playing: Array = []
+var bgm_playing: String
+var bgs_playing: Array = ["BGS0"]
+var se_playing: Array = ["SE0"]
+var me_playing: Array = ["ME0"]
 
-var Audio_Busses : Dictionary = {
-	"BGM" : "Master",
-	"BGS" : "Master",
-	"SE" : "Master",
-	"ME" : "Master",
+var Audio_Busses: Dictionary = {
+	"BGM": "Master",
+	"BGS": "Master",
+	"SE": "Master",
+	"ME": "Master",
 }
 
-var Preloaded_Resources : Dictionary = {}
-var Instantiated_Nodes : Array = []
+var Preloaded_Resources: Dictionary = {}
+var Instantiated_Nodes: Array = []
 
 ##################
 
 # Methods
-
 
 ##################################################
 #				SOUNDS HANDLING					 #
 # Use this methods to handle sounds in your game #
 ##################################################
 
+
 # Plays a given BGM
-func play_bgm(bgm : String, from_position : float = 0.0, volume_db : float = -81, pitch_scale : float = -1, sound_to_override : String = "") -> void:
+func play_bgm(
+	bgm: String,
+	from_position: float = 0.0,
+	volume_db: float = -81,
+	pitch_scale: float = -1,
+	sound_to_override: String = ""
+) -> void:
 	if bgm != "" and bgm != null:
 		self.play_deferred("BGM", bgm, from_position, volume_db, pitch_scale, sound_to_override)
 	elif debug:
@@ -75,7 +85,13 @@ func play_bgm(bgm : String, from_position : float = 0.0, volume_db : float = -81
 
 
 # Plays a given BGS
-func play_bgs(bgs : String, from_position : float = 0.0, volume_db : float = -81, pitch_scale : float = -1, sound_to_override : String = "") -> void:
+func play_bgs(
+	bgs: String,
+	from_position: float = 0.0,
+	volume_db: float = -81,
+	pitch_scale: float = -1,
+	sound_to_override: String = ""
+) -> void:
 	if bgs != "" and bgs != null:
 		self.play_deferred("BGS", bgs, from_position, volume_db, pitch_scale, sound_to_override)
 	elif debug:
@@ -83,7 +99,13 @@ func play_bgs(bgs : String, from_position : float = 0.0, volume_db : float = -81
 
 
 # Plays selected Sound Effect
-func play_se(sound_effect : String, from_position : float = 0.0, volume_db : float = -81, pitch_scale : float = -1, sound_to_override : String = "") -> void:
+func play_se(
+	sound_effect: String,
+	from_position: float = 0.0,
+	volume_db: float = -81,
+	pitch_scale: float = -1,
+	sound_to_override: String = ""
+) -> void:
 	if sound_effect != "" and sound_effect != null:
 		self.play_deferred("SE", sound_effect, from_position, volume_db, pitch_scale, sound_to_override)
 	elif debug:
@@ -91,7 +113,13 @@ func play_se(sound_effect : String, from_position : float = 0.0, volume_db : flo
 
 
 # Play a given Music Effect
-func play_me(music_effect : String, from_position : float = 0.0, volume_db : float = -81, pitch_scale : float = -1,	 sound_to_override : String = "") -> void:
+func play_me(
+	music_effect: String,
+	from_position: float = 0.0,
+	volume_db: float = -81,
+	pitch_scale: float = -1,
+	sound_to_override: String = ""
+) -> void:
 	if music_effect != "" and music_effect != null:
 		self.play_deferred("ME", music_effect, from_position, volume_db, pitch_scale, sound_to_override)
 	elif debug:
@@ -99,7 +127,7 @@ func play_me(music_effect : String, from_position : float = 0.0, volume_db : flo
 
 
 # Stops selected Sound
-func stop(sound : String) -> void:
+func stop(sound: String) -> void:
 	var sound_index = 0
 	if sound != "" and sound != null:
 		if self.is_playing(sound):
@@ -114,9 +142,10 @@ func stop(sound : String) -> void:
 	elif debug:
 		print_debug("No sound selected")
 
+
 # Returns the index of the given sound if it's playing
 # Returns -1 if it doesn't exist
-func find_sound(sound : String) -> int:
+func find_sound(sound: String) -> int:
 	var sound_index = -1
 	if not is_audio_file(sound):
 		sound = Audio_Files_Dictionary.get(sound, null)
@@ -126,8 +155,8 @@ func find_sound(sound : String) -> int:
 
 
 # Returns true if the selected sound is playing
-func is_playing(sound : String) -> bool:
-	var playing : bool = false
+func is_playing(sound: String) -> bool:
+	var playing: bool = false
 	if sound != "" and sound != null:
 		var sound_index = find_sound(sound)
 		playing = sound_index >= 0
@@ -138,15 +167,15 @@ func is_playing(sound : String) -> bool:
 	return playing
 
 
-func pause(sound : String) -> void:
+func pause(sound: String) -> void:
 	set_paused(sound, true)
 
 
-func unpause(sound : String) -> void:
+func unpause(sound: String) -> void:
 	set_paused(sound, false)
 
 
-func set_paused(sound : String, paused : bool = true) -> void:
+func set_paused(sound: String, paused: bool = true) -> void:
 	var sound_index = self.find_sound(sound)
 	if sound_index >= 0:
 		Audiostreams[sound_index].set_stream_paused(paused)
@@ -155,9 +184,9 @@ func set_paused(sound : String, paused : bool = true) -> void:
 
 
 # Returns true if the given sound is paused
-func is_paused(sound : String) -> bool:
+func is_paused(sound: String) -> bool:
 	var sound_index = self.find_sound(sound)
-	var paused : bool = false
+	var paused: bool = false
 	if sound_index >= 0:
 		paused = Audiostreams[sound_index].get_stream_paused()
 	elif debug:
@@ -165,10 +194,10 @@ func is_paused(sound : String) -> bool:
 	return paused
 
 
-
 #################################
 #		GETTERS AND SETTERS		#
 #################################
+
 
 # Returns the name of the currently playing sounds
 func get_playing_sounds() -> Array:
@@ -177,7 +206,8 @@ func get_playing_sounds() -> Array:
 
 # Sound Properties #
 
-func set_bgm_volume_db(volume_db : float) -> void:
+
+func set_bgm_volume_db(volume_db: float) -> void:
 	self.set_sound_property("BGM", "Volume", volume_db)
 
 
@@ -185,7 +215,7 @@ func get_bgm_volume_db() -> float:
 	return Default_Sounds_Properties["BGM"]["Volume"]
 
 
-func set_bgm_pitch_scale(pitch_scale : float) -> void:
+func set_bgm_pitch_scale(pitch_scale: float) -> void:
 	self.set_sound_property("BGM", "Pitch", pitch_scale)
 
 
@@ -193,7 +223,7 @@ func get_bgm_pitch_scale() -> float:
 	return Default_Sounds_Properties["BGM"]["Pitch"]
 
 
-func set_bgs_volume_db(volume_db : float) -> void:
+func set_bgs_volume_db(volume_db: float) -> void:
 	self.set_sound_property("BGS", "Volume", volume_db)
 
 
@@ -201,7 +231,7 @@ func get_bgs_volume_db() -> float:
 	return Default_Sounds_Properties["BGS"]["Volume"]
 
 
-func set_bgs_pitch_scale(pitch_scale : float) -> void:
+func set_bgs_pitch_scale(pitch_scale: float) -> void:
 	self.set_sound_property("BGS", "Pitch", pitch_scale)
 
 
@@ -209,7 +239,7 @@ func get_bgs_pitch_scale() -> float:
 	return Default_Sounds_Properties["BGS"]["Pitch"]
 
 
-func set_se_volume_db(volume_db : float) -> void:
+func set_se_volume_db(volume_db: float) -> void:
 	self.set_sound_property("SE", "Volume", volume_db)
 
 
@@ -217,7 +247,7 @@ func get_se_volume_db() -> float:
 	return Default_Sounds_Properties["SE"]["Volume"]
 
 
-func set_se_pitch_scale(pitch_scale : float) -> void:
+func set_se_pitch_scale(pitch_scale: float) -> void:
 	self.set_sound_property("SE", "Pitch", pitch_scale)
 
 
@@ -225,7 +255,7 @@ func get_se_pitch_scale() -> float:
 	return Default_Sounds_Properties["SE"]["Pitch"]
 
 
-func set_me_volume_db(volume_db : float) -> void:
+func set_me_volume_db(volume_db: float) -> void:
 	self.set_sound_property("ME", "Volume", volume_db)
 
 
@@ -233,7 +263,7 @@ func get_me_volume_db() -> float:
 	return Default_Sounds_Properties["ME"]["Volume"]
 
 
-func set_me_pitch_scale(pitch_scale : float) -> void:
+func set_me_pitch_scale(pitch_scale: float) -> void:
 	self.set_sound_property("ME", "Pitch", pitch_scale)
 
 
@@ -241,7 +271,7 @@ func get_me_pitch_scale() -> float:
 	return Default_Sounds_Properties["ME"]["Pitch"]
 
 
-func set_volume_db(volume_db : float, sound : String) -> void:
+func set_volume_db(volume_db: float, sound: String) -> void:
 	var sound_index = self.find_sound(sound)
 	if sound_index >= 0:
 		Audiostreams[sound_index].set_volume_db(volume_db)
@@ -249,9 +279,9 @@ func set_volume_db(volume_db : float, sound : String) -> void:
 		print_debug("Sound not found: " + sound)
 
 
-func get_volume_db(sound : String) -> float:
+func get_volume_db(sound: String) -> float:
 	var sound_index = self.find_sound(sound)
-	var volume_db : float = -81.0
+	var volume_db: float = -81.0
 	if sound_index >= 0:
 		volume_db = Audiostreams[sound_index].get_volume_db()
 	elif debug:
@@ -259,7 +289,7 @@ func get_volume_db(sound : String) -> float:
 	return volume_db
 
 
-func set_pitch_scale(pitch_scale : float, sound : String = "") -> void:
+func set_pitch_scale(pitch_scale: float, sound: String = "") -> void:
 	var sound_index = self.find_sound(sound)
 	if sound_index >= 0:
 		Audiostreams[sound_index].set_pitch_scale(sound)
@@ -267,9 +297,9 @@ func set_pitch_scale(pitch_scale : float, sound : String = "") -> void:
 		print_debug("Soud not found: " + sound)
 
 
-func get_pitch_scale(sound : String = "") -> float:
+func get_pitch_scale(sound: String = "") -> float:
 	var sound_index = self.find_sound(sound)
-	var pitch_scale : float = -1.0
+	var pitch_scale: float = -1.0
 	if sound_index >= 0:
 		pitch_scale = Audiostreams[sound_index].get_pitch_scale()
 	elif debug:
@@ -277,11 +307,11 @@ func get_pitch_scale(sound : String = "") -> float:
 	return pitch_scale
 
 
-func get_default_sound_properties(sound_type : String) -> Dictionary:
+func get_default_sound_properties(sound_type: String) -> Dictionary:
 	return Default_Sounds_Properties[sound_type]
 
 
-func set_sound_property(sound_type : String, property : String, value : float) -> void:
+func set_sound_property(sound_type: String, property: String, value: float) -> void:
 	match property:
 		"Volume":
 			value = clamp(value, -80, 24)
@@ -292,6 +322,7 @@ func set_sound_property(sound_type : String, property : String, value : float) -
 
 # Audio Files Dictionary #
 
+
 # Returns the Audio Files Dictionary
 func get_audio_files_dictionary() -> Dictionary:
 	return Audio_Files_Dictionary
@@ -299,31 +330,32 @@ func get_audio_files_dictionary() -> Dictionary:
 
 # Returns the file name of the given stream name
 # Returns null if an error occures.
-func get_config_value(stream_name : String) -> String:
+func get_config_value(stream_name: String) -> String:
 	return Audio_Files_Dictionary.get(stream_name)
 
 
 # Allows you to change or add a stream file and name to the dictionary in runtime
-func set_config_key(new_stream_name : String, new_stream_file : String) -> void:
-	if (new_stream_file == "" or new_stream_name == ""):
+func set_config_key(new_stream_name: String, new_stream_file: String) -> void:
+	if new_stream_file == "" or new_stream_name == "":
 		if debug:
 			print_debug("Invalid arguments")
 		return
 
 	self.add_to_dictionary(new_stream_name, new_stream_file)
 
-	if (preload_resources):
+	if preload_resources:
 		self.preload_resource_from_string(new_stream_file)
 
 
 # Adds a new voice to the Audio Files Dictionary
-func add_to_dictionary(audio_name : String, audio_file : String) -> void:
+func add_to_dictionary(audio_name: String, audio_file: String) -> void:
 	Audio_Files_Dictionary[audio_name] = audio_file
 
 
 # Resources preloading #
 
-func enable_preload_resources(enabled : bool = true) -> void:
+
+func enable_preload_resources(enabled: bool = true) -> void:
 	self.preload_resources = enabled
 
 
@@ -331,13 +363,13 @@ func is_preload_resources_enabled() -> bool:
 	return self.preload_resources
 
 
-
 #############################
 #	RESOURCE PRELOADING		#
 #############################
 
-func preload_audio_files_from_path(path : String):
-	var file_name : String
+
+func preload_audio_files_from_path(path: String):
+	var file_name: String
 	var dir := Directory.new()
 	dir.open(path)
 	dir.list_dir_begin(true, true)
@@ -352,22 +384,21 @@ func preload_audio_files_from_path(path : String):
 		print_debug("An error occurred when trying to access the path: " + path)
 
 
-
-func preload_resources_from_list(files_list : Array) -> void:
-	if (preload_resources):
+func preload_resources_from_list(files_list: Array) -> void:
+	if preload_resources:
 		if debug:
 			print_debug("Resources already preloaded.")
 		return
 
 	for file in files_list:
-		if (file is String):
+		if file is String:
 			self.preload_resource_from_string(file)
-		elif (file is Resource):
+		elif file is Resource:
 			self.preload_resource(file)
 
 
-func preload_resource(file : Resource) -> void:
-	if (file == null):
+func preload_resource(file: Resource) -> void:
+	if file == null:
 		if debug:
 			print_debug("Invalid resource passed")
 		return
@@ -377,7 +408,7 @@ func preload_resource(file : Resource) -> void:
 	Preloaded_Resources[file_path] = file
 
 
-func preload_resource_from_string(file : String) -> void:
+func preload_resource_from_string(file: String) -> void:
 	var res = null
 	var file_name = file
 
@@ -398,24 +429,26 @@ func preload_resource_from_string(file : String) -> void:
 		print_debug("An error occured while preloading resource: " + file)
 
 
-func unload_all_resources(force_unload : bool = false) -> void:
+func unload_all_resources(force_unload: bool = false) -> void:
 	if preload_resources:
 		if force_unload == false:
 			if debug:
-				print_debug("To unload resources with Preload Resources variable on, pass force_unload argument on true")
+				print_debug(
+					"To unload resources with Preload Resources variable on, pass force_unload argument on true"
+				)
 			return
 		preload_resources = false
 
 	Preloaded_Resources.clear()
 
 
-func unload_resources_from_list(files_list : Array) -> void:
+func unload_resources_from_list(files_list: Array) -> void:
 	for file in files_list:
-		if (file is String):
+		if file is String:
 			self.unload_resource_from_string(file)
 
 
-func unload_resource_from_string(file : String) -> void:
+func unload_resource_from_string(file: String) -> void:
 	var file_name = file
 
 	if self.is_import_file(file):
@@ -433,13 +466,13 @@ func unload_resource_from_string(file : String) -> void:
 		print_debug("An error occured while unloading resource: " + file)
 
 
-func unload_resources_from_dir(path : String) -> void:
+func unload_resources_from_dir(path: String) -> void:
 	var dir = Directory.new()
 	if dir.open(path + "/") == OK:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
-		while (file_name != ""):
-			if (self.is_audio_file(file_name)):
+		while file_name != "":
+			if self.is_audio_file(file_name):
 				self.unload_resource_from_string(dir.get_current_dir() + file_name)
 			file_name = dir.get_next()
 	elif debug:
@@ -450,8 +483,9 @@ func unload_resources_from_dir(path : String) -> void:
 #	NODES PREINSTANTIATION	#
 #############################
 
-func preinstantiate_nodes_from_path(path : String, sound_type : String = ""):
-	var file_name : String
+
+func preinstantiate_nodes_from_path(path: String, sound_type: String = ""):
+	var file_name: String
 	var dir := Directory.new()
 	dir.open(path)
 	if dir:
@@ -466,16 +500,16 @@ func preinstantiate_nodes_from_path(path : String, sound_type : String = ""):
 		print_debug("An error occurred when trying to access the path: " + path)
 
 
-func preinstantiate_nodes_from_list(files_list : Array, type_list : Array, all_same_type : bool = false) -> void:
+func preinstantiate_nodes_from_list(files_list: Array, type_list: Array, all_same_type: bool = false) -> void:
 	var index = 0
 	for file in files_list:
 		if file is String:
-			if (all_same_type == false):
+			if all_same_type == false:
 				index = files_list.find(file)
 			self.preinstantiate_node_from_string(file, type_list[index])
 
 
-func preinstantiate_node_from_string(file : String, sound_type : String = "") -> void:
+func preinstantiate_node_from_string(file: String, sound_type: String = "") -> void:
 	var Stream = null
 	var file_name = file
 	var sound_index = 0
@@ -498,7 +532,7 @@ func preinstantiate_node_from_string(file : String, sound_type : String = "") ->
 		print_debug("An error occured while creating a node from resource: " + file)
 
 
-func preinstantiate_node(stream : Resource, sound_type : String = "") -> bool:
+func preinstantiate_node(stream: Resource, sound_type: String = "") -> bool:
 	if stream != null:
 		var file_name = stream.get_path()
 		if not Instantiated_Nodes.has(file_name):
@@ -513,25 +547,27 @@ func preinstantiate_node(stream : Resource, sound_type : String = "") -> bool:
 	return false
 
 
-func uninstantiate_all_nodes(force_uninstantiation : bool = false) -> void:
+func uninstantiate_all_nodes(force_uninstantiation: bool = false) -> void:
 	if preinstantiate_nodes:
 		if not force_uninstantiation:
 			if debug:
-				print_debug("To uninstantiate resources with Preinstantiate Nodes on, pass force_uninstantiation argument on true")
+				print_debug(
+					"To uninstantiate resources with Preinstantiate Nodes on, pass force_uninstantiation argument on true"
+				)
 			return
 		preinstantiate_nodes = false
 
 	uninstantiate_nodes_from_list(Instantiated_Nodes)
 
 
-func uninstantiate_nodes_from_list(files_list : Array) -> void:
+func uninstantiate_nodes_from_list(files_list: Array) -> void:
 	var index = 0
 	for file in files_list:
-		if (file is String):
+		if file is String:
 			self.uninstantiate_node_from_string(file)
 
 
-func uninstantiate_node_from_string(file : String) -> void:
+func uninstantiate_node_from_string(file: String) -> void:
 	var file_name = file
 	var sound_index = 0
 
@@ -547,21 +583,21 @@ func uninstantiate_node_from_string(file : String) -> void:
 	self.erase_sound(file_name)
 
 
-func uninstantiate_nodes_from_dir(path : String) -> void:
+func uninstantiate_nodes_from_dir(path: String) -> void:
 	var dir = Directory.new()
 	if dir.open(path + "/") == OK:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		var sound_index = 0
-		while (file_name != ""):
-			if (self.is_audio_file(file_name)):
+		while file_name != "":
+			if self.is_audio_file(file_name):
 				self.uninstantiate_node_from_string(file_name)
 			file_name = dir.get_next()
 	elif debug:
 		print_debug("An error occurred when trying to access the path: " + path)
 
 
-func enable_node_preinstantiation(enabled : bool = true) -> void:
+func enable_node_preinstantiation(enabled: bool = true) -> void:
 	self.preinstantiate_nodes = enabled
 
 
@@ -573,11 +609,14 @@ func is_preinstantiate_nodes_enabled() -> bool:
 #	INTERNAL METHODS		#
 #############################
 
+
 # Called when the node enters the scene for the first time
 func _ready() -> void:
-	if(ProjectSettings.get_setting("editor_plugins/enabled") and
-	Array(ProjectSettings.get_setting("editor_plugins/enabled")).has("res://addons/sound_manager/plugin.cfg")):
-			get_sound_manager_settings()
+	if (
+		ProjectSettings.get_setting("editor_plugins/enabled")
+		and Array(ProjectSettings.get_setting("editor_plugins/enabled")).has("res://addons/sound_manager/plugin.cfg")
+	):
+		get_sound_manager_settings()
 	if debug:
 		print_debug("Error: sound manager is not enabled")
 
@@ -592,11 +631,11 @@ func _ready() -> void:
 
 
 # Load the Sound Manager settings from the JSON file:  SoundManager.json
-func get_sound_manager_settings()-> void:
-	var data_settings : Dictionary
+func get_sound_manager_settings() -> void:
+	var data_settings: Dictionary
 	var file: File = File.new()
 	file.open("res://addons/sound_manager/SoundManager.json", File.READ)
-	var json : JSONParseResult = JSON.parse(file.get_as_text())
+	var json: JSONParseResult = JSON.parse(file.get_as_text())
 	file.close()
 	if typeof(json.result) == TYPE_DICTIONARY:
 		data_settings = json.result
@@ -609,20 +648,36 @@ func get_sound_manager_settings()-> void:
 		debug = data_settings["DEBUG"]
 
 	elif debug:
-		print_debug("Failed to load the sound manager's settings file: " + 'res://addons/sound_manager/SoundManager.json')
+		print_debug(
+			"Failed to load the sound manager's settings file: " + "res://addons/sound_manager/SoundManager.json"
+		)
 
 
 # Calls the play method as deferred
-func play_deferred(sound_type : String, sound : String, from_position : float = 1.0, volume_db : float = -81, pitch_scale : float = -1, sound_to_override : String = "") -> void:
+func play_deferred(
+	sound_type: String,
+	sound: String,
+	from_position: float = 1.0,
+	volume_db: float = -81,
+	pitch_scale: float = -1,
+	sound_to_override: String = ""
+) -> void:
 	call_deferred("play", sound_type, sound, from_position, volume_db, pitch_scale, sound_to_override)
 
 
 # Plays the selected sound
-func play(sound_type : String, sound : String, from_position : float = 1.0, volume_db : float = -81, pitch_scale : float = -1, sound_to_override : String = "") -> void:
-	var sound_path : String
+func play(
+	sound_type: String,
+	sound: String,
+	from_position: float = 1.0,
+	volume_db: float = -81,
+	pitch_scale: float = -1,
+	sound_to_override: String = ""
+) -> void:
+	var sound_path: String
 	var volume = Default_Sounds_Properties[sound_type]["Volume"] if volume_db < -80 else volume_db
 	var pitch = Default_Sounds_Properties[sound_type]["Pitch"] if pitch_scale < 0 else pitch_scale
-	var audiostream : AudioStreamPlayer
+	var audiostream: AudioStreamPlayer
 	var sound_index = 0
 
 	if Audio_Files_Dictionary.has(sound):
@@ -650,7 +705,7 @@ func play(sound_type : String, sound : String, from_position : float = 1.0, volu
 		var Stream
 		if Preloaded_Resources.has(sound_path):
 			if debug:
-				 print_debug("Resource preloaded " + sound_path)
+				print_debug("Resource preloaded " + sound_path)
 			Stream = Preloaded_Resources.get(sound_path)
 		else:
 			Stream = load(sound_path)
@@ -675,7 +730,6 @@ func play(sound_type : String, sound : String, from_position : float = 1.0, volu
 	audiostream.set_volume_db(volume)
 	audiostream.set_pitch_scale(pitch)
 
-
 	audiostream.play(from_position)
 	if audiostream.get_script() != null:
 		audiostream.set_sound_name(sound)
@@ -686,11 +740,11 @@ func play(sound_type : String, sound : String, from_position : float = 1.0, volu
 
 
 # Adds a new AudioStreamPlayer
-func add_sound(sound : String, sound_type : String, preinstance : bool = false) -> int:
+func add_sound(sound: String, sound_type: String, preinstance: bool = false) -> int:
 	var sound_index
 	var new_audiostream = AudioStreamPlayer.new()
 	var sound_script = load(soundmgr_dir_rel_path + "/Sounds.gd")
-	var bus : String
+	var bus: String
 
 	if sound_type == "":
 		bus = "Master"
@@ -715,8 +769,8 @@ func add_sound(sound : String, sound_type : String, preinstance : bool = false) 
 	return sound_index
 
 
-func erase_sound(sound : String) -> void:
-	var sound_index : int = find_sound(sound)
+func erase_sound(sound: String) -> void:
+	var sound_index: int = find_sound(sound)
 
 	if sound_index >= 0:
 		Instantiated_Nodes.remove(sound_index)
@@ -727,7 +781,7 @@ func erase_sound(sound : String) -> void:
 		print_debug("Sound not found: " + sound)
 
 
-func _on_sound_finished(sound_name : String) -> void:
+func _on_sound_finished(sound_name: String) -> void:
 	if not preinstantiate_nodes:
 		self.erase_sound(sound_name)
 
@@ -739,7 +793,7 @@ func preload_audio_files() -> void:
 	self.preload_audio_files_r(directory)
 
 
-func preload_audio_files_r(directory : Directory):
+func preload_audio_files_r(directory: Directory):
 	if directory == null:
 		return
 	directory.list_dir_begin(true, true)
@@ -760,7 +814,7 @@ func preinstantiate_nodes() -> void:
 	self.preinstatiate_nodes_r(directory)
 
 
-func preinstatiate_nodes_r(directory : Directory):
+func preinstatiate_nodes_r(directory: Directory):
 	if directory == null:
 		return
 	directory.list_dir_begin(true, true)
@@ -773,12 +827,13 @@ func preinstatiate_nodes_r(directory : Directory):
 		dir_name = directory.get_next()
 
 
-func is_audio_file(file_name : String) -> bool:
-	return	(file_name.get_extension() == "wav" or
-			file_name.get_extension() == "ogg" or
-			file_name.get_extension() == "opus")
+func is_audio_file(file_name: String) -> bool:
+	return (
+		file_name.get_extension() == "wav"
+		or file_name.get_extension() == "ogg"
+		or file_name.get_extension() == "opus"
+	)
 
 
-func is_import_file(file_name : String) -> bool:
-	return (file_name.get_extension() == "import" and
-			self.is_audio_file(file_name.get_basename()))
+func is_import_file(file_name: String) -> bool:
+	return file_name.get_extension() == "import" and self.is_audio_file(file_name.get_basename())

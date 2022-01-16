@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-for file in docs/*.md
+for file in ../docs/*.md
 do
     f=${file%%.*}
     echo ${f}
