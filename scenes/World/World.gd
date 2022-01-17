@@ -98,11 +98,13 @@ func _on_player_destroyed():
 func _on_inventory_visible(ivisible):
 	get_tree().paused = ivisible
 
+
 func _on_gamemenu_visible(ivisible):
 	get_tree().paused = ivisible
 
+
 func _on_gamemenu_selected_option(option):
-	if option.text=="MENU_CHOICE_EXIT_YES":
+	if option.text == "MENU_CHOICE_EXIT_YES":
 		SoundManager.stop(Levels.Data[current_level.id].background_music)
 		get_tree().paused = false
 		get_tree().change_scene_to(load("res://scenes/TitleScreen/TitleScreen.tscn"))
@@ -123,4 +125,3 @@ func _on_transition_out_finished():
 	SoundManager.stop(Levels.Data[current_level.id].background_music)
 	current_level.queue_free()
 	_load_level(next_map, next_door_id)
-

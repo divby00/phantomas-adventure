@@ -72,6 +72,7 @@ func _on_menu_init(menu):
 			return
 	Configuration.on_menu_init(menu)
 
+
 func _on_menu_selected(menu):
 	match menu.text:
 		"MENU_MAIN_NEWGAME":
@@ -96,7 +97,7 @@ func _on_menu_selected(menu):
 		"MENU_MAIN_QUIT":
 			where_to_go = Destination.EXIT
 			transition_out.start()
-			return			
+			return
 		"MENU_SAVE_SLOT#1":
 			Configuration.save_slot = 1
 			return
@@ -110,4 +111,4 @@ func _on_menu_selected(menu):
 
 
 func _on_key_redefined(action, keyevent):
-	Configuration.on_key_redefined(action,keyevent)
+	Configuration.on_key_redefined(action, keyevent)

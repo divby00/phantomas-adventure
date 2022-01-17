@@ -7,7 +7,7 @@ signal gamemenu_selected_option(option)
 onready var life_bar: TextureProgress = $LifeBar
 onready var tech_container: HBoxContainer = $TechContainer
 onready var inventory = $InventoryPanel
-onready var menu_manager:MenuManager = $MenuManager
+onready var menu_manager: MenuManager = $MenuManager
 
 
 func _ready():
@@ -26,7 +26,7 @@ func _process(_delta):
 			self.emit_signal("inventory_visible", false)
 		return
 
-	if (Input.is_action_just_pressed("Cancel") or Input.is_action_just_pressed("ui_cancel")):
+	if Input.is_action_just_pressed("Cancel") or Input.is_action_just_pressed("ui_cancel"):
 		if inventory.visible:
 			inventory.close()
 			self.emit_signal("inventory_visible", false)
@@ -34,20 +34,23 @@ func _process(_delta):
 			menu_manager.show_menu()
 			self.emit_signal("gamemenu_visible", true)
 
+
 func _on_menu_init(menu):
 	Configuration.on_menu_init(menu)
 
+
 func _on_menu_selected(menu):
-	if menu.text=="MENU_MAIN_CONTINUEGAME":
+	if menu.text == "MENU_MAIN_CONTINUEGAME":
 		menu_manager.hide_menu()
 		self.emit_signal("gamemenu_visible", false)
 		return
-	if menu.text=="MENU_CHOICE_EXIT_YES":
+	if menu.text == "MENU_CHOICE_EXIT_YES":
 		menu_manager.hide_menu()
 		self.emit_signal("gamemenu_selected_option", menu)
 		return
-		
+
 	Configuration.on_menu_selected(menu)
 
+
 func _on_key_redefined(action, keyevent):
-	Configuration.on_key_redefined(action,keyevent)
+	Configuration.on_key_redefined(action, keyevent)

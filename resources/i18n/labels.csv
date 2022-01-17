@@ -35,10 +35,10 @@ MENU_CONTROL_REDEFINE_INVENTORY,Inventario,Inventory
 MENU_CONTROL_REDEFINE_CANCEL,Salir,Exit
 MENU_CHOICE_OVERWRITE_YES,"Sí, reemplaza","Yes, overwrite"
 MENU_CHOICE_OVERWRITE_NO,"No, ¡por Dios!","No, my God!"
-MENU_CHOICE_EXIT_YES,Si por favor,Yes please
-MENU_CHOICE_EXIT_NO,"No, no, olvidalo","No, no, forget it"
+MENU_CHOICE_EXIT_YES,"Si, por favor","Yes, please"
+MENU_CHOICE_EXIT_NO,"No, no, olvídalo","No, no, forget it"
 MENU_QUESTION_01,¿Seguro que quieres sobrescribir la partida?,Are you sure you want to overwrite the game?
-MENU_QUESTION_02,¿Seguiro que quieres abandonar la partida?,Are you sure do you want to exit game?
+MENU_QUESTION_02,¿Seguro que quieres abandonar la partida?,Are you sure do you want to exit game?
 CREDITS_MESSAGE_01,M.A Software + Love4Retro (2022),M.A Software + Love4Retro (2022)
 CREDITS_MESSAGE_02,Creado por:,Created by:
 CREDITS_MESSAGE_03,Miguel Ángel Jiménez y Jesús Chicharro,Miguel Ángel Jiménez & Jesús Chicharro

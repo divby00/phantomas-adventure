@@ -186,6 +186,7 @@ func _init_input_map(action, scancode):
 	event.scancode = scancode
 	InputMap.action_add_event(action, event)
 
+
 func on_menu_init(menu):
 	match menu.text:
 		"MENU_GRAPHICS_FULLSCREEN":
