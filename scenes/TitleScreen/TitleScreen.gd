@@ -17,8 +17,8 @@ var where_to_go = Destination.NEW_GAME
 
 
 func _ready():
-	Utils.connect_signal(transition_in, "transition_in_finished", self, "_on_transition_in_finished")
-	Utils.connect_signal(transition_out, "transition_out_finished", self, "_on_transition_out_finished")
+	Utils.connect_signal(transition_in, "finished", self, "_on_transition_in_finished")
+	Utils.connect_signal(transition_out, "finished", self, "_on_transition_out_finished")
 	Utils.connect_signal(menu_manager, "menu_selected", self, "_on_menu_selected")
 	Utils.connect_signal(menu_manager, "menu_init", self, "_on_menu_init")
 	Utils.connect_signal(menu_manager, "key_redefined", self, "_on_key_redefined")

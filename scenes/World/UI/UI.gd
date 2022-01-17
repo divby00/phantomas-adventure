@@ -9,6 +9,8 @@ onready var tech_container: HBoxContainer = $TechContainer
 onready var inventory = $InventoryPanel
 onready var menu_manager: MenuManager = $MenuManager
 
+var can_show_menu: bool = true
+
 
 func _ready():
 	Utils.connect_signal(menu_manager, "menu_selected", self, "_on_menu_selected")
@@ -17,22 +19,23 @@ func _ready():
 
 
 func _process(_delta):
-	if Input.is_action_just_pressed("Inventory"):
-		if !inventory.visible:
-			self.emit_signal("inventory_visible", true)
-			inventory.open()
-		else:
-			inventory.close()
-			self.emit_signal("inventory_visible", false)
-		return
+	if can_show_menu:
+		if Input.is_action_just_pressed("Inventory"):
+			if !inventory.visible:
+				self.emit_signal("inventory_visible", true)
+				inventory.open()
+			else:
+				inventory.close()
+				self.emit_signal("inventory_visible", false)
+			return
 
-	if Input.is_action_just_pressed("Cancel") or Input.is_action_just_pressed("ui_cancel"):
-		if inventory.visible:
-			inventory.close()
-			self.emit_signal("inventory_visible", false)
-		else:
-			menu_manager.show_menu()
-			self.emit_signal("gamemenu_visible", true)
+		if Input.is_action_just_pressed("Cancel") or Input.is_action_just_pressed("ui_cancel"):
+			if inventory.visible:
+				inventory.close()
+				self.emit_signal("inventory_visible", false)
+			else:
+				menu_manager.show_menu()
+				self.emit_signal("gamemenu_visible", true)
 
 
 func _on_menu_init(menu):
@@ -54,3 +57,11 @@ func _on_menu_selected(menu):
 
 func _on_key_redefined(action, keyevent):
 	Configuration.on_key_redefined(action, keyevent)
+
+
+func _on_transition_out_started():
+	can_show_menu = false
+
+
+func _on_transition_in_finished():
+	can_show_menu = true

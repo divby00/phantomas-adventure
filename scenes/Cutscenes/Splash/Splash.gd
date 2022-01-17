@@ -10,8 +10,8 @@ onready var transition_out: CanvasLayer = $TransitionOut
 func _ready() -> void:
 	print("Starting 'Phantomas en la sierra' version " + ProjectSettings.get("application/config/version"))
 	Configuration.load_and_save_config()
-	Utils.connect_signal(transition_in, "transition_in_finished", self, "_on_transition_in_finished")
-	Utils.connect_signal(transition_out, "transition_out_finished", self, "_on_transition_out_finished")
+	Utils.connect_signal(transition_in, "finished", self, "_on_transition_in_finished")
+	Utils.connect_signal(transition_out, "finished", self, "_on_transition_out_finished")
 	transition_in.start()
 
 

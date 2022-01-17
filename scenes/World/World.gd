@@ -17,10 +17,9 @@ var next_door_id = null
 
 
 func _ready():
-	Utils.connect_signal(ui, "inventory_visible", self, "_on_inventory_visible")
-	Utils.connect_signal(ui, "gamemenu_visible", self, "_on_gamemenu_visible")
-	Utils.connect_signal(ui, "gamemenu_selected_option", self, "_on_gamemenu_selected_option")
 	Configuration.load_and_save_config()
+	_connect_ui()
+	_connect_transitions()
 	_load_level("Rio", null)
 
 
@@ -65,16 +64,23 @@ func _set_camera_limits(level):
 
 
 func _connect_level_signals():
-	_connect_transitions()
 	Utils.connect_signal(PlayerStats, "health_changed", self, "_on_health_changed")
 	Utils.connect_signal(PlayerStats, "player_destroyed", self, "_on_player_destroyed")
 	_connect_enemies()
 	_connect_doors()
 
 
+func _connect_ui():
+	Utils.connect_signal(ui, "inventory_visible", self, "_on_inventory_visible")
+	Utils.connect_signal(ui, "gamemenu_visible", self, "_on_gamemenu_visible")
+	Utils.connect_signal(ui, "gamemenu_selected_option", self, "_on_gamemenu_selected_option")
+
+
 func _connect_transitions():
-	Utils.connect_signal(transition_in, "transition_in_finished", self, "_on_transition_in_finished")
-	Utils.connect_signal(transition_out, "transition_out_finished", self, "_on_transition_out_finished")
+	Utils.connect_signal(transition_in, "finished", self, "_on_transition_in_finished")
+	Utils.connect_signal(transition_out, "finished", self, "_on_transition_out_finished")
+	Utils.connect_signal(transition_out, "started", ui, "_on_transition_out_started")
+	Utils.connect_signal(transition_in, "finished", ui, "_on_transition_in_finished")
 
 
 func _connect_enemies():
