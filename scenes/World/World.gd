@@ -7,6 +7,8 @@ onready var lifebar: TextureProgress = $UI/LifeBar
 onready var transition_in: CanvasLayer = $TransitionIn
 onready var transition_out: CanvasLayer = $TransitionOut
 onready var remote_transform: RemoteTransform2D = $Player/RemoteTransform2D
+onready var level_node:Node2D = $Level
+onready var cinematic_node:Node2D = $Cinematic
 
 const PineTreeScene: PackedScene = preload("res://scenes/World/Trees/PineTree.tscn")
 
@@ -14,20 +16,26 @@ var previous_level = null
 var current_level = null
 var next_map = null
 var next_door_id = null
-
+var cinematic_scene:Cinematic = null
 
 func _ready():
 	Configuration.load_and_save_config()
 	_connect_ui()
 	_connect_transitions()
 	_load_level("Rio", null)
+	
+	#Esto es solo para probar la cinematica
+	Utils.connect_signal(player, "collision_cinematic", self, "_on_player_collision_cinematic")
+	
+func _on_player_collision_cinematic(_item):
+	_play_cinematic("res://scenes/Tests/TestDialog.tscn")
 
 
 func _load_level(level_key, door_id):
 	previous_level = current_level
 	current_level = Levels.Data[level_key].scene.instance()
 	next_door_id = door_id
-	get_tree().current_scene.add_child_below_node(camera, current_level, false)
+	level_node.add_child(current_level)
 	_set_player()
 	_set_camera_limits(current_level)
 	_connect_level_signals()
@@ -36,6 +44,12 @@ func _load_level(level_key, door_id):
 	SoundManager.play_me(Levels.Data[current_level.id].background_music)
 	transition_in.start()
 
+func _play_cinematic(scene_resource_path):
+	_pause_world(true)
+	cinematic_scene = load(scene_resource_path).instance()
+	Utils.connect_signal(cinematic_scene, "cinematic_start", self, "_on_cinematic_start")
+	Utils.connect_signal(cinematic_scene, "cinematic_end", self, "_on_cinematic_end")
+	ui.show_cinemascope_bars()
 
 func _set_player():
 	if next_door_id != null:
@@ -74,6 +88,8 @@ func _connect_ui():
 	Utils.connect_signal(ui, "inventory_visible", self, "_on_inventory_visible")
 	Utils.connect_signal(ui, "gamemenu_visible", self, "_on_gamemenu_visible")
 	Utils.connect_signal(ui, "gamemenu_selected_option", self, "_on_gamemenu_selected_option")
+	Utils.connect_signal(ui, "cinemascope_start", self, "_on_cinemascope_start")
+	Utils.connect_signal(ui, "cinemascope_end", self, "_on_cinemascope_end")
 
 
 func _connect_transitions():
@@ -100,13 +116,14 @@ func _on_health_changed(health):
 func _on_player_destroyed():
 	pass
 
+func _pause_world(pause):
+	get_tree().paused = pause
 
 func _on_inventory_visible(ivisible):
-	get_tree().paused = ivisible
-
+	_pause_world(ivisible)
 
 func _on_gamemenu_visible(ivisible):
-	get_tree().paused = ivisible
+	_pause_world(ivisible)
 
 
 func _on_gamemenu_selected_option(option):
@@ -131,3 +148,16 @@ func _on_transition_out_finished():
 	SoundManager.stop(Levels.Data[current_level.id].background_music)
 	current_level.queue_free()
 	_load_level(next_map, next_door_id)
+	
+func _on_cinemascope_start():
+	cinematic_node.add_child(cinematic_scene)
+
+func _on_cinemascope_end():
+	_pause_world(false)
+	
+func _on_cinematic_start():
+	pass
+	
+func _on_cinematic_end():
+	cinematic_scene.queue_free()
+	ui.hide_cinemascope_bars()

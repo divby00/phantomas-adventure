@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/level02_cemetery.ogg-dabb9191efc2767b353d4ee6a3229418.oggstr"
+
+[deps]
+
+source_file="res://resources/music/level02_cemetery.ogg"
+dest_files=[ "res://.import/level02_cemetery.ogg-dabb9191efc2767b353d4ee6a3229418.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

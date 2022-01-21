@@ -17,6 +17,11 @@ __meta__ = {
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Cinematic" type="Node2D" parent="."]
+pause_mode = 2
+
 [node name="UI" parent="." instance=ExtResource( 2 )]
 pause_mode = 2
 

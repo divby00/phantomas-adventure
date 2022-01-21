@@ -21,6 +21,8 @@ func _ready():
 	match locale:
 		"es":
 			locale = "SPA"
+		"es_ES":
+			locale = "SPA"
 		"en":
 			locale = "ENG"
 	nodes = json.result[0]["nodes"]
@@ -129,4 +131,4 @@ func _on_message_finished(_message_panel):
 	if current_panel < message_panels.size():
 		add_child(message_panels[current_panel])
 	else:
-		emit_signal("dialog_finished", self)
+		self.emit_signal("dialog_finished")

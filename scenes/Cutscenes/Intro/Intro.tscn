@@ -125,7 +125,6 @@ anims/animate = SubResource( 2 )
 
 [node name="Dialog" parent="." instance=ExtResource( 8 )]
 
-[connection signal="transition_out_finished" from="TransitionOut" to="." method="_on_TransitionOut_transition_out_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="ActTimer" to="." method="_on_ActTimer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

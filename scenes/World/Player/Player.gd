@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 const BombScene: PackedScene = preload("res://scenes/World/Player/Bomb/Bomb.tscn")
 
+signal collision_cinematic(item)
+
 onready var timer = $Timer
 onready var sprite = $Sprite
 onready var jumping_y: int = global_position.y
@@ -141,3 +143,8 @@ func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
 func set_phantom(value):
 	phantom_collision.disabled = !value
 	phantom = value
+
+
+func _on_Area2D_area_entered(area:Area2D):
+	if area.get_collision_layer_bit(5):
+		emit_signal("collision_cinematic",area)

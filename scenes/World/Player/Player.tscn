@@ -554,6 +554,7 @@ hframes = 26
 [node name="Area2D" type="Area2D" parent="Sprite"]
 position = Vector2( -9, -9 )
 collision_layer = 0
+collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
 position = Vector2( 40, 9.5 )
@@ -588,6 +589,7 @@ one_shot = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 
+[connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Sprite/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Sprite/Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

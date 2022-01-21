@@ -7,3 +7,6 @@
 script = ExtResource( 2 )
 
 [node name="Dialog" parent="." instance=ExtResource( 1 )]
+file = "dlg_test.json"
+
+[connection signal="dialog_finished" from="Dialog" to="." method="_on_Dialog_dialog_finished"]

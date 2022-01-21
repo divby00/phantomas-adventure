@@ -8,13 +8,13 @@ onready var transition_out = $TransitionOut
 
 func _ready():
 	transition_in.start()
+	SoundManager.play_se("L4R")
 	Utils.connect_signal(transition_in, "finished", self, "_on_transition_in_finished")
 	Utils.connect_signal(transition_out, "finished", self, "_on_transition_out_finished")
 
 
 func _on_transition_in_finished():
-	SoundManager.play_se("L4R")
-
+	pass
 
 func _on_transition_out_finished():
 # warning-ignore:return_value_discarded

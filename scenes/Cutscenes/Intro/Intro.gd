@@ -23,6 +23,7 @@ func _ready():
 		Utils.connect_signal(act, "message_removed", self, "_on_message_removed")
 	Utils.connect_signal(dialog, "dialog_finished", self, "_on_dialog_finished")
 	Utils.connect_signal(menu_manager, "menu_selected", self, "_on_menu_selected")
+	Utils.connect_signal(transition_out, "finished", self, "_on_transition_out_finished")
 
 	acts[current_act].start()
 # warning-ignore:return_value_discarded
@@ -88,7 +89,7 @@ func _on_dialog_finished(_dialog):
 	transition_out.start()
 
 
-func _on_TransitionOut_transition_out_finished():
+func _on_transition_out_finished():
 # warning-ignore:return_value_discarded
 	GameSlotHandler.GameData.intro_viewed = true
 	GameSlotHandler.update_slot()

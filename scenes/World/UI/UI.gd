@@ -3,11 +3,15 @@ extends CanvasLayer
 signal inventory_visible(visible)
 signal gamemenu_visible(visible)
 signal gamemenu_selected_option(option)
+signal cinemascope_start()
+signal cinemascope_end()
 
 onready var life_bar: TextureProgress = $LifeBar
 onready var tech_container: HBoxContainer = $TechContainer
 onready var inventory = $InventoryPanel
 onready var menu_manager: MenuManager = $MenuManager
+onready var animate_bars: AnimationPlayer = $Cinemascope/AnimateBars
+onready var cinemascope: Node2D = $Cinemascope
 
 var can_show_menu: bool = true
 
@@ -65,3 +69,16 @@ func _on_transition_out_started():
 
 func _on_transition_in_finished():
 	can_show_menu = true
+
+func show_cinemascope_bars():
+	cinemascope.visible=true
+	animate_bars.play("show_bars")
+	yield(animate_bars, "animation_finished")
+	self.emit_signal("cinemascope_start")
+	
+func hide_cinemascope_bars():
+	animate_bars.play("hide_bars")
+	yield(animate_bars, "animation_finished")
+	self.emit_signal("cinemascope_end")
+	cinemascope.visible=false
+	
