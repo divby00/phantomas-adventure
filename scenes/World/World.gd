@@ -7,8 +7,8 @@ onready var lifebar: TextureProgress = $UI/LifeBar
 onready var transition_in: CanvasLayer = $TransitionIn
 onready var transition_out: CanvasLayer = $TransitionOut
 onready var remote_transform: RemoteTransform2D = $Player/RemoteTransform2D
-onready var level_node:Node2D = $Level
-onready var cinematic_node:Node2D = $Cinematic
+onready var level_node: Node2D = $Level
+onready var cinematic_node: Node2D = $Cinematic
 
 const PineTreeScene: PackedScene = preload("res://scenes/World/Trees/PineTree.tscn")
 
@@ -16,7 +16,8 @@ var previous_level = null
 var current_level = null
 var next_map = null
 var next_door_id = null
-var cinematic_scene:Cinematic = null
+var cinematic_scene: Cinematic = null
+
 
 func _ready():
 	Configuration.load_and_save_config()
@@ -26,6 +27,7 @@ func _ready():
 
 	#Esto es solo para probar la cinematica
 	Utils.connect_signal(player, "collision_cinematic", self, "_on_player_collision_cinematic")
+
 
 func _on_player_collision_cinematic(_item):
 	_play_cinematic("res://scenes/Tests/TestDialog.tscn")
@@ -44,12 +46,14 @@ func _load_level(level_key, door_id):
 	SoundManager.play_me(Levels.Data[current_level.id].background_music)
 	transition_in.start()
 
+
 func _play_cinematic(scene_resource_path):
 	_pause_world(true)
 	cinematic_scene = load(scene_resource_path).instance()
 	Utils.connect_signal(cinematic_scene, "cinematic_start", self, "_on_cinematic_start")
 	Utils.connect_signal(cinematic_scene, "cinematic_end", self, "_on_cinematic_end")
 	ui.show_cinemascope_bars()
+
 
 func _set_player():
 	if next_door_id != null:
@@ -116,11 +120,14 @@ func _on_health_changed(health):
 func _on_player_destroyed():
 	pass
 
+
 func _pause_world(pause):
 	get_tree().paused = pause
 
+
 func _on_inventory_visible(ivisible):
 	_pause_world(ivisible)
+
 
 func _on_gamemenu_visible(ivisible):
 	_pause_world(ivisible)
@@ -149,14 +156,18 @@ func _on_transition_out_finished():
 	current_level.queue_free()
 	_load_level(next_map, next_door_id)
 
+
 func _on_cinemascope_start():
 	cinematic_node.add_child(cinematic_scene)
+
 
 func _on_cinemascope_end():
 	_pause_world(false)
 
+
 func _on_cinematic_start():
 	pass
+
 
 func _on_cinematic_end():
 	cinematic_scene.queue_free()

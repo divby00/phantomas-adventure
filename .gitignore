@@ -5,3 +5,5 @@
 .mono/
 .resources/music/original/.mscbackup
 export_presets.cfg
+tools/.ropeproject/
+tools/.vscode/

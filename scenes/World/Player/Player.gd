@@ -145,6 +145,6 @@ func set_phantom(value):
 	phantom = value
 
 
-func _on_Area2D_area_entered(area:Area2D):
+func _on_Area2D_area_entered(area: Area2D):
 	if area.get_collision_layer_bit(5):
-		emit_signal("collision_cinematic",area)
+		emit_signal("collision_cinematic", area)
