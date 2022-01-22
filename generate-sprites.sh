@@ -109,6 +109,7 @@ for file in resources/sprites/original/player/*.ase
 do
     f=${file%%.*}
     ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
+    ${ASEPRITE_PATH} -b -script-param input=${file} -script tools/export-tags.lua
     echo ${f}.png
 done
 mv resources/sprites/original/player/*.png resources/sprites/player/
