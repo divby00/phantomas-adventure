@@ -23,10 +23,10 @@ func _ready():
 	_connect_ui()
 	_connect_transitions()
 	_load_level("Rio", null)
-	
+
 	#Esto es solo para probar la cinematica
 	Utils.connect_signal(player, "collision_cinematic", self, "_on_player_collision_cinematic")
-	
+
 func _on_player_collision_cinematic(_item):
 	_play_cinematic("res://scenes/Tests/TestDialog.tscn")
 
@@ -148,16 +148,16 @@ func _on_transition_out_finished():
 	SoundManager.stop(Levels.Data[current_level.id].background_music)
 	current_level.queue_free()
 	_load_level(next_map, next_door_id)
-	
+
 func _on_cinemascope_start():
 	cinematic_node.add_child(cinematic_scene)
 
 func _on_cinemascope_end():
 	_pause_world(false)
-	
+
 func _on_cinematic_start():
 	pass
-	
+
 func _on_cinematic_end():
 	cinematic_scene.queue_free()
 	ui.hide_cinemascope_bars()

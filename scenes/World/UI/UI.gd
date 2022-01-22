@@ -75,10 +75,10 @@ func show_cinemascope_bars():
 	animate_bars.play("show_bars")
 	yield(animate_bars, "animation_finished")
 	self.emit_signal("cinemascope_start")
-	
+
 func hide_cinemascope_bars():
 	animate_bars.play("hide_bars")
 	yield(animate_bars, "animation_finished")
 	self.emit_signal("cinemascope_end")
 	cinemascope.visible=false
-	
+
