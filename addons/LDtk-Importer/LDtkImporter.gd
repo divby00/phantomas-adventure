@@ -121,10 +121,12 @@ func get_level_layerInstances(level, options):
 
 				layers.push_front(new_node)
 			"Tiles", "IntGrid", "AutoLayer":
-				var new_layer = LDtk.new_tilemap(layerInstance, level)
-				if new_layer:
-					new_layer.z_index = 0
-					layers.push_front(new_layer)
+				# Db0: The condition below has been added to disable viewing the X tile associated to hard zones.
+				if layerInstance.__identifier != "HardZone":
+					var new_layer = LDtk.new_tilemap(layerInstance, level)
+					if new_layer:
+						new_layer.z_index = 0
+						layers.push_front(new_layer)
 
 		if layerInstance.__type == "IntGrid":
 			var collision_layer = LDtk.import_collisions(layerInstance, level, options)

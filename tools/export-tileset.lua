@@ -107,6 +107,6 @@ for i,v in ipairs(images) do
 end
 newSprTileset:setPalette(spr.palettes[1])
 newSprTileset.cels[1].image = sheetImg
-app.command.AutocropSprite(newSprTileset)
+--app.command.AutocropSprite(newSprTileset)
 newSprTileset:saveAs(app.params["input"]:match("(.+)%..+$") .. "-tileset.png")
 app.refresh()

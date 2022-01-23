@@ -240,7 +240,9 @@ func import_collisions(tilemap_data, level, options):
 	if tilemap_data.__type == "IntGrid" and get_layer_tileset_data(tilemap_data.layerDefUid) == null:
 		return
 
-	var shouldImportCollisions = options.Import_Collisions and tilemap_data.__identifier == "Collisions"
+	# DB0: Changed!
+	# var shouldImportCollisions = options.Import_Collisions and tilemap_data.__identifier == "Collisions"
+	var shouldImportCollisions = options.Import_Collisions
 	if not shouldImportCollisions:
 		return
 
