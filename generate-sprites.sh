@@ -132,7 +132,15 @@ do
     ${ASEPRITE_PATH} -b ${f}.ase --sheet ${f}.png
     echo ${f}.png
 done
+
+# Process tilesets
+${ASEPRITE_PATH} -b -script-param input=resources/sprites/original/maps/hostel-foreground.ase -script-param tile_w=16 -script-param tile_h=16 -script-param sheet_w=160 -script tools/export-tileset.lua 
+${ASEPRITE_PATH} -b -script-param input=resources/sprites/original/maps/hostel-background.ase -script-param tile_w=16 -script-param tile_h=16 -script-param sheet_w=160 -script tools/export-tileset.lua 
+${ASEPRITE_PATH} -b -script-param input=resources/sprites/original/maps/hostel-backwall.ase -script-param tile_w=16 -script-param tile_h=16 -script-param sheet_w=160 -script tools/export-tileset.lua 
 mv resources/sprites/original/maps/*.png resources/sprites/maps/
+rm resources/sprites/maps/hostel-foreground.png
+rm resources/sprites/maps/hostel-background.png
+rm resources/sprites/maps/hostel-backwall.png
 
 # Get sprites from 'cutscenes/intro' folder
 rm resources/sprites/cutscenes/intro/*.png 
